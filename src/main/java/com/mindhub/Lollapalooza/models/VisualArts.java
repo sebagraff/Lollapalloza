@@ -1,9 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 //
@@ -16,4 +13,47 @@ public class VisualArts {
     private long id;
     private String artName;
     private LocalDateTime dateAndTime;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Event_id")
+    private Event event;
+
+    public VisualArts() {
+    }
+
+    public VisualArts(String artName, LocalDateTime dateAndTime, Event event) {
+        this.artName = artName;
+        this.dateAndTime = dateAndTime;
+        this.event = event;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+
+
+    public String getArtName() {
+        return artName;
+    }
+
+    public void setArtName(String artName) {
+        this.artName = artName;
+    }
+
+    public LocalDateTime getDateAndTime() {
+        return dateAndTime;
+    }
+
+    public void setDateAndTime(LocalDateTime dateAndTime) {
+        this.dateAndTime = dateAndTime;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
 }
