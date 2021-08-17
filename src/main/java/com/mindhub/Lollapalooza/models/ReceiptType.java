@@ -1,5 +1,5 @@
 package com.mindhub.Lollapalooza.models;
 
-public enum ResetType {
+public enum ReceiptType {
     PRODUCT,TICKET
 }
