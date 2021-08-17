@@ -21,7 +21,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 }
-
+bootRun {
+	sourceResources sourceSets.main
+}
 test {
 	useJUnitPlatform()
 }
