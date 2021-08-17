@@ -15,9 +15,9 @@ public class Location {
     private LocalDate date;
     private int maximumCapacity;
 
-    public Sede() { }
+    public Location() { }
 
-    public Sede(LocalDate date, int maximumCapacity) {
+    public Location(LocalDate date, int maximumCapacity) {
         this.date = date;
         this.maximumCapacity = maximumCapacity;
     }
