@@ -10,6 +10,6 @@ public class LollapaloozaApplication {
 		SpringApplication.run(LollapaloozaApplication.class, args);
 	}
 
-	
+
 
 }
