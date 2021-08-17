@@ -20,7 +20,7 @@ public class Event {
     @OneToMany(mappedBy="event", fetch=FetchType.EAGER)
     Set<VisualArts> visualArts;
 
-    @OneToOne(mappedBy="location")
+    @OneToOne(mappedBy="event")
     private Location location;
 
     @OneToOne

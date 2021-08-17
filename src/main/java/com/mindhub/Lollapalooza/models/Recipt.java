@@ -16,7 +16,7 @@ public class Recipt {
     private Client client;
 
     @OneToMany(mappedBy="recipt", fetch=FetchType.EAGER)
-    Set<Recipt> recipts;
+    Set<Details> details;
 
     public Recipt() {
     }
