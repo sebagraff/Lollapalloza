@@ -12,9 +12,9 @@ public class TicketDTO {
 
     public TicketDTO(Ticket ticket){
         this.id = ticket.getId();
-        this.monto = ticket.getMonto();
-        this.dia = ticket.getDia();
-        this.numero = ticket.getNumero();
+        this.monto = ticket.getPrice();
+        this.dia = ticket.getDate();
+        this.numero = ticket.getNumberCode();
         this.stock = ticket.getStock();
     }
 
