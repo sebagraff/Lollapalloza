@@ -4,13 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
+
+//
 
 @Entity
-public class Compra {
+public class VisualArts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private TipoCompra tipo;
-
+    private String artName;
+    private LocalDateTime dateAndTime;
 }

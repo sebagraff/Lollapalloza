@@ -7,11 +7,12 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
-public class ArtesVisuales {
+public class MusicBand {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String nombreArte;
-    private LocalDateTime fechaConHora;
+    private String bandName;
+    private String genre;
+    private LocalDateTime dateAndTime;
 }
