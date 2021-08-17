@@ -2,11 +2,8 @@ package com.mindhub.Lollapalooza.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import org.hibernate.annotations.GenericGenerator;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Client {
@@ -18,6 +15,14 @@ public class Client {
     private String user;
     private String password;
 
+    @OneToMany(mappedBy="client", fetch=FetchType.EAGER)
+    Set<Comment> comments;
+
+    @OneToMany(mappedBy="client", fetch=FetchType.EAGER)
+    Set<Recipt> recipts;
+
+    @OneToMany(mappedBy="client", fetch=FetchType.EAGER)
+    Set<ClientEvent> clientEvents;
 
     public Client(){}
 
@@ -37,4 +42,12 @@ public class Client {
     public String getPassword() { return password; }
 
     public void setPassword(String password) { this.password = password; }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
+    }
 }

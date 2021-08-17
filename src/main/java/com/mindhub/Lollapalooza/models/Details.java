@@ -1,10 +1,8 @@
 package com.mindhub.Lollapalooza.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 public class Details {
@@ -17,13 +15,24 @@ public class Details {
     private LocalDateTime dateAndTime;
     private String location;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Recipt_id")
+    private Recipt recipt;
+
+    @OneToMany(mappedBy="detail", fetch=FetchType.EAGER)
+    Set<Product> products;
+
+    @OneToMany(mappedBy="detail", fetch=FetchType.EAGER)
+    Set<Ticket> tickets;
     public Details(){}
 
-    public Details(String header, int invoiceNumber, LocalDateTime dateAndTime, String location) {
+
+    public Details(String header, int invoiceNumber, LocalDateTime dateAndTime, String location, Recipt recipt) {
         this.header = header;
         this.invoiceNumber = invoiceNumber;
         this.dateAndTime = dateAndTime;
         this.location = location;
+        this.recipt = recipt;
     }
 
     public long getId() { return id; }
@@ -45,4 +54,12 @@ public class Details {
     public String getLocation() { return location; }
 
     public void setLocation(String location) { this.location = location; }
+
+    public Recipt getRecipt() {
+        return recipt;
+    }
+
+    public void setRecipt(Recipt recipt) {
+        this.recipt = recipt;
+    }
 }
