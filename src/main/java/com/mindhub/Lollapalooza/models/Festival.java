@@ -4,11 +4,11 @@ import javax.persistence.*;
 
 @Entity
 public class Festival {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @OneToOne(mappedBy="festival")
     private Event event;
 
     public Festival() {
@@ -20,10 +20,6 @@ public class Festival {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public Event getEvent() {

@@ -1,9 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -16,6 +13,10 @@ public class Ticket {
     private LocalDate date;
     private int numberCode;
     private int stock;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Detail_id")
+    private Details detail;
 
     public Ticket(){}
 
@@ -45,4 +46,12 @@ public class Ticket {
     public int getStock() { return stock; }
 
     public void setStock(int stock) { this.stock = stock; }
+
+    public Details getDetail() {
+        return detail;
+    }
+
+    public void setDetail(Details detail) {
+        this.detail = detail;
+    }
 }

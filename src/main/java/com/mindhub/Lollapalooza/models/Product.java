@@ -1,9 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Product {
@@ -16,6 +13,10 @@ public class Product {
     private String type;
     private String description;
     private int stock;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Detail_id")
+    private Details detail;
 
     public Product(){}
 
@@ -50,4 +51,12 @@ public class Product {
     public int getStock() { return stock; }
 
     public void setStock(int stock) { this.stock = stock; }
+
+    public Details getDetail() {
+        return detail;
+    }
+
+    public void setDetail(Details detail) {
+        this.detail = detail;
+    }
 }
