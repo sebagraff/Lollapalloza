@@ -15,8 +15,8 @@ public class Ticket {
     private int stock;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Recipt_id")
-    private Recipt recipt;
+    @JoinColumn(name="Detail_id")
+    private Details detail;
 
     public Ticket(){}
 
@@ -47,11 +47,11 @@ public class Ticket {
 
     public void setStock(int stock) { this.stock = stock; }
 
-    public Recipt getRecipt() {
-        return recipt;
+    public Details getDetail() {
+        return detail;
     }
 
-    public void setRecipt(Recipt recipt) {
-        this.recipt = recipt;
+    public void setDetail(Details detail) {
+        this.detail = detail;
     }
 }
