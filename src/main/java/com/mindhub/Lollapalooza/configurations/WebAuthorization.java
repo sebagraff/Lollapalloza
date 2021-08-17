@@ -1,4 +1,4 @@
-package com.mindhub.homebanking.configurations;
+package com.mindhub.Lollapalooza.configurations;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
