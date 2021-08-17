@@ -15,3 +15,13 @@ body{
     width: 375px;
     background-color: blanchedalmond;
 }
+
+/*------ CAMBIOS QUE HIZO UKO --------- */
+
+body{
+    width: 100vw;
+}
+.wrapper{
+    min-height: 100%;
+    width: 100%;
+}
