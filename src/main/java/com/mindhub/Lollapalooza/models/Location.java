@@ -1,9 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -15,6 +12,10 @@ public class Location {
     private LocalDate date;
     private int maximumCapacity;
 
+    @OneToOne
+    @JoinColumn(name="event_id")
+    private Event event;
+
     public Location() { }
 
     public Location(LocalDate date, int maximumCapacity) {
@@ -24,7 +25,6 @@ public class Location {
 
     public long getId() { return id; }
 
-    public void setId(long id) { this.id = id; }
 
     public LocalDate getDate() { return date; }
 
@@ -33,4 +33,12 @@ public class Location {
     public int getMaximumCapacity() { return maximumCapacity; }
 
     public void setMaximumCapacity(int maximumCapacity) { this.maximumCapacity = maximumCapacity; }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
 }
