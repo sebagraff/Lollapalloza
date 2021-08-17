@@ -1,6 +1,7 @@
 package com.mindhub.Lollapalooza.configurations;
 
-import ch.qos.logback.core.net.server.Client;
+
+import com.mindhub.Lollapalooza.models.Client;
 import com.mindhub.Lollapalooza.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -24,14 +25,14 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
             Client client = clientRepository.findByEmail(inputName);
 
-            if(client.getEmail().equalsIgnoreCase("mabel@gmail.com")){
-                return new User(client.getEmail(), client.getPassword(),
+            if(client.getUser().equalsIgnoreCase("user@gmail.com")){
+                return new User(client.getUser(), client.getPassword(),
                         AuthorityUtils.createAuthorityList("ADMIN"));
 
             }
             if (client != null) {
 
-                return new User(client.getEmail(), client.getPassword(),
+                return new User(client.getUser(), client.getPassword(),
 
                         AuthorityUtils.createAuthorityList("USER"));
 
