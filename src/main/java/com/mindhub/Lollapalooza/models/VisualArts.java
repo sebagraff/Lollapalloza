@@ -21,10 +21,9 @@ public class VisualArts {
     public VisualArts() {
     }
 
-    public VisualArts(String artName, LocalDateTime dateAndTime, Event event) {
+    public VisualArts(String artName, LocalDateTime dateAndTime) {
         this.artName = artName;
         this.dateAndTime = dateAndTime;
-        this.event = event;
     }
 
     public long getId() {
