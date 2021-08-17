@@ -6,19 +6,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Cliente {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //@GenericGenerator(name ="native", strategy = "native")
     private long id;
-    private String usuario;
+    private String user;
     private String password;
 
-    public Cliente(){}
+    public Client(){}
 
-    public Cliente(String usuario, String password) {
-        this.usuario = usuario;
+    public Client(String user, String password) {
+        this.user = user;
         this.password = password;
     }
 
@@ -26,9 +26,9 @@ public class Cliente {
 
     public void setId(long id) { this.id = id; }
 
-    public String getUsuario() { return usuario; }
+    public String getUser() { return user; }
 
-    public void setUsuario(String usuario) { this.usuario = usuario; }
+    public void setUser(String user) { this.user = user; }
 
     public String getPassword() { return password; }
 

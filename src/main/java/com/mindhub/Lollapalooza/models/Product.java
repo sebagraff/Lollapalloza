@@ -4,25 +4,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDate;
 
 @Entity
-public class Ticket {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String name;
     private double price;
-    private LocalDate date;
-    private int numberCode;
+    private String type;
+    private String description;
     private int stock;
 
-    public Ticket(){}
+    public Product(){}
 
-    public Ticket(double price, LocalDate date, int numberCode, int stock) {
+    public Product(String name, double price, String type, String description, int stock) {
+        this.name = name;
         this.price = price;
-        this.date = date;
-        this.numberCode = numberCode;
+        this.type = type;
+        this.description = description;
         this.stock = stock;
     }
 
@@ -30,17 +31,21 @@ public class Ticket {
 
     public void setId(long id) { this.id = id; }
 
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
+
     public double getPrice() { return price; }
 
     public void setPrice(double price) { this.price = price; }
 
-    public LocalDate getDate() { return date; }
+    public String getType() { return type; }
 
-    public void setDate(LocalDate date) { this.date = date; }
+    public void setType(String type) { this.type = type; }
 
-    public int getNumberCode() { return numberCode; }
+    public String getDescription() { return description; }
 
-    public void setNumberCode(int numberCode) { this.numberCode = numberCode; }
+    public void setDescription(String description) { this.description = description; }
 
     public int getStock() { return stock; }
 
