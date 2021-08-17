@@ -16,9 +16,7 @@ import javax.servlet.http.HttpSession;
 @Configuration
 public class WebAuthorization extends WebSecurityConfigurerAdapter {
     @Override
-
     protected void configure(HttpSecurity http) throws Exception {
-
         http.authorizeRequests()
                 .antMatchers("/Web/index.html","/Web/styles/**","/Web/js/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/clients/**").permitAll()
