@@ -5,16 +5,16 @@ import java.time.LocalDate;
 public class TicketDTO {
 
     private long id;
-    private double monto;
-    private LocalDate dia;
-    private int numero;
+    private double price;
+    private LocalDate date;
+    private int numberCode;
     private int stock;
 
     public TicketDTO(Ticket ticket){
         this.id = ticket.getId();
-        this.monto = ticket.getMonto();
-        this.dia = ticket.getDia();
-        this.numero = ticket.getNumero();
+        this.price = ticket.getPrice();
+        this.date = ticket.getDate();
+        this.numberCode = ticket.getNumberCode();
         this.stock = ticket.getStock();
     }
 
@@ -22,17 +22,17 @@ public class TicketDTO {
 
     public void setId(long id) { this.id = id; }
 
-    public double getMonto() { return monto; }
+    public double getPrice() { return price; }
 
-    public void setMonto(double monto) { this.monto = monto; }
+    public void setPrice(double price) { this.price = price; }
 
-    public LocalDate getDia() { return dia; }
+    public LocalDate getDate() { return date; }
 
-    public void setDia(LocalDate dia) { this.dia = dia; }
+    public void setDate(LocalDate date) { this.date = date; }
 
-    public int getNumero() { return numero; }
+    public int getNumberCode() { return numberCode; }
 
-    public void setNumero(int numero) { this.numero = numero; }
+    public void setNumberCode(int numberCode) { this.numberCode = numberCode; }
 
     public int getStock() { return stock; }
 
