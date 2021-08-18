@@ -144,7 +144,6 @@ header{
 }
 /*------------------------Main------------------------*/
 main{
-    margin-bottom: 30vh;
 }
 /*------------------------info Cards-----------------*/
 
@@ -163,7 +162,7 @@ main{
     justify-content: space-around;
     max-width: 80vw;
     margin-top: 5vh;
-    border: none!important;
+    box-shadow: 2px 2px 10px 2px;
 }
 .card img{
     width:100%;
@@ -236,6 +235,7 @@ main{
 
 
 footer{
+    margin-top: 30vh;
     
 }
 
@@ -350,7 +350,6 @@ a:hover{
     justify-content: space-around;
     width: 50vw;
     margin-top: 15vh;
-    border: none!important;
     padding: 0 1vw;
 
 }
