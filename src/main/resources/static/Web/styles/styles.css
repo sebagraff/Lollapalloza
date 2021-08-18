@@ -27,7 +27,7 @@ body{
 }
 
 #app{
-    width: 375px;
+    width: 100vw;
 }
 
 .fas{
@@ -91,10 +91,11 @@ body{
     color: var(--color1);
 }
 /*------------------------Main------------------------*/
-
 main{
+    overflow-y: scroll;
+    padding-bottom: 25vw;
+    max-width: 100vw!important;
 }
-
 /*------------------------info Cards-----------------*/
 
 
@@ -113,7 +114,11 @@ main{
     max-width: 80vw;
     margin-top: 5vh;
     box-shadow: 2px 2px 10px 2px;
+    margin-bottom: 5vw;
+
 }
+
+
 .card img{
     width:100%;
 }
@@ -183,11 +188,6 @@ main{
 
 /* -----------------------------------Footer-------------------------*/
 
-
-footer{
-    margin-top: 30vh;
-    
-}
 
 #up{
     height: 35vh;
@@ -278,17 +278,12 @@ a:hover{
 }
 
 /* -----------------------------------Media Queries -------------------------*/
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 535px){
 
 /*------------------------info Cards-----------------*/
 
 
-    .info-cards{
-        max-width: 10vw;
-        display: inline;
-    }
 
-}
 
 .col{
     width: 50vw!important;
@@ -306,13 +301,13 @@ a:hover{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 50vw;
+    width: 40vw;
     margin-top: 15vh;
     padding: 0 1vw;
 
 }
 .card img{
-    width:100%;
+    width:40vw;
 }
 
 .card-body{
@@ -345,7 +340,7 @@ a:hover{
 
 .dateEvent p{
     font-weight: bold;
-   
+
 }
 .dateEvent h2{
     font-size: 6vh;
@@ -371,26 +366,32 @@ a:hover{
     display: flex;
     justify-content: space-evenly;
     margin-top: 1.5vh;
-    
+
 }
 
 /*-------------------------Slider--------------------*/
 
 .slider{
     max-width: 100vw!important;
-  }
-  
-  .d-block{
-      width: 100%;
-      background-size: cover;
-  }
-
 }
 
+.d-block{
+    width: 100%;
+    background-size: cover;
+}
+
+
+}
 @media only screen and (min-width: 900px){
 
     .col{
         width: 33vw!important;
+    }
+
+
+
+    .card img{
+        width: 108%!important;
     }
 }
 
