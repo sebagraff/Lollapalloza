@@ -9,6 +9,9 @@
     overflow-x: unset;
 }
 
+a{
+    text-decoration: none!important;
+}
 
 body{
     min-height: 100vh;
@@ -65,9 +68,40 @@ header{
 .fas{
     color: var(--color1);
 
-<<<<<<< HEAD
 }
-=======
+
+.links{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.links a{
+    color: white;
+    font-weight: bold;
+}
+
+.search{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logOut{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-top: 1px solid white;
+}
+
+.logOut a{
+    color: var(--color1);
 }
 
 /*------------------------info Cards-----------------*/
@@ -161,4 +195,3 @@ header{
     display: inline;
 }
 }
->>>>>>> 05266a67f413faed9cc08d51bd9c91fc7e504fe2
