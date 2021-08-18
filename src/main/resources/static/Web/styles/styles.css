@@ -146,9 +146,11 @@ header{
     max-width: 80vw;
     margin-top: 5vh;
     border: none;
-
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 481cad3d9e9c0b262b9e5459f1b274d9c868ee45
 .card img{
     width:100%;
 }
@@ -210,6 +212,40 @@ header{
     
 }
 
+
+<<<<<<< HEAD
+.info-cards{
+    max-width: 10vw;
+    display: inline;
+=======
+/* ------------HEADER---------- */
+
+header{
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+.content-header{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+>>>>>>> 481cad3d9e9c0b262b9e5459f1b274d9c868ee45
+}
+
+}
+<<<<<<< HEAD
+=======
+
+.fas{
+    color: var(--color1);
+
+
+
+
 /* -----------------------------------Media Queries -------------------------*/
 @media only screen and (min-width: 768px){
 
@@ -221,3 +257,4 @@ header{
 }
 
 }
+>>>>>>> 481cad3d9e9c0b262b9e5459f1b274d9c868ee45
