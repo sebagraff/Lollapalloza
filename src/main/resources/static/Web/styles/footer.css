@@ -28,13 +28,13 @@ header{
 
 main{
     width: 100%;
-    min-height: 40vh;
+    min-height: 35vh;
     background-color: lightskyblue;
 }
 
 footer{
     width: 100%;
-    min-height: 45vh;
+    min-height: 50vh;
 }
 
 #up{
@@ -50,17 +50,18 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-/* .upBlock > h3{
+.upBlock > h3{
     margin-top: 1.5rem;
 }
 
 .upBlock > p{
-    margin: 0.3rem;
-} */
+    margin: 0.4rem;
+}
 
-.upBlock1 > h3{
+/* .upBlock1 > h3{
     margin-top: 1.5rem;
 }
 
@@ -82,11 +83,7 @@ footer{
 
 .upBlock3 > *{
     margin: 0.3rem;
-}
-
-i{
-    margin-right: 1rem;
-}
+} */
 
 .upBlock4 > h3{
     margin-top: 1.5rem;
@@ -94,18 +91,37 @@ i{
 
 input[type=text]{
     margin-top: 0.5rem;
+    width: 70%;
 }
 
 button{
-    /* width: 2px; */
-    /* margin: 0.5rem; */
-    padding: 0.5rem;
-    /* border-radius: 25%; */
+    width: 50%;
+    margin: 0.5rem;
+    padding: 0.7rem;
+    border-radius: 40%;
     -webkit-border-radius: 4;
 }
 
 #down{
-    height: 10vh;
+    height: 15vh;
     border-top: 1px solid rgb(66, 93, 110);
     background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
 }
+
+a{
+    color: white;
+    text-decoration: none;
+    font-family: var(--bs-font-sans-serif);
+}
+
+a:hover{
+    color: white;
+}
+
+#down p {
+    margin: 0;
+}
+
