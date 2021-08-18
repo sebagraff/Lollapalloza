@@ -24,26 +24,54 @@ body{
     max-width: 100vw;
 }
 
-.wrapper{
-    min-height: 100vh;
-    width: 375px;
-    background-color: blanchedalmond;
+.fas{
+    color: var(--color1);
+
 }
 
-/*------ CAMBIOS QUE HIZO UKO --------- */
+/*-------------------------Slider--------------------*/
 
 
 .slider{
   max-width: 96vw!important;
 }
 
+
+
+
+/*-------------------------Filter--------------------*/
 .filter{
     background-color: grey;
     height: 15vh;
     max-width: 96vw;
 }
 
-/* --------------HEADER------------------------ */
+/* ---------------------HEADER------------------------ */
+
+:root{
+    --color1: rgb(250, 66, 56);
+    --color2: rgb(0,173,153);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.wrapper{
+    min-height: 100vh;
+    width: 375px;
+    background-color: blanchedalmond;
+}
+
+
 
 header{
     height: 10vh;
@@ -54,6 +82,8 @@ header{
 .content-header{
     height: 100%;
     width: 100%;
+
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,13 +92,8 @@ header{
 
 #imgHeader{
     height: 8vh;
-    width: 20vw;
 }
 
-.fas{
-    color: var(--color1);
-
-}
 
 .links{
     height: 50%;
@@ -194,4 +219,5 @@ header{
     max-width: 10vw;
     display: inline;
 }
+
 }
