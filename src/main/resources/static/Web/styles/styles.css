@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    overflow-x: unset;
+    box-sizing: border-box;
 }
 
 #app{
@@ -11,7 +11,7 @@
 header{
     background-color: blue;
     height: 10vh;
-    max-width: 96vw;
+    max-width: 100vw;
 
 }
 /*------ CAMBIOS QUE HIZO UKO --------- */
@@ -22,17 +22,13 @@ body{
 }
 
 .slider{
-  max-width: 96vw!important;
+  max-width: 100vw!important;
 }
-
-
-
-
 
 .filter{
     background-color: grey;
     height: 15vh;
-    max-width: 96vw;
+    max-width: 100vw;
 }
 /*------------------------info Cards-----------------*/
 
@@ -41,7 +37,7 @@ body{
     height: 50vh;
     display: flex;
     justify-content: center;
-    max-width: 98vw!important;
+    max-width: 100vw!important;
 }
 
 .card{
@@ -67,6 +63,7 @@ body{
     text-align: center;
     margin-top: 1vh;
     border-bottom: rgba(128, 128, 128, 0.466) 1px solid;
+    padding: 5px;
     margin: 3vw;
     min-width: 75vw;
 }
@@ -98,6 +95,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
 }
 
 .redirectToPurchase input{
