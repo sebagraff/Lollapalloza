@@ -8,18 +8,8 @@
     max-width: 100vw;
 }
 
-header{
-    background-color: blue;
-    height: 10vh;
-    max-width: 96vw;
-
-}
 /*------ CAMBIOS QUE HIZO UKO --------- */
 
-body{
-   
-    max-width: 100vw!important;
-}
 
 .slider{
   max-width: 96vw!important;
@@ -34,6 +24,59 @@ body{
     height: 15vh;
     max-width: 96vw;
 }
+
+/* --------------HEADER------------------------ */
+
+:root{
+    --color1: rgb(250, 66, 56);
+    --color2: rgb(0,173,153);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.wrapper{
+    min-height: 100vh;
+    width: 375px;
+    background-color: blanchedalmond;
+}
+
+/* ------------HEADER---------- */
+
+header{
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+.content-header{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+#imgHeader{
+    height: 8vh;
+    width: 20vw;
+}
+
+.fas{
+    color: var(--color1);
+
+}
+
 /*------------------------info Cards-----------------*/
 
 
