@@ -13,7 +13,7 @@
 
 }
 
-/*------ CAMBIOS QUE HIZO UKO --------- */
+/*-------------------------Slider--------------------*/
 
 
 .slider{
@@ -23,14 +23,14 @@
 
 
 
-
+/*-------------------------Filter--------------------*/
 .filter{
     background-color: grey;
     height: 15vh;
     max-width: 96vw;
 }
 
-/* --------------HEADER------------------------ */
+/* ---------------------HEADER------------------------ */
 
 :root{
     --color1: rgb(250, 66, 56);
@@ -55,7 +55,7 @@ body{
     background-color: blanchedalmond;
 }
 
-/* ------------HEADER---------- */
+
 
 header{
     height: 10vh;
@@ -76,7 +76,6 @@ header{
 
 #imgHeader{
     height: 8vh;
-    width: 20vw;
 }
 
 
