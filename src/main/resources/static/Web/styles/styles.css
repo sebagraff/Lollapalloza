@@ -7,14 +7,13 @@
 body{
     width: 100%;
     min-height: 100vh;
-    color: white;
     display: flex;
     justify-content: center;
 }
 .wrapper{
     min-height: 100vh;
     width: 375px;
-    /* background-color: blanchedalmond; */
+    background-color: blanchedalmond;
 }
 
 /*------ CAMBIOS QUE HIZO UKO --------- */
@@ -25,93 +24,4 @@ body{
 .wrapper{
     min-height: 100%;
     width: 100%;
-}
-
-/* ------ CAMBIOS QUE HIZO EMA --------- */
-
-body{
-    min-height: 100vh;
-    width: 100vw;
-}
-
-.app{
-    width: 100vw;
-    min-height: 100vh;
-}
-
-.wrapper{
-    width: 100vw;
-    min-height: 100vh;
-}
-
-header{
-    width: 100%;
-    min-height: 15vh;
-    background-color: lightskyblue;
-}
-
-main{
-    width: 100%;
-    min-height: 40vh;
-    background-color: lightskyblue;
-}
-
-footer{
-    width: 100%;
-    min-height: 45vh;
-}
-
-#up{
-    height: 35vh;
-    background-color: black;
-    display: flex;
-}
-
-#up > div{
-    width: 100vw;
-    height: 30vh;
-    /* border: 0.01px orange solid; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.upBlock1 > h3{
-    margin-top: 1.5rem;
-}
-
-.upBlock1 > *{
-    margin: 0.3rem;
-}
-
-.upBlock2 > h3{
-    margin-top: 1.5rem;
-}
-
-.upBlock2 > *{
-    margin: 0.3rem;
-}
-
-.upBlock3 > h3{
-    margin-top: 1.5rem;
-}
-
-.upBlock3 > *{
-    margin: 0.3rem;
-}
-
-.upBlock4 > h3{
-    margin-top: 1.5rem;
-}
-
-button{
-    margin: 1rem;
-    padding: 0.5rem;
-    border-radius: 25%;
-}
-
-#down{
-    height: 10vh;
-    border-top: 1px solid rgb(66, 93, 110);
-    background-color: black;
 }

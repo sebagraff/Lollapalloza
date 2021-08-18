@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <main>
+
+        <div class="container__all">
+            <div class="back__box">
+                <div class="back__box-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión</p>
+                    <button id="btn__sing-in" onclick="singIn()">Iniciar sesión</button>
+                </div>
+
+                <div class="back__box-register">
+                    <h3>¿No tienes una cuenta?</h3>
+                    <p>Regístrate</p>
+                    <button id="btn__register" onclick="register()">Registarse</button>
+                </div>
+            </div>
+
+
+            <!-- Formulario de login y registro -->
+
+            <div class="container__login-register">
+
+                <!-- Login -->
+
+                <form action="" class="form__login">
+                    <h2>Iniciar sesión</h2>
+                    <input type="text" placeholder="Email">
+                    <input type="password" placeholder="Contraseña">
+                    <button>Ingresar</button>
+                </form>
+
+                <!-- Registro -->
+
+                <form action="" class="form__register">
+                    <h2>Registrarse</h2>
+                    <input type="text" placeholder="Nombre completo">
+                    <input type="text" placeholder="Email">
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <button>Registrarse</button>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
