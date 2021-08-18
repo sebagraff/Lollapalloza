@@ -8,6 +8,11 @@
     max-width: 100vw;
 }
 
+.fas{
+    color: var(--color1);
+
+}
+
 /*------ CAMBIOS QUE HIZO UKO --------- */
 
 
@@ -74,10 +79,6 @@ header{
     width: 20vw;
 }
 
-.fas{
-    color: var(--color1);
-
-}
 
 /*------------------------info Cards-----------------*/
 
