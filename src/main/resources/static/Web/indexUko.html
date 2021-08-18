@@ -35,7 +35,70 @@
                 </div>
               </div>
 
-
+              <div id="filtros">
+                <h3>Busca tus eventos!</h3>
+                <div>
+                  <div class="labels">
+                    <label for="genero">Genero:</label>
+                    <label for="fecha">Fechas:</label>
+                    <label for="banda">Tu banda favorita:</label>
+                  </div>
+                  <div class="selects">
+                    <select name="genero" id="genero">
+                      <option value="todos">Todos</option>
+                      <option value="rock">Rock</option>
+                      <option value="pop">Pop</option>
+                      <option value="electronica">Electronica</option>
+                      <option value="reggae">Reggae</option>
+                    </select>
+                    <select name="fecha" id="fecha">
+                      <option value="todas">Todas</option>
+                      <option value="veinteDos">Noviembre 22</option>
+                      <option value="veinteTres">Noviembre 23</option>
+                      <option value="veinteCuatro">Noviembre 24</option>
+                      <option value="veinteCinco">Noviembre 25</option>
+                    </select>
+                    <select name="banda" id="banda">
+                      <option value="todos">Todas</option>
+                      <option value="eminem">Eminem</option>
+                      <option value="ratm">Rage Against The Machine</option>
+                      <option value="rdr">Redonditos de Ricotta</option>
+                    </select>
+                  </div>
+                  <!--
+                  <div class="filtroIndividual">
+                    <label for="genero">Genero:</label>
+                    <select name="genero" id="genero">
+                      <option value="todos">Todos</option>
+                      <option value="rock">Rock</option>
+                      <option value="pop">Pop</option>
+                      <option value="electronica">Electronica</option>
+                      <option value="reggae">Reggae</option>
+                    </select>
+                  </div>
+                  <div class="filtroIndividual">
+                    <label for="fecha">Fechas:</label>
+                    <select name="fecha" id="fecha">
+                      <option value="todas">Todas</option>
+                      <option value="veinteDos">Noviembre 22</option>
+                      <option value="veinteTres">Noviembre 23</option>
+                      <option value="veinteCuatro">Noviembre 24</option>
+                      <option value="veinteCinco">Noviembre 25</option>
+                    </select>
+                  </div>
+                  Estos option son de prueba. La idea es que se autogeneren con la data del backend
+                  <div class="filtroIndividual">
+                    <label for="banda">Tu banda favorita:</label>
+                    <select name="banda" id="banda">
+                      <option value="todos">Todas</option>
+                      <option value="eminem">Eminem</option>
+                      <option value="ratm">Rage Against The Machine</option>
+                      <option value="rdr">Redonditos de Ricotta</option>
+                    </select>
+                  </div>-->
+                </div>
+                <button>Buscar</button>
+              </div>
 
         </div>
     </div>
@@ -49,7 +112,7 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
     <!-- mis scripts -->
-    <script src="js/index.js"> </script>
+    <script src="js/app.js"> </script>
 </body>
 
 </html>
