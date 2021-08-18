@@ -38,6 +38,7 @@
                             aria-label="Close"></button>
                     </div>
 
+
                             <div class="offcanvas-body">
                                 <div class="links">
                                     <h3 class="text-white">Lollapalooza</h3>
@@ -48,16 +49,17 @@
                                     <a href="#"><i class="fas fa-circle"></i> Entradas</a>
                                 </div>
 
-                                <div class="search">
-                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-light" type="submit">Search</button>
-                                </div>
 
-                                <div class="logOut">
-                                    <a href="#">Log Out</a>
-                                    <a href="#">Settings</a>
-                                </div>
-                            </div>
+                        <div class="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit">Search</button>
+                        </div>
+
+                        <div class="logOut">
+                            <a href="#">Log Out</a>
+                            <a href="#">Settings</a>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -89,12 +91,45 @@
             </section>
             <!-- Filter -->
             <section class="filter">
+                <div id="filtros">
+                    <h3>Busca tus eventos!</h3>
+                    <div>
+                        <div class="labels">
+                            <label for="genero">Genero:</label>
+                            <label for="fecha">Fechas:</label>
+                            <label for="banda">Tu banda favorita:</label>
+                        </div>
+                        <div class="selects">
+                            <select name="genero" id="genero">
+                                <option value="todos">Todos</option>
+                                <option value="rock">Rock</option>
+                                <option value="pop">Pop</option>
+                                <option value="electronica">Electronica</option>
+                                <option value="reggae">Reggae</option>
+                            </select>
+                            <select name="fecha" id="fecha">
+                                <option value="todas">Todas</option>
+                                <option value="veinteDos">Noviembre 22</option>
+                                <option value="veinteTres">Noviembre 23</option>
+                                <option value="veinteCuatro">Noviembre 24</option>
+                                <option value="veinteCinco">Noviembre 25</option>
+                            </select>
+                            <select name="banda" id="banda">
+                                <option value="todos">Todas</option>
+                                <option value="eminem">Eminem</option>
+                                <option value="ratm">Rage Against The Machine</option>
+                                <option value="rdr">Redonditos de Ricotta</option>
+                            </select>
+                        </div>
 
+                    </div>
+                    <button>Buscar</button>
+                </div>
             </section>
             <!-- Info cards -->
             <section class="info-cards">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col ">
+                    <div class="col">
                         <div class="card">
                             <img src=" assets/eminem.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -116,6 +151,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col">
                         <div class="card">
                             <img src="assets/ratm.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -137,6 +174,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col">
                         <div class="card">
                             <img src="assets/redondos.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -163,7 +202,54 @@
                 </div>
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div>
+                <div id="up">
+                    <div class="upBlock">
+                        <h3>FESTIVAL</h3>
+                        <p>Tickets</p>
+                        <p>Sponsors</p>
+                        <p>Prensa</p>
+                        <p>Merch</p>
+                    </div>
+                    <div class="upBlock">
+                        <h3>AYUDA</h3>
+                        <p>Contacto</p>
+                        <p>Información</p>
+                    </div>
+                    <div class="upBlock">
+                        <h3>SOCIAL</h3>
+                        <div class="d-flex"><i class="fab fa-instagram d-flex"><a
+                                    href="https://www.instagram.com/lollapaloozaar/?hl=es-la">
+                                    <p class="ms-1">Instagram</p>
+                                </a></i></div>
+                        <div class="d-flex"><i class="fab fa-facebook d-flex"><a
+                                    href="https://www.facebook.com/lollapaloozaar/">
+                                    <p class="ms-1">Facebook</p>
+                                </a></i></div>
+                        <div class="d-flex"><i class="fab fa-twitter d-flex"><a
+                                    href="https://twitter.com/lollapaloozaar">
+                                    <p class="ms-1">Twitter</p>
+                                </a></i></div>
+                        <div class="d-flex"><i class="fab fa-youtube d-flex"><a
+                                    href="https://www.youtube.com/channel/UC87T78G5VWLc28nKMd5KAHw">
+                                    <p class="ms-1">YouTube</p>
+                                </a></i></div>
+                    </div>
+                    <div class="upBlock4">
+                        <h3>SUSCRIBITE</h3>
+                        <input type="text" placeholder="Email Address">
+                        <button>Sign Up Now</button>
+                    </div>
+                </div>
+                <div id="down">
+                    <p>&copy Lollapalooza, MH</p>
+                    <p>Privacidad</p>
+                    <p>Términos y Condiciones</p>
+                    <p>Do not sell my info</p>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- bootstrap -->
@@ -176,7 +262,7 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
     <!-- mis scripts -->
-    <script src="/js/index.js"> </script>
+    <script src="js/index.js"> </script>
 </body>
 
 </html>
