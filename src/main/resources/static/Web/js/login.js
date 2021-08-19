@@ -20,7 +20,7 @@ function widthPage(){
         form_login.style.display = "block";
         form_register.style.display = "none";
         container_login_register.style.left = "0";
-        back__box.style.background = "rgba(87, 88, 90, 1)";
+        back__box.style.background = "linear-gradient(1.5turn, #00af9a, #ff4034)";
     }
 }
 
