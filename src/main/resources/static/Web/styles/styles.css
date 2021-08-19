@@ -27,7 +27,7 @@ body{
 }
 
 #app{
-    width: 375px;
+    width: 100vw;
 }
 
 .fas{
@@ -60,6 +60,7 @@ body{
     flex-direction: row;
     height: 25vh;
 }
+
 .labels,.selects{
     width:50vw;
     height: 100%;
@@ -114,7 +115,9 @@ body{
 .card img{
     width:100%;
 }
-
+.row{
+    min-height: 100vh!important;
+}
 .card-body{
     max-height: 33vh!important;
 }
@@ -182,7 +185,8 @@ body{
 
 
 footer{
-    
+    height: 30vh;
+    width: 100%;
 }
 
 #up{
@@ -284,7 +288,7 @@ a:hover{
         display: inline;
     }
 
-}
+
 
 .col{
     width: 50vw!important;
