@@ -1,7 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
 import javax.persistence.*;
-import javax.swing.*;
 
 @Entity
 public class Product {
@@ -14,7 +13,7 @@ public class Product {
     private String type;
     private String description;
     private int stock;
-    private JLabel image;
+    private String image;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Detail_id")
@@ -22,7 +21,7 @@ public class Product {
 
     public Product(){}
 
-    public Product(String name, double price, String type, String description, int stock, JLabel image) {
+    public Product(String name, double price, String type, String description, int stock, String image) {
         this.name = name;
         this.price = price;
         this.type = type;
@@ -63,11 +62,11 @@ public class Product {
         this.detail = detail;
     }
 
-    public JLabel getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(JLabel image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }
