@@ -194,14 +194,6 @@ main{
 /* -----------------------------------Footer-------------------------*/
 
 
-<<<<<<< HEAD
-footer{
-    height: 30vh;
-    width: 100%;
-}
-
-=======
->>>>>>> 005fab8abe0b94d63b75374e79d93cc3bb3ce4be
 #up{
     height: 35vh;
     background-color: black;
@@ -213,7 +205,6 @@ footer{
 #up > div{
     width: 100vw;
     height: 35vh;
-    /* border: 0.01px orange solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,30 +218,6 @@ footer{
 .upBlock > p{
     margin: 0.4rem;
 }
-
-/* .upBlock1 > h3{
-    margin-top: 1.5rem;
-}
-
-.upBlock1 > *{
-    margin: 0.3rem;
-}
-
-.upBlock2 > h3{
-    margin-top: 1.5rem;
-}
-
-.upBlock2 > *{
-    margin: 0.3rem;
-}
-
-.upBlock3 > h3{
-    margin-top: 1.5rem;
-}
-
-.upBlock3 > *{
-    margin: 0.3rem;
-} */
 
 .upBlock4 > h3{
     margin-top: 1.5rem;
@@ -315,10 +282,6 @@ a:hover{
 
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 005fab8abe0b94d63b75374e79d93cc3bb3ce4be
 
 .col{
     width: 50vw!important;
