@@ -61,6 +61,7 @@ body{
     flex-direction: row;
     height: 25vh;
 }
+
 .labels,.selects{
     width:50vw;
     height: 100%;
@@ -100,7 +101,7 @@ main{
 
 
 .info-cards{
-    height: 50vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
@@ -124,7 +125,9 @@ main{
 .card img{
     width:100%;
 }
-
+.row{
+    min-height: 100vh!important;
+}
 .card-body{
     max-height: 33vh!important;
 }
@@ -191,6 +194,14 @@ main{
 /* -----------------------------------Footer-------------------------*/
 
 
+<<<<<<< HEAD
+footer{
+    height: 30vh;
+    width: 100%;
+}
+
+=======
+>>>>>>> 005fab8abe0b94d63b75374e79d93cc3bb3ce4be
 #up{
     height: 35vh;
     background-color: black;
@@ -279,6 +290,10 @@ a:hover{
 
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 005fab8abe0b94d63b75374e79d93cc3bb3ce4be
 
 .col{
     width: 50vw!important;
@@ -289,7 +304,7 @@ a:hover{
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
-    min-height: 70vh;
+    min-height: 50vh;
 }
 
 .card{

@@ -60,3 +60,15 @@ header{
 .logOut a{
     color: var(--color1);
 }
+
+.fa-circle{
+    color: var(--color1);
+}
+
+.offcanvas-header{
+    border-bottom: 1px solid white;
+}
+
+.fa-ellipsis-h{
+    color: var(--color1);
+}

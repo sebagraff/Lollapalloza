@@ -1,5 +1,7 @@
 package com.mindhub.Lollapalooza;
 
+import com.mindhub.Lollapalooza.models.Product;
+import com.mindhub.Lollapalooza.repositories.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,8 +14,8 @@ public class LollapaloozaApplication {
 		SpringApplication.run(LollapaloozaApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner initData(){
-
+	public CommandLineRunner initData(ProductRepository productRepository){
+		Product Camiseta = productRepository.save(new Product());
 		return(args) -> {
 
 		};

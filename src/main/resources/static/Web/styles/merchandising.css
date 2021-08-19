@@ -7,6 +7,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+html{
+    overflow-x: hidden!important;
 }
 
 main{
@@ -22,7 +27,17 @@ main{
 .filter{
     height: 20vh;
     width: 100%;
-    background-color: rgb(250, 66, 56);
+
+}
+
+.tittle-filter{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: 1px;
 }
 
 .div-products{
@@ -62,10 +77,22 @@ main{
     background-color: sandybrown;
 }
 
+.img-card img {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
 .info-card{
     height: 100%;
     width: 55%;
     background-color: seashell;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
 }
 
 .tittle-card{
@@ -107,7 +134,7 @@ main{
 }
 
 .buttons-card{
-    height: 40%;
+    height: 20%;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -120,4 +147,6 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: flex-end;
 }
+
