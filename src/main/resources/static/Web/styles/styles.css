@@ -398,3 +398,56 @@ a:hover{
 
 }
 
+/* ------------------TICKETS------------------ */
+
+#header-tickets{
+    width: 100vw;
+    height: 80vh;
+    background-color: lightskyblue;
+    background-image: url(../assets/fondologin.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#header-tickets h1{
+    margin: 5vh 0 0 5vw;
+    color: #F23838;
+}
+
+#nav-tickets{
+    width: 100vw;
+    height: 17vh;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+#tickets-logo{
+    margin: 0 2rem;
+    width: 10vw;
+}
+
+#ingresarButton{
+    margin: 0rem 2rem ;
+    padding: 0.5rem;
+    height: 6vh;
+    color: #0D0D0D;
+    background-color: #F23838;
+}
+
+#main-tickets{
+    min-height: 150vh;
+}
+
+#footer-tickets{
+    height: 10vh;
+    color: #F23838;
+    background-color: #03A688;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
