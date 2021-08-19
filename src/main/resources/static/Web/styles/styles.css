@@ -403,7 +403,7 @@ a:hover{
 #nav-tickets{
     width: 100vw;
     height: 17vh;
-    background-color: white;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -422,8 +422,12 @@ a:hover{
 }
 
 #header-tickets h1{
-    margin: 5vh 0 0 5vw;
+    margin: 2vh 0 0 0;
+    width: 100vw;
     color: #F23838;
+    font-size: 59px;
+    display: flex;
+    justify-content: center;
 }
 
 #tickets-logo{
