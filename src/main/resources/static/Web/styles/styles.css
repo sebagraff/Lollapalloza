@@ -12,10 +12,11 @@
 
 html{
     max-width: 100vw!important;
+    overflow-x: hidden;
 }
 
 body{
-    width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -92,15 +93,20 @@ body{
     color: var(--color1);
 }
 /*------------------------Main------------------------*/
-
+main{
+    padding-bottom: 25vw;
+    max-width: 100vw!important;
+}
 /*------------------------info Cards-----------------*/
 
 
 .info-cards{
-    height: 50vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .card{
@@ -110,8 +116,12 @@ body{
     justify-content: space-around;
     max-width: 80vw;
     margin-top: 5vh;
-    border: none!important;
+    box-shadow: 2px 2px 10px 2px;
+    margin-bottom: 5vw;
+
 }
+
+
 .card img{
     width:100%;
 }
@@ -184,15 +194,20 @@ body{
 /* -----------------------------------Footer-------------------------*/
 
 
+<<<<<<< HEAD
 footer{
     height: 30vh;
     width: 100%;
 }
 
+=======
+>>>>>>> 005fab8abe0b94d63b75374e79d93cc3bb3ce4be
 #up{
     height: 35vh;
     background-color: black;
     display: flex;
+    color: white;
+
 }
 
 #up > div{
@@ -275,20 +290,35 @@ a:hover{
 
 #down p {
     margin: 0;
+    text-align: center;
+}
+.ancle{
+    color: white;
+    text-decoration: none;
+    font-family: var(--bs-font-sans-serif);
 }
 
+.ancle:hover{
+    color: white;
+}
+#button{
+    width: 50%;
+    margin: 0.5rem;
+    padding: 0.7rem;
+    border-radius: 40%;
+    -webkit-border-radius: 4;
+}
 /* -----------------------------------Media Queries -------------------------*/
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 693px){
 
 /*------------------------info Cards-----------------*/
 
 
-    .info-cards{
-        max-width: 10vw;
-        display: inline;
-    }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 005fab8abe0b94d63b75374e79d93cc3bb3ce4be
 
 .col{
     width: 50vw!important;
@@ -299,6 +329,7 @@ a:hover{
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
+    min-height: 50vh;
 }
 
 .card{
@@ -306,14 +337,13 @@ a:hover{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 50vw;
+    width: 40vw;
     margin-top: 15vh;
-    border: none!important;
     padding: 0 1vw;
 
 }
 .card img{
-    width:100%;
+    width:40vw;
 }
 
 .card-body{
@@ -346,7 +376,7 @@ a:hover{
 
 .dateEvent p{
     font-weight: bold;
-   
+
 }
 .dateEvent h2{
     font-size: 6vh;
@@ -372,26 +402,36 @@ a:hover{
     display: flex;
     justify-content: space-evenly;
     margin-top: 1.5vh;
-    
+
 }
 
 /*-------------------------Slider--------------------*/
 
 .slider{
     max-width: 100vw!important;
-  }
-  
-  .d-block{
-      width: 100%;
-      background-size: cover;
-  }
-
 }
 
+.d-block{
+    width: 100%;
+    background-size: cover;
+}
+
+
+}
 @media only screen and (min-width: 900px){
 
     .col{
         width: 33vw!important;
     }
+
+    .card img{
+        width: 108%!important;
+    }
+
+    .info-cards{
+        overflow: unset !important;
+        margin-left: 1vw;
+    }
+
 }
 
