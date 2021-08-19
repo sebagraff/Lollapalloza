@@ -13,6 +13,7 @@ public class Product {
     private String type;
     private String description;
     private int stock;
+    private String image;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Detail_id")
@@ -20,12 +21,13 @@ public class Product {
 
     public Product(){}
 
-    public Product(String name, double price, String type, String description, int stock) {
+    public Product(String name, double price, String type, String description, int stock, String image) {
         this.name = name;
         this.price = price;
         this.type = type;
         this.description = description;
         this.stock = stock;
+        this.image = image;
     }
 
     public long getId() { return id; }
@@ -58,5 +60,13 @@ public class Product {
 
     public void setDetail(Details detail) {
         this.detail = detail;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

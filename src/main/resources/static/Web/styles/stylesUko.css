@@ -130,6 +130,7 @@ option:hover{
     flex-direction: row;
     height: 25vh;
 }
+
 .labels,.selects{
     width:50vw;
     height: 100%;
@@ -169,7 +170,7 @@ main{
 
 
 .info-cards{
-    height: 50vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
@@ -193,7 +194,9 @@ main{
 .card img{
     width:100%;
 }
-
+.row{
+    min-height: 100vh!important;
+}
 .card-body{
     max-height: 33vh!important;
 }
@@ -264,12 +267,13 @@ main{
     height: 35vh;
     background-color: black;
     display: flex;
+    color: white;
+
 }
 
 #up > div{
     width: 100vw;
     height: 35vh;
-    /* border: 0.01px orange solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -283,30 +287,6 @@ main{
 .upBlock > p{
     margin: 0.4rem;
 }
-
-/* .upBlock1 > h3{
-    margin-top: 1.5rem;
-}
-
-.upBlock1 > *{
-    margin: 0.3rem;
-}
-
-.upBlock2 > h3{
-    margin-top: 1.5rem;
-}
-
-.upBlock2 > *{
-    margin: 0.3rem;
-}
-
-.upBlock3 > h3{
-    margin-top: 1.5rem;
-}
-
-.upBlock3 > *{
-    margin: 0.3rem;
-} */
 
 .upBlock4 > h3{
     margin-top: 1.5rem;
@@ -348,7 +328,22 @@ a:hover{
     margin: 0;
     text-align: center;
 }
+.ancle{
+    color: white;
+    text-decoration: none;
+    font-family: var(--bs-font-sans-serif);
+}
 
+.ancle:hover{
+    color: white;
+}
+#button{
+    width: 50%;
+    margin: 0.5rem;
+    padding: 0.7rem;
+    border-radius: 40%;
+    -webkit-border-radius: 4;
+}
 /* -----------------------------------Media Queries -------------------------*/
 @media only screen and (min-width: 693px){
 
@@ -366,7 +361,7 @@ a:hover{
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
-    overflow: unset;
+    min-height: 50vh;
 }
 
 .card{
@@ -472,3 +467,56 @@ a:hover{
 
 }
 
+/* ------------------TICKETS------------------ */
+
+#header-tickets{
+    width: 100vw;
+    height: 80vh;
+    background-color: lightskyblue;
+    background-image: url(../assets/fondologin.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#header-tickets h1{
+    margin: 5vh 0 0 5vw;
+    color: #F23838;
+}
+
+#nav-tickets{
+    width: 100vw;
+    height: 17vh;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+#tickets-logo{
+    margin: 0 2rem;
+    width: 10vw;
+}
+
+#ingresarButton{
+    margin: 0rem 2rem ;
+    padding: 0.5rem;
+    height: 6vh;
+    color: #0D0D0D;
+    background-color: #F23838;
+}
+
+#main-tickets{
+    min-height: 150vh;
+}
+
+#footer-tickets{
+    height: 10vh;
+    color: #F23838;
+    background-color: #03A688;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
