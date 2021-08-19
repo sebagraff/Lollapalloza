@@ -469,6 +469,16 @@ a:hover{
 
 /* ------------------TICKETS------------------ */
 
+#nav-tickets{
+    width: 100vw;
+    height: 17vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
 #header-tickets{
     width: 100vw;
     height: 80vh;
@@ -481,18 +491,12 @@ a:hover{
 }
 
 #header-tickets h1{
-    margin: 5vh 0 0 5vw;
-    color: #F23838;
-}
-
-#nav-tickets{
+    margin: 2vh 0 0 0;
     width: 100vw;
-    height: 17vh;
-    background-color: white;
+    color: #F23838;
+    font-size: 59px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
+    justify-content: center;
 }
 
 #tickets-logo{
