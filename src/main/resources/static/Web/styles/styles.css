@@ -12,10 +12,11 @@
 
 html{
     max-width: 100vw!important;
+    overflow-x: hidden;
 }
 
 body{
-    width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -92,7 +93,6 @@ body{
 }
 /*------------------------Main------------------------*/
 main{
-    overflow-y: scroll;
     padding-bottom: 25vw;
     max-width: 100vw!important;
 }
@@ -104,6 +104,8 @@ main{
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .card{
@@ -193,6 +195,8 @@ main{
     height: 35vh;
     background-color: black;
     display: flex;
+    color: white;
+
 }
 
 #up > div{
@@ -277,9 +281,24 @@ a:hover{
     margin: 0;
     text-align: center;
 }
+.ancle{
+    color: white;
+    text-decoration: none;
+    font-family: var(--bs-font-sans-serif);
+}
 
+.ancle:hover{
+    color: white;
+}
+#button{
+    width: 50%;
+    margin: 0.5rem;
+    padding: 0.7rem;
+    border-radius: 40%;
+    -webkit-border-radius: 4;
+}
 /* -----------------------------------Media Queries -------------------------*/
-@media only screen and (min-width: 535px){
+@media only screen and (min-width: 693px){
 
 /*------------------------info Cards-----------------*/
 
@@ -295,6 +314,7 @@ a:hover{
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
+    min-height: 70vh;
 }
 
 .card{
@@ -389,10 +409,14 @@ a:hover{
         width: 33vw!important;
     }
 
-
-
     .card img{
         width: 108%!important;
     }
+
+    .info-cards{
+        overflow: unset !important;
+        margin-left: 1vw;
+    }
+
 }
 

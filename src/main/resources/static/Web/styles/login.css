@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: url(../assets/fondologin.jpg);
+    background-image: url(../assets/fondologin.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -33,9 +33,9 @@ main{
     padding: 10px 20px;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(10px);
-    background-color: rgba(184, 120, 3, 0.548);
+    /* backdrop-filter: blur(10px); */
 }
+
 
 .back__box div{
     margin: 100px 40px;
