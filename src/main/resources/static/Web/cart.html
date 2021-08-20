@@ -87,11 +87,10 @@
                                 <i class="fas fa-shopping-cart text-dark">&nbsp; {{cart.length}} </i>
                             </button>
                             <ul class="dropdown-menu">
-                              <li v-for="product in cart"><a class="dropdown-item" href="#"></a>{{product.name}} ${{product.price}} <span class="text-success"> cantidad: {{product.count}} </span></a></li>
-                              <li v-show="(cart.length === 0)" ><a class="dropdown-item" href="#">No hay ningun producto seleccionado</a></li>
+                              <li v-for="product in cart"><a class="dropdown-item" href="#">{{product.name}} ${{product.price}} <span class="text-success"> {{product.count}} </span></a></li>
+                              <!-- <li v-show="(cart.length === 0)" ><a class="dropdown-item" href="#">No hay ningun producto seleccionado</a></li> -->
                               <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
-                              <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="#">Continuar con la compra</a></li>
+                              <li><a class="dropdown-item" href="#">Continuar con la compra</a></li>
                             </ul>
                           </div>
                         
@@ -113,75 +112,7 @@
         </header>
 
         <main>
-            <div class="content-main bg-dark">
-
-                
-                <div class="img-bcc"></div>
-
-                <div class="filter">
-
-                    <div class="tittle-filter">
-                        <h5><i class="fas fa-store"></i> Nuestra tienda</h5>
-                    </div>
-
-                    <div class="tittle-filter">
-                        <h5 id="tittle-color">Merchandising Lollapalooza</h5>
-                    </div>
-
-                    <div class="tittle-filter ">
-                        <input @change="filterProducts" v-model="inputSearch" class="form-control w-50" type="search"
-                            placeholder="Buscar" aria-label="Search">
-                        <i class="fas fa-search ms-2 fs-3"></i>
-                    </div>
-
-                </div>
-
-                <div class="div-products">
-                    <div class="content-products">
-
-                        <div v-show="(product)" v-for="product in AuxProducts" class="card-shop ">
-                            <div class="content-card animate__animated animate__zoomIn">
-
-                                <div class="img-card">
-                                    <img :src="product.image" alt="img">
-                                </div>
-
-                                <div class="info-card">
-
-                                    <div class="tittle-card">
-                                        <h3>{{product.name}}</h3>
-                                    </div>
-
-                                    <div class="amount-card">
-                                        <p class="" v-show="product.price > 100">${{product.price}}</p>
-                                    </div>
-
-                                    <div class="stock-card">
-                                        <p v-show="product.stock >= 10"> <span class="text-bold">Stock:</span>
-                                            {{product.stock}}</p>
-                                        <p v-show="product.stock < 10"> <span class="text-bold">Ultimos
-                                                productos:</span> {{product.stock}}</p>
-                                    </div>
-
-                                    <div class="buttons-card">
-                                        <button v-show="product.stock > 0" @click="handlePushCarrito(product)"
-                                            type="button" class="btn btn-warning"><i class="fas fa-cart-plus me-2"></i>
-                                            Agregar</button>
-                                        <button v-show="product.stock < 1" type="button" class="btn btn-warning"
-                                            disabled><i class="fas fa-cart-plus me-2"></i> Agregar</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div v-show="(AuxProducts.length === 0)" class="notFound">
-                            <h2 class="text-white">¡Lo siento, intente otra busqueda!</h2>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+   
         </main>
 
     </div>
