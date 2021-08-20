@@ -12,7 +12,7 @@
     <!-- Mis estilos -->
 
     <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/merchandising.css">
+    <link rel="stylesheet" href="./styles/bands.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -56,7 +56,7 @@
                         <div class="links">
                             <h3 class="text-white">Lollapalooza</h3>
                             <a href="index.html"><i class="fas fa-circle"></i> Inicio</a>
-                            <a href="#"><i class="fas fa-circle"></i> Musica</a>
+                            <a href="bands.html"><i class="fas fa-circle"></i> Musica</a>
                             <a href="merchandising.html"><i class="fas fa-circle"></i> Merchandising</a>
                             <a href="#"><i class="fas fa-circle"></i> Entradas</a>
                         </div>
@@ -103,77 +103,34 @@
 
         <main>
             <div class="content-main bg-dark">
+                <div class="band">
+                    <div class="content-band bg-dark">
 
-                
-                <div class="img-bcc"></div>
+                        <div class="img-band">
 
-                <div class="filter">
+                        </div>
 
-                    <div class="tittle-filter">
-                        <h5><i class="fas fa-store"></i> Nuestra tienda</h5>
-                    </div>
+                        <div class="name-band">
+                            <h3>Hola soy la banda</h3>
+                        </div>
 
-                    <div class="tittle-filter">
-                        <h5 id="tittle-color">Merchandising Lollapalooza</h5>
-                    </div>
+                        <div class="description-band">
+                            <p>Hola soy la descripcion de la banda para el conocimiento de la gente y bueno hola que tal</p>
+                        </div>
 
-                    <div class="tittle-filter ">
-                        <input @change="filterProducts" v-model="inputSearch" class="form-control w-50" type="search"
-                            placeholder="Buscar" aria-label="Search">
-                        <i class="fas fa-search ms-2 fs-3"></i>
-                    </div>
-
-                </div>
-
-                <div class="div-products">
-                    <div class="content-products">
-
-                        <div v-show="(product)" v-for="product in AuxProducts" class="card-shop ">
-                            <div class="content-card animate__animated animate__zoomIn">
-
-                                <div class="img-card">
-                                    <img :src="product.image" alt="img">
-                                </div>
-
-                                <div class="info-card">
-
-                                    <div class="tittle-card">
-                                        <h3>{{product.name}}</h3>
-                                    </div>
-
-                                    <div class="amount-card">
-                                        <p class="" v-show="product.price > 100">${{product.price}}</p>
-                                    </div>
-
-                                    <div class="stock-card">
-                                        <p v-show="product.stock >= 10"> <span class="text-bold">Stock:</span>
-                                            {{product.stock}}</p>
-                                        <p v-show="product.stock < 10"> <span class="text-bold">Ultimos
-                                                productos:</span> {{product.stock}}</p>
-                                    </div>
-
-                                    <div class="buttons-card">
-                                        <button v-show="product.stock > 0" @click="handlePushCarrito(product)"
-                                            type="button" class="btn btn-warning"><i class="fas fa-cart-plus me-2"></i>
-                                            Agregar</button>
-                                        <button v-show="product.stock < 1" type="button" class="btn btn-warning"
-                                            disabled><i class="fas fa-cart-plus me-2"></i> Agregar</button>
-                                    </div>
-                                </div>
-
+                        <div class="info-band">
+                            <div class="w-50 d-flex justify-content-center align-items-center">
+                                <p>Genero: </p>
                             </div>
+
+                            <div class="w-50 d-flex justify-content-center align-items-center">
+                                <p>Cunado y donde toca: </p>
+                            </div>
+
                         </div>
-
-                        <div v-show="(!product)" class="spinner-border text-danger" style="width: 3rem; height: 3rem;" role="status">
-                            <span class="sr-only text-danger">Loading...</span>
-                          </div>
-
-                        <div v-show="(AuxProducts.length === 0)" class="notFound">
-                            <h2 class="text-white">¡Lo siento, intente otra busqueda!</h2>
-                        </div>
-
                     </div>
                 </div>
+            
             </div>
         </main>
 
@@ -190,7 +147,7 @@
 
     <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
     <!-- mis scripts -->
-    <script src="../Web/js/merchandising.js"> </script>
+    <script src="../Web/js/bands.js"> </script>
 </body>
 
 </html>
