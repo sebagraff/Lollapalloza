@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
+    <title>Home</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -26,10 +27,12 @@
             <div class="content-header">
                 <img src="assets/lola.png" alt="logo" id="imgHeader">
 
-                <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight"><i class="fas fa-ellipsis-h"></i></button>
+                <!-- ------------MOBILEEEE---------------- -->
+                <button class="btn-canvas btn btn-dark" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                        class="fas fa-ellipsis-h"></i></button>
 
-                <div class="offcanvas offcanvas-end w-75 bg-dark" tabindex="-1" id="offcanvasRight"
+                <div class="offcanvas offcanvas-end  bg-dark" tabindex="-1" id="offcanvasRight"
                     aria-labelledby="offcanvasRightLabel">
 
                     <div class="offcanvas-header">
@@ -40,11 +43,11 @@
 
 
                     <div class="offcanvas-body">
+
                         <div class="links">
                             <h3 class="text-white">Lollapalooza</h3>
                             <a href="index.html"><i class="fas fa-circle"></i> Inicio</a>
                             <a href="#"><i class="fas fa-circle"></i> Musica</a>
-                            <a href="#"><i class="fas fa-circle"></i> Especiales</a>
                             <a href="merchandising.html"><i class="fas fa-circle"></i> Merchandising</a>
                             <a href="#"><i class="fas fa-circle"></i> Entradas</a>
                         </div>
@@ -59,6 +62,30 @@
                             <a href="#">Log Out</a>
                             <a href="#">Settings</a>
                         </div>
+                    </div>
+
+                </div>
+                <!-- -------------------DESKTOP------------ -->
+                <div class="links-desktop">
+                    <div class="content-links">
+                        <a href="index.html"> <i class="fas fa-home"></i> Incio</a>
+                        <a href=""> <i class="fas fa-music"></i> Musica</a>
+                        <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
+                        <a href=""> <i class="fas fa-ticket-alt"></i> Entradas</a>
+
+
+                        <!-- <i class="fas fa-shopping-cart">&nbsp; {{cart.length}} </i> -->
+                    </div>
+                </div>
+
+                <div class="login-user">
+
+                    <div class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+
+                    <div class="user">
+                        <p class="text-white">Maria de los Andes</p>
                     </div>
 
                 </div>
@@ -91,6 +118,50 @@
             </section>
             <!-- Filter -->
             <section class="filter">
+                <div class="accordion" id="filtros">
+                    <div class="accodion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Busca tus eventos!</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="labels">
+                                    <label for="genero">Genero:</label>
+                                    <label for="fecha">Fechas:</label>
+                                    <label for="banda">Tu banda favorita:</label>
+                                </div>
+                                <div class="selects">
+                                    <select name="genero" id="genero">
+                                        <option value="todos">Todos</option>
+                                        <option value="rock">Rock</option>
+                                        <option value="pop">Pop</option>
+                                        <option value="electronica">Electronica</option>
+                                        <option value="reggae">Reggae</option>
+                                    </select>
+                                    <select name="fecha" id="fecha">
+                                        <option value="todas">Todas</option>
+                                        <option value="veinteDos">Noviembre 22</option>
+                                        <option value="veinteTres">Noviembre 23</option>
+                                        <option value="veinteCuatro">Noviembre 24</option>
+                                        <option value="veinteCinco">Noviembre 25</option>
+                                    </select>
+                                    <select name="banda" id="banda">
+                                        <option value="todos">Todas</option>
+                                        <option value="eminem">Eminem</option>
+                                        <option value="ratm">Rage Against The Machine</option>
+                                        <option value="rdr">Redonditos de Ricotta</option>
+                                    </select>
+                                </div>
+                                <button>Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
                 <div id="filtros">
                     <h3>Busca tus eventos!</h3>
                     <div>
@@ -125,6 +196,7 @@
                     </div>
                     <button>Buscar</button>
                 </div>
+            -->
             </section>
             <!-- Info cards -->
             <section class="info-cards">
