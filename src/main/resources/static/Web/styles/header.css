@@ -105,12 +105,19 @@ header{
 .login-user{
     display: none;
     width: 20%;
+    align-items: center;
+    
 }
+
+.login-user p{
+    margin-bottom: 0!important;
+}
+
 .user-icon{
     width: 10%;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 881px) {
 
     .btn-canvas{
         display: none!important;
@@ -121,7 +128,7 @@ header{
 
 }
 
-@media(max-width: 751px){
+@media(max-width: 881px){
     .links-desktop{
         display: none;
     }
