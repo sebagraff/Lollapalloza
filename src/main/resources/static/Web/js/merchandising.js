@@ -26,8 +26,11 @@ const app = Vue.createApp({
         }
     },
     computed: {
+
         filterProducts() {
-            this.AuxProducts = this.products.filter(product => product.name.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
+            if(this.inputSearch != ""){
+                this.AuxProducts = this.products.filter(product => product.name.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
+            }
         }
     }
 
