@@ -103,9 +103,16 @@ header{
 }
 
 .login-user{
-    display: none;
+    display: flex;
     width: 20%;
+    align-items: center;
+    
 }
+
+.login-user p{
+    margin-bottom: 0!important;
+}
+
 .user-icon{
     width: 10%;
 }
