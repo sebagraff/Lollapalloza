@@ -14,7 +14,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 25px;
 }
 
 .offcanvas-body{
@@ -71,4 +71,60 @@ header{
 
 .fa-ellipsis-h{
     color: var(--color1);
+}
+.offcanvas{
+    width: 10vw!important;
+}
+
+.offcanvas{
+    margin: 0 auto;
+    width: 70vw!important;
+}
+
+/* -------------------DESKTOP */
+
+
+.links-desktop{
+    width: 60%;
+    height: 100%;
+}
+
+.content-links{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.content-links a{
+    text-decoration: none;
+    color: white;
+}
+
+.login-user{
+    display: none;
+    width: 20%;
+}
+.user-icon{
+    width: 10%;
+}
+
+@media (min-width: 750px) {
+
+    .btn-canvas{
+        display: none!important;
+    }
+    .login-user{
+        display: flex;
+    }
+
+}
+
+@media(max-width: 751px){
+    .links-desktop{
+        display: none;
+    }
+
+  
 }

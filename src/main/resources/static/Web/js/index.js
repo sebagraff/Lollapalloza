@@ -10,7 +10,9 @@ const app = Vue.createApp({
     },
 
     methods: {
-
+        ticketsLoginButton(){
+            window.location.href="login.html"
+        }
     },
     computed: {
 
