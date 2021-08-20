@@ -18,6 +18,14 @@ body::-webkit-scrollbar-thumb{
     background:var(--color1)!important;
 }
 
+.dropdown-menu::-webkit-scrollbar{
+    width: 7px;
+    background:#000000!important;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb{
+    background:var(--color2)!important;
+}
 p{
     margin-bottom: 0!important;
 }
@@ -211,6 +219,14 @@ main{
     color: var(--color1);
 }
 
+.dropdown-menu{
+    overflow-y: auto!important;
+    max-height: 35vh!important;
+}
+
+.dropdown-menu li{
+    padding: 5px;
+}
 
 .img-bcc{
     height: 90vh;
