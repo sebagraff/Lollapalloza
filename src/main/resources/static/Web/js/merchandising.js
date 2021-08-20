@@ -17,15 +17,15 @@ const app = Vue.createApp({
 
             })
     },
-
+    
     methods: {
         handlePushCarrito(product) {
             this.cart.push(product)
-            console.log(this.cart)
             product.stock--
         }
     },
     computed: {
+
 
         filterProducts() {
             if(this.inputSearch != ""){
