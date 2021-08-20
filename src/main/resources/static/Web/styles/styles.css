@@ -464,6 +464,10 @@ a:hover{
         margin-left: 1vw;
     }
 
+    .card{
+        height: 50vh;
+    }
+
 }
 
 /* ------------------TICKETS------------------ */
