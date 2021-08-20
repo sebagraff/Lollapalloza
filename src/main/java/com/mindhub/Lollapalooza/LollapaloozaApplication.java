@@ -18,6 +18,7 @@ public class LollapaloozaApplication {
 	@Bean
 	public CommandLineRunner initData(ProductRepository productRepository){
 		return(args) -> {
+			//---------------------------------------------------------------Productos----------------------------------------
 			Product RemeraLogoVibes = productRepository.save(new Product("Remera Lolla Logo Vibes",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135701-c7f1c684c312f86fb715959866423406-640-0.jpg"));
 			Product RemeraBand = productRepository.save(new Product("Remera Lolla Band",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135291-cd90a76a58b259cf1215959873728285-640-0.jpg"));
 			Product RemeraMain = productRepository.save(new Product("Remera Lolla Main",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135461-581c05db4c94d16eea15959873265224-640-0.jpg"));
@@ -81,6 +82,7 @@ public class LollapaloozaApplication {
 			Product EcoCuadernoLogoMisc= productRepository.save(new Product("Cuaderno Lolla Logo Misc",690,"Cuaderno","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo1301911-6f0937228eb56261d115959775327683-640-0.jpg"));
 			Product EcoLapizMix= productRepository.save(new Product("Lapiz Plantable Lolla Mix",150,"Lapiz","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo1294311-811e9d97d08954823515959772724598-640-0.jpg"));
 
+			//---------------------------------------------------------------Bandas----------------------------------------
 
 
 		};

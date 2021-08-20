@@ -1,6 +1,5 @@
 package com.mindhub.Lollapalooza.models;
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
@@ -9,7 +8,7 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private LocalDate date;
+    private String date;
 
     @OneToMany(mappedBy="event", fetch=FetchType.EAGER)
     Set<ClientEvent> clientEvents;
@@ -29,7 +28,7 @@ public class Event {
 
     public Event() { }
 
-    public Event(LocalDate date, Set<ClientEvent> clientEvents) {
+    public Event(String date, Set<ClientEvent> clientEvents) {
         this.date = date;
         this.clientEvents = clientEvents;
     }
@@ -37,9 +36,9 @@ public class Event {
     public long getId() { return id; }
 
 
-    public LocalDate getDate() { return date; }
+    public String getDate() { return date; }
 
-    public void setDate(LocalDate date) { this.date = date; }
+    public void setDate(String date) { this.date = date; }
 
 
 

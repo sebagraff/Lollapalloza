@@ -1,7 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 public class MusicBand {
@@ -11,7 +10,7 @@ public class MusicBand {
     private long id;
     private String bandName;
     private String genre;
-    private LocalDateTime dateAndTime;
+    private String dateAndTime;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Event_id")
@@ -20,7 +19,7 @@ public class MusicBand {
     public MusicBand() {
     }
 
-    public MusicBand(String bandName, String genre, LocalDateTime dateAndTime, Event event) {
+    public MusicBand(String bandName, String genre, String dateAndTime, Event event) {
         this.bandName = bandName;
         this.genre = genre;
         this.dateAndTime = dateAndTime;
@@ -49,11 +48,11 @@ public class MusicBand {
         this.genre = genre;
     }
 
-    public LocalDateTime getDateAndTime() {
+    public String getDateAndTime() {
         return dateAndTime;
     }
 
-    public void setDateAndTime(LocalDateTime dateAndTime) {
+    public void setDateAndTime(String dateAndTime) {
         this.dateAndTime = dateAndTime;
     }
 
