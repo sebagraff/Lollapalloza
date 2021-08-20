@@ -103,7 +103,7 @@ header{
 }
 
 .login-user{
-    display: flex;
+    display: none;
     width: 20%;
     align-items: center;
     
