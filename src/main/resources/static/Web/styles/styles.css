@@ -483,6 +483,10 @@ a:hover{
     }
 }
 /* ------------------TICKETS------------------ */
+.body-tickets{
+    margin: 0;
+    width: 100vw;
+}
 
 #header-tickets{
     width: 100vw;
@@ -498,7 +502,7 @@ a:hover{
 .div1-tickets{
     width: 100vw;
     height: 17vh;
-    background-color: #0D0D0D;
+    background-color: #03A688;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -525,9 +529,16 @@ a:hover{
     background-color: #F23838;
 }
 
+
+
 #main-tickets{
     min-height: 150vh;
-    background-color: #0D0D0D;
+    /* background-color: #0D0D0D; */
+}
+
+#main-tickets h2{
+    display: flex;
+    justify-content: center;
 }
 
 #footer-tickets{
