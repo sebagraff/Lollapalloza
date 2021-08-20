@@ -1,7 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 public class Location {
@@ -9,7 +8,7 @@ public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private LocalDate date;
+    private String name;
     private int maximumCapacity;
 
     @OneToOne
@@ -18,17 +17,17 @@ public class Location {
 
     public Location() { }
 
-    public Location(LocalDate date, int maximumCapacity) {
-        this.date = date;
+    public Location(String name, int maximumCapacity) {
+        this.name = name;
         this.maximumCapacity = maximumCapacity;
     }
 
     public long getId() { return id; }
 
 
-    public LocalDate getDate() { return date; }
+    public String getName() { return name; }
 
-    public void setDate(LocalDate date) { this.date = date; }
+    public void setName(String name) { this.name = name; }
 
     public int getMaximumCapacity() { return maximumCapacity; }
 

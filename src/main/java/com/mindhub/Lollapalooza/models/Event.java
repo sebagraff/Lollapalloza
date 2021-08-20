@@ -28,9 +28,9 @@ public class Event {
 
     public Event() { }
 
-    public Event(String date, Set<ClientEvent> clientEvents) {
+    public Event(String date, Location location) {
         this.date = date;
-        this.clientEvents = clientEvents;
+        this.location = location;
     }
 
     public long getId() { return id; }
@@ -72,5 +72,13 @@ public class Event {
 
     public void setMusicBands(Set<MusicBand> musicBands) {
         this.musicBands = musicBands;
+    }
+
+    public Set<VisualArts> getVisualArts() {
+        return visualArts;
+    }
+
+    public void setVisualArts(Set<VisualArts> visualArts) {
+        this.visualArts = visualArts;
     }
 }

@@ -17,17 +17,24 @@ const app = Vue.createApp({
 
             })
     },
-
+    
     methods: {
         handlePushCarrito(product) {
             this.cart.push(product)
-            console.log(this.cart)
             product.stock--
         }
     },
     computed: {
+
+
         filterProducts() {
+<<<<<<< HEAD
             this.AuxProducts = this.products.filter(product => product.name.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1).sort((a, b) => b.price - a.price)
+=======
+            if(this.inputSearch != ""){
+                this.AuxProducts = this.products.filter(product => product.name.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
+            }
+>>>>>>> bb52d47ed3075261bab56b770c279619f405684b
         }
     }
 
