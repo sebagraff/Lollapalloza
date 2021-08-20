@@ -10,6 +10,16 @@
     font-family: 'Work Sans', sans-serif;
 }
 
+.text-bold{
+    font-weight: bold;
+}
+
+#tittle-color{
+    color: var(--color2);
+    font-size: 1.6rem;
+}
+
+
 html{
     overflow-x: hidden!important;
 }
@@ -25,7 +35,7 @@ main{
 }
 
 .filter{
-    height: 20vh;
+    height: 25vh;
     width: 100%;
 
 }
@@ -36,6 +46,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     color: white;
     letter-spacing: 1px;
 }
@@ -44,6 +55,7 @@ main{
     min-height: 70vh;
     width: 100%;
     padding: 10px;
+
 }
 
 .content-products{
@@ -52,29 +64,31 @@ main{
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .card-shop{
-    height: 30vh;
-    width: 85vw;
-    background-color: royalblue;
+    height: 33vh;
+    width: 90vw;
     padding: 5px;
     border-radius: 10px;
+    transition: transform 1s;
 }
+.card-shop:hover {
+    transform: translate(20px, 20px);
+  }
 
 .content-card{
     height: 100%;
     width: 100%;
-    background-color: var(--color2);
-    border-radius: 10px;
     display: flex;
-
+    text-align: center;
+    padding: 10px;
 }
 
 .img-card{
     height: 100%;
     width: 45%;
-    background-color: sandybrown;
 }
 
 .img-card img {
@@ -82,50 +96,62 @@ main{
     width: 100%;
     background-position: center;
     background-size: cover;
+    border-radius: 20px 5px 5px 20px;
+}
+
+.id-card{
+    position: absolute;
+    left: 14%;
 }
 
 .info-card{
     height: 100%;
-    width: 55%;
-    background-color: seashell;
+    width: 50%;
+    background: linear-gradient( 0.25turn, #00af9a, #ff4034 );
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
+    border-left: 1px inset black;
+    box-shadow: rgba(99, 18, 18, 0.25) 0px 50px 100px -20px, rgba(95, 2, 2, 0.3) 0px 30px 60px -30px, rgba(59, 136, 212, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px 30px 30px 5px;
+    color: #000000;
+    
 }
 
 .tittle-card{
-    height: 20%;
+    height: 35%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: 0 0 3px var(--color2);
+    
 }
 
 .tittle-card h3{
     font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Nosifer', cursive;
 }
 
-.description-card{
-    height: 20%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
 
 .description-card p{
     font-size: .8rem;
 }
 
 .amount-card{
-    height: 12%;
+    height: 20%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
 }
+
 
 .stock-card{
     height: 3vh;
@@ -142,11 +168,37 @@ main{
 }
 
 .buttons-card button{
-    height: 3vh;
+    height: 4vh;
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: flex-end;
+    font-size: .8rem;
 }
 
+.fa-store{
+    color: var(--color1);
+}
+
+
+.notFound{
+    height: 40%;
+    width: 80%;
+
+}
+
+.fas{
+    color: var(--color1);
+}
+
+@media (min-width: 550px) {
+    .card-shop{
+        max-width: 450px;
+        height: 25vh;
+    }
+
+    .id-card{
+        display: none;
+    }
+}
