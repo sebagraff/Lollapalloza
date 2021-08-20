@@ -10,6 +10,14 @@
     font-family: 'Work Sans', sans-serif;
 }
 
+body::-webkit-scrollbar{
+    width: 7px;
+    background:#000000!important;
+}
+body::-webkit-scrollbar-thumb{
+    background:var(--color1)!important;
+}
+
 p{
     margin-bottom: 0!important;
 }

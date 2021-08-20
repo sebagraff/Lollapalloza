@@ -18,15 +18,26 @@ const app = Vue.createApp({
     
     methods: {
         handlePushCarrito(product) {
-            this.cart.push(product)
+
+            let atriculoIndexCarrito = this.cart.findIndex(e=> e.id == product.id )
+
+            if(atriculoIndexCarrito == -1){
+                this.cart.push({
+                    "id": product.id,
+                    "name": product.name,
+                    "count": 1,
+                    "price": product.price
+                })
+            }else{
+                this.cart[atriculoIndexCarrito].count += 1
+                this.cart[atriculoIndexCarrito].price += this.cart[atriculoIndexCarrito].price
+            }
             product.stock--
+
+            localStorage.setItem("cart" , JSON.stringify(this.cart))
         }
     },
     computed: {
-<<<<<<< HEAD
-=======
-
->>>>>>> 00666c1e28bc0fb2f0a3d2b47e0e1879fa926b75
 
         filterProducts() {
             if(this.inputSearch != ""){
