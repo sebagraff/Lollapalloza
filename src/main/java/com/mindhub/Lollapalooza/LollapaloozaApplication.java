@@ -19,6 +19,7 @@ public class LollapaloozaApplication {
 	public CommandLineRunner initData(ProductRepository productRepository){
 		return(args) -> {
 			Product RemeraLogoVibes = productRepository.save(new Product("Remera Lolla Logo Vibes",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135701-c7f1c684c312f86fb715959866423406-640-0.jpg"));
+
 			Product RemeraBand = productRepository.save(new Product("Remera Lolla Band",1890.0,"Remera","",27,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135291-cd90a76a58b259cf1215959873728285-640-0.jpg"));
 			Product RemeraMain = productRepository.save(new Product("Remera Lolla Main",1890.0,"Remera","",93,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135461-581c05db4c94d16eea15959873265224-640-0.jpg"));
 			Product RemeraMusic = productRepository.save(new Product("Remera Lolla Music",1890.0,"Remera","",9,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135671-c35bab1e9a71720ecd15959872334113-1024-1024.jpg"));
@@ -29,6 +30,7 @@ public class LollapaloozaApplication {
 			Product AccesorioPinLogo= productRepository.save(new Product("Pin Lolla Logo",290,"Pin","",31,"https://d2r9epyceweg5n.cloudfront.net/assets/themes/idea/static/images/empty-placeholder.png?802389227"));
 			Product AccesorioPilusoMixNegro= productRepository.save(new Product("Piluso Lolla Mix Negro",1490.0,"Piluso","",65,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo131541-c3ce36ac30201e480615959840839887-1024-1024.jpg"));
 			Product AccesorioMaskMix= productRepository.save(new Product("Lolla Mask Mix",590.0,"Mask","",4,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/seg-foto-accesorio-8-de-julio357661-0d5bf313a118da5e1b15959788940663-1024-1024.jpg"));
+
 			Product AccesorioMaskTieDye= productRepository.save(new Product("Lolla Mask Tie Dye",590,"Mask","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/barbijo-21-1984f2d6251bd2aece15961159294100-1024-1024.jpg"));
 			Product AccesorioMaskElectric= productRepository.save(new Product("Lolla Mask Electric",590,"Mask","",2,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/seg-foto-accesorio-8-de-julio357721-11fa8948870a9f37ba15959798841171-1024-1024.jpg"));
 			Product AccesorioMaskPride= productRepository.save(new Product("Lolla Mask Pride",590,"Mask","",19,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/seg-foto-accesorio-8-de-julio357831-58725edcd02ebcb23815959796841195-1024-1024.jpg"));
@@ -65,7 +67,9 @@ public class LollapaloozaApplication {
 			Product AccesorioLlaveroMixNegro= productRepository.save(new Product("Llavero Lolla Mix Negro",390,"Llavero","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo129551-7313913a5ab590825e15959758574668-640-0.jpg"));
 			Product AccesorioBandanaMix= productRepository.save(new Product("Bandana Lolla Mix",590,"Bandana","",30,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo1316811-63783d207f7b9022d115959688526735-640-0.jpg"));
 			Product AccesorioBandanaTieDye= productRepository.save(new Product("Bandana Lolla Tie Dye",590,"Bandana","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo132071-79048992da4a78971415959680772089-640-0.jpg"));
+
 			Product AccesorioGorraMusicNegra= productRepository.save(new Product("Gorra Lolla Music Negra",1990.0,"Gorra","",7,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo130871-2fc0f5f97855500dd415960301990987-640-0.jpg"));
+
 			Product AccesorioGorraLogoNegra= productRepository.save(new Product("Gorra Lolla Logo Negra",1790.0,"Gorra","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo131231-339a93be2cc96bb09515959855209067-640-0.jpg"));
 			Product AccesorioGorraBonesNegra= productRepository.save(new Product("Gorra Lolla Bones Negra",1990.0,"Gorra","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo131071-ddafd10587feaea22515959852496531-640-0.jpg"));
 			Product AccesorioGorraYellow= productRepository.save(new Product("Gorra Lolla Yellow",1790.0,"Gorra","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo130801-33a84701e73d427bee15959847940202-640-0.jpg"));
@@ -76,10 +80,12 @@ public class LollapaloozaApplication {
 			Product AccesorioBilleteraLogoMisc = productRepository.save(new Product("Billetera Lolla Logo Misc",590,"Billetera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo130141-de62e8d31d08752bf115959781795234-640-0.jpg"));
 			Product AccesorioBandanaElectricNegro = productRepository.save(new Product("Bandana Lolla Electric Negro",590,"Bandana","",20,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo132051-5ec0c19f37e1184f8d15959652394957-640-0.jpg"));
 			Product AccesorioBandanaVioleta = productRepository.save(new Product("Bandana Lolla Violeta",590,"Bandana","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo1320811-946563af5bd8034d3015959677775947-640-0.jpg"));
+
 			Product EcoVasos= productRepository.save(new Product("Vasos Lolla",85,"Vaso","",1000,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/merch_0012_img_1426-removebg-preview-png1-37b10cf9b7236df7cd16080748621512-1024-1024.jpg"));
 			Product EcoCuadernoPide= productRepository.save(new Product("Cuaderno Lolla Pide",690,"Cuaderno","",2,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo130211-577723abcb9d16f0d115959776348637-640-0.jpg"));
 			Product EcoCuadernoLogoMisc= productRepository.save(new Product("Cuaderno Lolla Logo Misc",690,"Cuaderno","",45,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo1301911-6f0937228eb56261d115959775327683-640-0.jpg"));
 			Product EcoLapizMix= productRepository.save(new Product("Lapiz Plantable Lolla Mix",150,"Lapiz","",32,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo1294311-811e9d97d08954823515959772724598-640-0.jpg"));
+
 
 
 
