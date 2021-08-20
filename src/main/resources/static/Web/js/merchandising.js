@@ -12,9 +12,7 @@ const app = Vue.createApp({
         axios.get("http://localhost:8080/api/products")
             .then(res => {
                 this.products = res.data
-                console.log(this.products)
                 this.AuxProducts = this.products.sort((a, b) => b.price - a.price);
-
             })
     },
     
@@ -25,7 +23,10 @@ const app = Vue.createApp({
         }
     },
     computed: {
+<<<<<<< HEAD
+=======
 
+>>>>>>> 00666c1e28bc0fb2f0a3d2b47e0e1879fa926b75
 
         filterProducts() {
             if(this.inputSearch != ""){
