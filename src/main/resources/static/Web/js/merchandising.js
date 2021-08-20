@@ -23,6 +23,10 @@ const app = Vue.createApp({
         }
     },
     computed: {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00666c1e28bc0fb2f0a3d2b47e0e1879fa926b75
 
         filterProducts() {
             if(this.inputSearch != ""){

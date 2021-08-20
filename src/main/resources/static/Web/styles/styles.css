@@ -484,43 +484,41 @@ a:hover{
 }
 /* ------------------TICKETS------------------ */
 
-#nav-tickets{
-    width: 100vw;
-    height: 17vh;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-}
-
 #header-tickets{
     width: 100vw;
-    height: 80vh;
+    height: 90vh;
     background-color: lightskyblue;
     background-image: url(../assets/fondologin.png);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-start;    
 }
 
-#header-tickets h1{
-    margin: 2vh 0 0 0;
+.div1-tickets{
     width: 100vw;
+    height: 17vh;
+    background-color: #0D0D0D;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+}
+
+.div1-tickets h1{
     color: #F23838;
-    font-size: 59px;
+    font-size: 5vw;
     display: flex;
     justify-content: center;
 }
 
 #tickets-logo{
-    margin: 0 2rem;
+    /* margin: 0 2rem; */
     width: 10vw;
 }
 
 #ingresarButton{
-    margin: 0rem 2rem ;
+    /* margin: 0rem 2rem ; */
     padding: 0.5rem;
     height: 6vh;
     color: #0D0D0D;
@@ -529,6 +527,7 @@ a:hover{
 
 #main-tickets{
     min-height: 150vh;
+    background-color: #0D0D0D;
 }
 
 #footer-tickets{

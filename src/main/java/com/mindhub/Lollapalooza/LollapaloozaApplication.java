@@ -31,7 +31,10 @@ public class LollapaloozaApplication {
 			Product AccesorioPilusoMixNegro= productRepository.save(new Product("Piluso Lolla Mix Negro",1490.0,"Piluso","",65,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo131541-c3ce36ac30201e480615959840839887-1024-1024.jpg"));
 			Product AccesorioMaskMix= productRepository.save(new Product("Lolla Mask Mix",590.0,"Mask","",4,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/seg-foto-accesorio-8-de-julio357661-0d5bf313a118da5e1b15959788940663-1024-1024.jpg"));
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 00666c1e28bc0fb2f0a3d2b47e0e1879fa926b75
 			Product AccesorioMaskTieDye= productRepository.save(new Product("Lolla Mask Tie Dye",590,"Mask","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/barbijo-21-1984f2d6251bd2aece15961159294100-1024-1024.jpg"));
 			Product AccesorioMaskElectric= productRepository.save(new Product("Lolla Mask Electric",590,"Mask","",2,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/seg-foto-accesorio-8-de-julio357721-11fa8948870a9f37ba15959798841171-1024-1024.jpg"));
 			Product AccesorioMaskPride= productRepository.save(new Product("Lolla Mask Pride",590,"Mask","",19,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/seg-foto-accesorio-8-de-julio357831-58725edcd02ebcb23815959796841195-1024-1024.jpg"));
@@ -71,8 +74,11 @@ public class LollapaloozaApplication {
 
 			Product AccesorioGorraMusicNegra= productRepository.save(new Product("Gorra Lolla Music Negra",1990.0,"Gorra","",7,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo130871-2fc0f5f97855500dd415960301990987-640-0.jpg"));
 
+<<<<<<< HEAD
 			Product AccesorioGorraMusicGrey= productRepository.save(new Product("Gorra Lolla Music Grey",1990.0,"Gorra","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo130871-2fc0f5f97855500dd415960301990987-640-0.jpg"));
 
+=======
+>>>>>>> 00666c1e28bc0fb2f0a3d2b47e0e1879fa926b75
 			Product AccesorioGorraLogoNegra= productRepository.save(new Product("Gorra Lolla Logo Negra",1790.0,"Gorra","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo131231-339a93be2cc96bb09515959855209067-640-0.jpg"));
 			Product AccesorioGorraBonesNegra= productRepository.save(new Product("Gorra Lolla Bones Negra",1990.0,"Gorra","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo131071-ddafd10587feaea22515959852496531-640-0.jpg"));
 			Product AccesorioGorraYellow= productRepository.save(new Product("Gorra Lolla Yellow",1790.0,"Gorra","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo130801-33a84701e73d427bee15959847940202-640-0.jpg"));
@@ -88,6 +94,10 @@ public class LollapaloozaApplication {
 			Product EcoCuadernoPide= productRepository.save(new Product("Cuaderno Lolla Pide",690,"Cuaderno","",2,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo130211-577723abcb9d16f0d115959776348637-640-0.jpg"));
 			Product EcoCuadernoLogoMisc= productRepository.save(new Product("Cuaderno Lolla Logo Misc",690,"Cuaderno","",45,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo1301911-6f0937228eb56261d115959775327683-640-0.jpg"));
 			Product EcoLapizMix= productRepository.save(new Product("Lapiz Plantable Lolla Mix",150,"Lapiz","",32,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo1294311-811e9d97d08954823515959772724598-640-0.jpg"));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00666c1e28bc0fb2f0a3d2b47e0e1879fa926b75
 
 
 
