@@ -17,7 +17,7 @@ const app = Vue.createApp({
 
             })
     },
-    
+
     methods: {
         handlePushCarrito(product) {
             this.cart.push(product)
@@ -28,13 +28,9 @@ const app = Vue.createApp({
 
 
         filterProducts() {
-<<<<<<< HEAD
-            this.AuxProducts = this.products.filter(product => product.name.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1).sort((a, b) => b.price - a.price)
-=======
-            if(this.inputSearch != ""){
+            if (this.inputSearch != "") {
                 this.AuxProducts = this.products.filter(product => product.name.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
             }
->>>>>>> bb52d47ed3075261bab56b770c279619f405684b
         }
     }
 
