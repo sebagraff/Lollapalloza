@@ -17,7 +17,7 @@ const app = Vue.createApp({
                 this.AuxProducts = this.products.sort((a, b) => b.price - a.price);
             })
     },
-    
+
     methods: {
         handlePushCarrito(product) {
             this.totalCart += product.price;
@@ -43,7 +43,7 @@ const app = Vue.createApp({
     computed: {
 
         filterProducts() {
-            if(this.inputSearch != ""){
+            if (this.inputSearch != "") {
                 this.AuxProducts = this.products.filter(product => product.name.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
             }
         }
