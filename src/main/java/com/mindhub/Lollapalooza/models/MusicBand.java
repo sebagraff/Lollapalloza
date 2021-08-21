@@ -21,14 +21,13 @@ public class MusicBand {
     public MusicBand() {
     }
 
-    public MusicBand(String bandName, String genre, String hour, String description,  Event event, String image) {
+    public MusicBand(String bandName, String genre, String hour, String description,Event event, String image ) {
         this.bandName = bandName;
         this.genre = genre;
         this.hour = hour;
-        this.event = event;
         this.description = description;
         this.image = image;
-
+        this.event = event;
 
     }
 
