@@ -80,7 +80,9 @@ header{
     margin: 0 auto;
     width: 70vw!important;
 }
-
+.fas {
+    color: var(--color1);
+}
 /* -------------------DESKTOP */
 
 
@@ -101,6 +103,8 @@ header{
     text-decoration: none;
     color: white;
 }
+
+
 
 .login-user{
     display: none;
