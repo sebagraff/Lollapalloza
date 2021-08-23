@@ -6,16 +6,22 @@ const app = Vue.createApp({
             inputSearch: "",
             cart: [],
             totalCart:0,
-
+            currentClient:""
         }
     },
 
     created() {
-        axios.get("http://localhost:8080/api/products")
+        axios.get("/api/products")
             .then(res => {
                 this.products = res.data
                 this.AuxProducts = this.products.sort((a, b) => b.price - a.price);
+
             })
+        axios.get("/api/clients/current")
+        .then(res =>{
+            console.log(res.data)
+            //this.currentClient=res.data.
+        })
     },
 
     methods: {
@@ -36,6 +42,8 @@ const app = Vue.createApp({
                 this.cart[atriculoIndexCarrito].price += this.cart[atriculoIndexCarrito].price
             }
             product.stock--
+
+            
 
             localStorage.setItem("cart" , JSON.stringify(this.cart))
         }
