@@ -11,9 +11,7 @@ public class Location {
     private String name;
     private int maximumCapacity;
 
-    @OneToOne
-    @JoinColumn(name="event_id")
-    private Event event;
+
 
     public Location() { }
 
@@ -33,11 +31,5 @@ public class Location {
 
     public void setMaximumCapacity(int maximumCapacity) { this.maximumCapacity = maximumCapacity; }
 
-    public Event getEvent() {
-        return event;
-    }
 
-    public void setEvent(Event event) {
-        this.event = event;
-    }
 }
