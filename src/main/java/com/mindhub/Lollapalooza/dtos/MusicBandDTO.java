@@ -71,5 +71,11 @@ public class MusicBandDTO {
         this.image = image;
     }
 
+    public String getEventDate() {
+        return eventDate;
+    }
 
+    public void setEventDate(String eventDate) {
+        this.eventDate = eventDate;
+    }
 }
