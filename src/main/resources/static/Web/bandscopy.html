@@ -12,7 +12,11 @@
     <!-- Mis estilos -->
 
     <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/bands.css">
+    <link rel="stylesheet" href="./styles/bandscopy.css">
+
+    <!-- band cards -->
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -102,40 +106,22 @@
         </header>
 
         <main>
-            
-            <div class="content-main bg-dark" v-for="data in musicbands">
-                <div class="band" >
-                    <div class="content-band bg-dark" >
-
-                        <div class="img-band">
-
-                                <img :src="data.image" alt="" class="bandBanner">
-
-                        </div>
-
-                        <div class="name-band" >
-                            <h3>{{data.bandName}}</h3>
-                        </div>
-
-                        <div class="description-band">
-                            <p>{{data.description}}</p>
-                        </div>
-
-                        <div class="info-band">
-                            <div class="w-50 d-flex justify-content-center align-items-center">
-                                <p>Genero: {{data.genre}}</p>
+                <section class="hero-section" >
+                <div class="card-grid" >
+                    <a class="card" href="#" v-for="data in musicbands">
+                        <div class="card__background" :style="{ backgroundImage: `url(${data.image})` }">
+                            <div class="card__content">
+                                <p class="card__category">{{data.genre}}</p>
+                                <h3 class="card__heading">{{data.bandName}}</h3>
+                                <p class="card__category">data.date</p>
+                                <p class="card__category">{{data.hour}}</p>
                             </div>
-
-                            <div class="w-50 d-flex justify-content-center align-items-center">
-                                <p>Cunado y donde toca: Ver event en java Hora: {{data.hour}}</p>
-                            </div>
-
                         </div>
-                    </div>
+                    </a>
                 </div>
-            
-            </div>
+            </section>
         </main>
+        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/167886971&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dennis-bojang" title="Dennis Bojang" target="_blank" style="color: #cccccc; text-decoration: none;">Dennis Bojang</a> · <a href="https://soundcloud.com/dennis-bojang/sets/fest" title="Fest" target="_blank" style="color: #cccccc; text-decoration: none;">Fest</a></div>
 
     </div>
 
