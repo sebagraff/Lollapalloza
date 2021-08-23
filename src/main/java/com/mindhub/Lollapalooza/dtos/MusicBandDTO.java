@@ -1,6 +1,7 @@
 package com.mindhub.Lollapalooza.dtos;
 
 import com.mindhub.Lollapalooza.models.Event;
+import com.mindhub.Lollapalooza.models.Location;
 import com.mindhub.Lollapalooza.models.MusicBand;
 
 public class MusicBandDTO {
@@ -12,6 +13,7 @@ public class MusicBandDTO {
     private String description;
     private String image;
     private String eventDate;
+    private Location eventLocation;
 
     public MusicBandDTO() {
 
@@ -25,6 +27,7 @@ public class MusicBandDTO {
         this.description = musicBand.getDescription();
         this.image = musicBand.getImage();
         this.eventDate = musicBand.getEvent().getDate();
+        this.eventLocation = musicBand.getEvent().getLocation();
     }
 
     public long getId() {
@@ -77,5 +80,13 @@ public class MusicBandDTO {
 
     public void setEventDate(String eventDate) {
         this.eventDate = eventDate;
+    }
+
+    public Location getEventLocation() {
+        return eventLocation;
+    }
+
+    public void setEventLocation(Location eventLocation) {
+        this.eventLocation = eventLocation;
     }
 }

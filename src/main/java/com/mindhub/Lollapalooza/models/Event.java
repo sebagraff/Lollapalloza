@@ -19,7 +19,8 @@ public class Event {
     @OneToMany(mappedBy="event", fetch=FetchType.EAGER)
     Set<VisualArts> visualArts;
 
-    @OneToOne(mappedBy="event")
+    @OneToOne
+    @JoinColumn(name="Location_id")
     private Location location;
 
     @OneToOne
@@ -81,4 +82,6 @@ public class Event {
     public void setVisualArts(Set<VisualArts> visualArts) {
         this.visualArts = visualArts;
     }
+
+
 }
