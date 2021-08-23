@@ -117,6 +117,10 @@ header{
     width: 10%;
 }
 
+.dropdown-menu li a{
+    color: black;
+}
+
 @media (min-width: 881px) {
 
     .btn-canvas{

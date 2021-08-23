@@ -18,10 +18,11 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/Web/index.html","/Web/styles/**","/Web/js/**","/Web/assets/**","/Web/merchandising.html").permitAll()
+                .antMatchers("/Web/**.html","/Web/styles/**","/Web/js/**","/Web/assets/**","/Web/merchandising.html","/events","/musicBands", "/Web/viewBands.html").permitAll() //chequear permisos
                 .antMatchers("/api/products").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/clients/**").permitAll()
                 .antMatchers("/api/clients").hasAuthority("ADMIN")
+                .antMatchers("/api/**").permitAll() // chequear
                 .antMatchers("/**").hasAuthority("CLIENT");
         http.formLogin()
                 .usernameParameter("user")

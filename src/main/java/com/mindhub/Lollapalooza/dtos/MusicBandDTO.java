@@ -1,41 +1,35 @@
-package com.mindhub.Lollapalooza.models;
+package com.mindhub.Lollapalooza.dtos;
 
-import javax.persistence.*;
+import com.mindhub.Lollapalooza.models.Event;
+import com.mindhub.Lollapalooza.models.MusicBand;
 
-@Entity
-public class MusicBand {
+public class MusicBandDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String bandName;
     private String genre;
     private String hour;
     private String description;
     private String image;
+    private String eventDate;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Event_id")
-    private Event event;
+    public MusicBandDTO() {
 
-    public MusicBand() {
     }
 
-    public MusicBand(String bandName, String genre, String hour, String description,Event event, String image ) {
-        this.bandName = bandName;
-        this.genre = genre;
-        this.hour = hour;
-        this.description = description;
-        this.image = image;
-        this.event = event;
-
+    public MusicBandDTO(MusicBand musicBand) {
+        this.id = musicBand.getId();
+        this.bandName = musicBand.getBandName();
+        this.genre = musicBand.getGenre();
+        this.hour = musicBand.getHour();
+        this.description = musicBand.getDescription();
+        this.image = musicBand.getImage();
+        this.eventDate = musicBand.getEvent().getDate();
     }
 
     public long getId() {
         return id;
     }
-
-
 
     public String getBandName() {
         return bandName;
@@ -61,14 +55,6 @@ public class MusicBand {
         this.hour = hour;
     }
 
-    public Event getEvent() {
-        return event;
-    }
-
-    public void setEvent(Event event) {
-        this.event = event;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -84,4 +70,6 @@ public class MusicBand {
     public void setImage(String image) {
         this.image = image;
     }
+
+
 }

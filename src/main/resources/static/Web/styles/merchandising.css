@@ -10,6 +10,22 @@
     font-family: 'Work Sans', sans-serif;
 }
 
+body::-webkit-scrollbar{
+    width: 7px;
+    background:#000000!important;
+}
+body::-webkit-scrollbar-thumb{
+    background:var(--color1)!important;
+}
+
+.dropdown-menu::-webkit-scrollbar{
+    width: 7px;
+    background:#000000!important;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb{
+    background:var(--color2)!important;
+}
 p{
     margin-bottom: 0!important;
 }
@@ -203,6 +219,22 @@ main{
     color: var(--color1);
 }
 
+.dropdown-menu{
+    overflow-y: auto!important;
+    max-height: 35vh!important;
+}
+
+.dropdown-menu li{
+    padding: 5px;
+}
+
+.dropdown-menu li:hover{
+    background-color: var(--color2);
+}
+
+.dropdown-menu a:hover{
+    background-color: var(--color2,0.4);
+}
 
 .img-bcc{
     height: 90vh;
@@ -213,12 +245,29 @@ main{
     background-size: cover;
 }
 
+.button-img{
+    height: 96%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.div-click{
+    width: 300px;
+    height: 65px;
+    margin-right: .7rem;
+    cursor: pointer;
+    margin-bottom: 2.7rem;
+
+}
+
+
 @media (min-width: 550px) {
     .card-shop{
         max-width: 450px;
         height: 25vh;
     }
 
-
-    
 }
+

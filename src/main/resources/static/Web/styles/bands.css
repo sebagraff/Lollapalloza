@@ -34,6 +34,17 @@ main{
     justify-content: center;
     align-items: center;
     border: 1px inset white;
+    text-align: center;
+
+    
+}
+
+.bandBanner{
+    width: 50vw; /* width of container */
+    height: 24.2vh; /* height of container */
+    object-fit: cover;
+    text-align: center;
+
 }
 
 .content-band{
@@ -45,6 +56,7 @@ main{
     height: 45%;
     width: 100%;
     background-color: burlywood;
+
 }
 
 .name-band{

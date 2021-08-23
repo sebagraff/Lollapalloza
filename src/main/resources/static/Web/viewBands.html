@@ -12,7 +12,11 @@
     <!-- Mis estilos -->
 
     <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/merchandising.css">
+    <link rel="stylesheet" href="./styles/bandscopy.css">
+
+    <!-- band cards -->
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -56,7 +60,7 @@
                         <div class="links">
                             <h3 class="text-white">Lollapalooza</h3>
                             <a href="index.html"><i class="fas fa-circle"></i> Inicio</a>
-                            <a href="#"><i class="fas fa-circle"></i> Musica</a>
+                            <a href="bands.html"><i class="fas fa-circle"></i> Musica</a>
                             <a href="merchandising.html"><i class="fas fa-circle"></i> Merchandising</a>
                             <a href="#"><i class="fas fa-circle"></i> Entradas</a>
                         </div>
@@ -82,19 +86,8 @@
                         <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
                         <a href=""> <i class="fas fa-ticket-alt"></i> Entradas</a>
 
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-shopping-cart text-dark">&nbsp; {{cart.length}} </i>
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li v-for="product in cart"><a class="dropdown-item" href="#"></a>{{product.name}} ${{product.price}} <span class="text-success"> cantidad: {{product.count}} </span></a></li>
-                              <li v-show="(cart.length === 0)" ><a class="dropdown-item" href="#">No hay ningun producto seleccionado</a></li>
-                              <hr class="dropdown-divider">
-                              <li><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
-                              <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="#">Continuar con la compra</a></li>
-                            </ul>
-                          </div>
-                        
+
+                        <i class="fas fa-shopping-cart">&nbsp; {{cart.length}} </i>
                     </div>
                 </div>
 
@@ -113,80 +106,22 @@
         </header>
 
         <main>
-            <div class="content-main bg-dark">
-
-                
-                <div class="img-bcc">
-                    <div class="button-img">
-                        <a href="#down"><div class="div-click"></div></a>
-                    </div>
-                </div>
-
-                <div class="filter" id="down">
-
-                    <div class="tittle-filter">
-                        <h5><i class="fas fa-store"></i> Nuestra tienda</h5>
-                    </div>
-
-                    <div class="tittle-filter">
-                        <h5 id="tittle-color">Merchandising Lollapalooza</h5>
-                    </div>
-
-                    <div class="tittle-filter ">
-                        <input @change="filterProducts" v-model="inputSearch" class="form-control w-50" type="search"
-                            placeholder="Buscar" aria-label="Search">
-                        <i class="fas fa-search ms-2 fs-3"></i>
-                    </div>
-
-                </div>
-
-                <div class="div-products">
-                    <div class="content-products">
-
-                        <div v-show="(product)" v-for="product in AuxProducts" class="card-shop ">
-                            <div class="content-card animate__animated animate__zoomIn">
-
-                                <div class="img-card">
-                                    <img :src="product.image" alt="img">
-                                </div>
-
-                                <div class="info-card">
-
-                                    <div class="tittle-card">
-                                        <h3>{{product.name}}</h3>
-                                    </div>
-
-                                    <div class="amount-card">
-                                        <p class="" v-show="product.price > 100">${{product.price}}</p>
-                                    </div>
-
-                                    <div class="stock-card">
-                                        <p v-show="product.stock >= 10"> <span class="text-bold">Stock:</span>
-                                            {{product.stock}}</p>
-                                        <p v-show="product.stock < 10"> <span class="text-bold">Ultimos
-                                                productos:</span> {{product.stock}}</p>
-                                    </div>
-
-                                    <div class="buttons-card">
-                                        <button v-show="product.stock > 0" @click="handlePushCarrito(product)"
-                                            type="button" class="btn btn-warning"><i class="fas fa-cart-plus me-2"></i>
-                                            Agregar</button>
-                                        <button v-show="product.stock < 1" type="button" class="btn btn-warning"
-                                            disabled><i class="fas fa-cart-plus me-2"></i> Agregar</button>
-                                    </div>
-                                </div>
-
+                <section class="hero-section" >
+                <div class="card-grid" >
+                    <a class="card" href="#" v-for="data in musicbands">
+                        <div class="card__background" :style="{ backgroundImage: `url(${data.image})` }">
+                            <div class="card__content">
+                                <p class="card__category">{{data.genre}}</p>
+                                <h3 class="card__heading">{{data.bandName}}</h3>
+                                <p class="card__category">data.date</p>
+                                <p class="card__category">{{data.hour}}</p>
                             </div>
                         </div>
-
-                        <div v-show="(AuxProducts.length === 0)" class="notFound">
-                            <h2 class="text-white">¡Lo siento, intente otra busqueda!</h2>
-                        </div>
-
-                    </div>
+                    </a>
                 </div>
-            </div>
+            </section>
         </main>
+        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/167886971&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/dennis-bojang" title="Dennis Bojang" target="_blank" style="color: #cccccc; text-decoration: none;">Dennis Bojang</a> · <a href="https://soundcloud.com/dennis-bojang/sets/fest" title="Fest" target="_blank" style="color: #cccccc; text-decoration: none;">Fest</a></div>
 
     </div>
 
@@ -201,7 +136,7 @@
 
     <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
     <!-- mis scripts -->
-    <script src="../Web/js/merchandising.js"> </script>
+    <script src="../Web/js/bands.js"> </script>
 </body>
 
 </html>
