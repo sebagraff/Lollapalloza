@@ -9,20 +9,20 @@ const app = Vue.createApp({
 
     created() {
         axios.get("http://localhost:8080/api/musicbands")
-        .then(res => {
-            this.musicbands = res.data
-        })
+            .then(res => {
+                this.musicbands = res.data
+            })
 
     },
 
     methods: {
-        ticketsLoginButton(){
-            window.location.href="login.html"
+        ticketsLoginButton() {
+            window.location.href = "login.html"
         }
     },
 
     computed: {
-        
+
 
     }
 

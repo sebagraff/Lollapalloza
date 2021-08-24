@@ -1,3 +1,35 @@
+const app = Vue.createApp({
+    data() {
+        return {
+            user="",
+            password=""
+        }
+    },
+
+    created() {
+        
+    },
+
+    methods: {
+        /*ticketsLoginButton(){
+            window.location.href="login.html"
+        }*/
+        logearse(){
+            axios.post("/api/login","user="+this.user+"&password="+this.password)
+            .then(console.log("logeado"))
+            .then(window.location.href="/Web/merchandising.html")
+        }
+    },
+
+    computed: {
+        
+
+    }
+
+})
+
+app.mount("#app")
+
 /* Declaración de variables */
 let form_login = document.querySelector(".form__login")
 let form_register = document.querySelector(".form__register")

@@ -1,9 +1,6 @@
 package com.mindhub.Lollapalooza;
 
-import com.mindhub.Lollapalooza.models.Event;
-import com.mindhub.Lollapalooza.models.Location;
-import com.mindhub.Lollapalooza.models.MusicBand;
-import com.mindhub.Lollapalooza.models.Product;
+import com.mindhub.Lollapalooza.models.*;
 import com.mindhub.Lollapalooza.repositories.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -24,7 +21,8 @@ public class LollapaloozaApplication {
 									  EventRepository eventRepository,
 									  ClientEventRepository clientEventRepository,
 									  LocationRepository locationRepository,
-									  MusicBandRepository musicBandRepository){
+									  MusicBandRepository musicBandRepository,
+									  ClientRepository clientRepository){
 		return(args) -> {
 			//---------------------------------------------------------------Products----------------------------------------
 			Product RemeraLogoVibes = productRepository.save(new Product("Remera Lolla Logo Vibes",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135701-c7f1c684c312f86fb715959866423406-640-0.jpg"));
@@ -193,7 +191,7 @@ public class LollapaloozaApplication {
 			MusicBand ChrisLake = musicBandRepository.save(new MusicBand("Chris Lake","Dance/electrónica","21:15","Chris Lake es un DJ y productor escocés de música house radicado en Aberdeen",dia3,"https://edm.com/.image/t_share/MTY2ODQ0MjAzNTkzMTE0NjQz/fisher-and-chris-lake.jpg"));
 			MusicBand Rezz = musicBandRepository.save(new MusicBand("Rezz","Dance/electrónica/Techno","22:30","Isabelle Rezazadeh, más conocida por su nombre artístico Rezz, es una DJ y productora musical canadiense, proveniente de Niagara Falls, Ontario.",dia3,"https://allmusicspain.com/wp-content/uploads/2018/07/rezz-1500283305.81.2560x1440.jpeg"));
 
-
+			Client clientePrueba= clientRepository.save(new Client("jorgito","alfajor"));
 
 
 
