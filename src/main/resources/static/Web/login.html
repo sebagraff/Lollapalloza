@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+    <div id="app">
     <main>
 
         <div class="container__all">
@@ -41,8 +41,8 @@
 
                 <form action="" class="form__login">
                     <h2>Iniciar sesión</h2>
-                    <input type="text" placeholder="Email">
-                    <input type="password" placeholder="Contraseña">
+                    <input v-model="email" type="text" placeholder="Email">
+                    <input v-model="password" type="password" placeholder="Contraseña">
                     <button>Ingresar</button>
                 </form>
 
@@ -60,6 +60,8 @@
             </div>
         </div>
     </main>
+
+</div>
 
 
     <script src="./js/login.js"></script>
