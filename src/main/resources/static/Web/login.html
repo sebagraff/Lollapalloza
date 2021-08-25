@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <div id="app">
         <main>
 
@@ -32,6 +33,19 @@
                         <p>Regístrate</p>
                         <button id="btn__register" onclick="register()">Registarse</button>
                     </div>
+=======
+
+    <div id="app">
+    <main>
+
+
+        <div class="container__all">
+            <div class="back__box">
+                <div class="back__box-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión</p>
+                    <button id="btn__sing-in" onclick="singIn()">Iniciar sesión</button>
+>>>>>>> 5a857cc5d8579542fe37f190a8643f885dccee18
                 </div>
 
 
@@ -48,7 +62,12 @@
                         <button @click="logearse">Ingresar</button>
                     </form>
 
-                    <!-- Registro -->
+                <form class="form__login">
+                    <h2>Iniciar sesión</h2>
+                    <input type="text" placeholder="Email" v-model="user">
+                    <input type="password" placeholder="Contraseña" v-model="password">
+                    <input type="button" value="Ingresar" class="btn-ingresar" @click="login">
+                </form>
 
                     <form action="" class="form__register">
                         <h2>Registrarse</h2>
@@ -66,12 +85,13 @@
     </div>
 
 
-    <script src="./js/login.js"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- script vue -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
+    <script src="../Web/js/login.js"></script>
+
 </body>
 
 </html>

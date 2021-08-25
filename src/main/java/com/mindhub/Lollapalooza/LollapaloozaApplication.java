@@ -2,16 +2,20 @@ package com.mindhub.Lollapalooza;
 
 import com.mindhub.Lollapalooza.models.*;
 import com.mindhub.Lollapalooza.repositories.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.swing.*;
 import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class LollapaloozaApplication {
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 	public static void main(String[] args) {
 		SpringApplication.run(LollapaloozaApplication.class, args);
@@ -22,7 +26,8 @@ public class LollapaloozaApplication {
 									  ClientEventRepository clientEventRepository,
 									  LocationRepository locationRepository,
 									  MusicBandRepository musicBandRepository,
-									  ClientRepository clientRepository){
+									  ClientRepository clientRepository,
+									  CartRepository cartRepository){
 		return(args) -> {
 			//---------------------------------------------------------------Products----------------------------------------
 			Product RemeraLogoVibes = productRepository.save(new Product("Remera Lolla Logo Vibes",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135701-c7f1c684c312f86fb715959866423406-640-0.jpg"));
@@ -33,7 +38,7 @@ public class LollapaloozaApplication {
 			Product RemeraTvSpiral = productRepository.save(new Product("Remera Lolla Tv Spiral",1890.0,"Remera","",50,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135551-15b7cb05c138314ee115959867242967-1024-1024.jpg"));
 			Product RemeraHeadphones = productRepository.save(new Product("Remera Lolla Headphones",1890.0,"Remera","",43,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135341-09f44b40bb73fd5e2215959871790968-1024-1024.jpg"));
 			Product RemeraShapes = productRepository.save(new Product("Remera Lolla Shapes",1890.0,"Remera","",7,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135191-032146c6e713b1f28a15959869953160-1024-1024.jpg"));
-			Product AccesorioPinLogo= productRepository.save(new Product("Pin Lolla Logo",290,"Pin","",31,"https://d2r9epyceweg5n.cloudfront.net/assets/themes/idea/static/images/empty-placeholder.png?802389227"));
+			Product AccesorioPinLogo= productRepository.save(new Product("Pin Lolla Logo",290,"Pin","",31,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo129211-7391ece38c16a32e3315959768128717-480-0.jpg"));
 			Product AccesorioPilusoMixNegro= productRepository.save(new Product("Piluso Lolla Mix Negro",1490.0,"Piluso","",65,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo131541-c3ce36ac30201e480615959840839887-1024-1024.jpg"));
 			Product AccesorioMaskMix= productRepository.save(new Product("Lolla Mask Mix",590.0,"Mask","",4,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/seg-foto-accesorio-8-de-julio357661-0d5bf313a118da5e1b15959788940663-1024-1024.jpg"));
 
@@ -191,9 +196,11 @@ public class LollapaloozaApplication {
 			MusicBand ChrisLake = musicBandRepository.save(new MusicBand("Chris Lake","Dance/electrónica","21:15","Chris Lake es un DJ y productor escocés de música house radicado en Aberdeen",dia3,"https://edm.com/.image/t_share/MTY2ODQ0MjAzNTkzMTE0NjQz/fisher-and-chris-lake.jpg"));
 			MusicBand Rezz = musicBandRepository.save(new MusicBand("Rezz","Dance/electrónica/Techno","22:30","Isabelle Rezazadeh, más conocida por su nombre artístico Rezz, es una DJ y productora musical canadiense, proveniente de Niagara Falls, Ontario.",dia3,"https://allmusicspain.com/wp-content/uploads/2018/07/rezz-1500283305.81.2560x1440.jpeg"));
 
-			Client clientePrueba= clientRepository.save(new Client("jorgito","alfajor"));
+		Client client =	new Client("jorgito", passwordEncoder.encode("123"));
+			Cart newCart = cartRepository.save(new Cart());
 
-
+			client.setCart(newCart);
+			clientRepository.save(client);
 
 		};
 	}

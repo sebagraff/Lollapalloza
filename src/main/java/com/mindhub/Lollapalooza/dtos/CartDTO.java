@@ -4,17 +4,18 @@ import com.mindhub.Lollapalooza.models.Cart;
 import com.mindhub.Lollapalooza.models.ProductInCart;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class CartDTO {
 
     private long id;
-    private Set<ProductInCart> productsInCart;
+    private Set<ProductInCartDTO> productsInCart;
 
     public CartDTO() {
     }
 
     public CartDTO(Cart cart) {
-        this.productsInCart = cart.getProductsInCart();
+        this.productsInCart = cart.getProductsInCart().stream().map(ProductInCartDTO::new).collect(Collectors.toSet());
     }
 
     public long getId() {
@@ -25,11 +26,11 @@ public class CartDTO {
         this.id = id;
     }
 
-    public Set<ProductInCart> getProductsInCart() {
+    public Set<ProductInCartDTO> getProductsInCart() {
         return productsInCart;
     }
 
-    public void setProductsInCart(Set<ProductInCart> productsInCart) {
+    public void setProductsInCart(Set<ProductInCartDTO> productsInCart) {
         this.productsInCart = productsInCart;
     }
 }

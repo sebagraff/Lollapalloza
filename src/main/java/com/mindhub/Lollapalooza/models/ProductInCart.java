@@ -19,21 +19,18 @@ public class ProductInCart {
     public ProductInCart() {
     }
 
-    public ProductInCart(long productId, String productName, int productQuantity, double productPrice, Cart cart) {
-        this.productId = productId;
+    public ProductInCart( String productName, int productQuantity, double productPrice) {
         this.productName = productName;
         this.productQuantity = productQuantity;
         this.productPrice = productPrice;
-        this.cart = cart;
     }
+
+
 
     public long getProductId() {
         return productId;
     }
 
-    public void setProductId(long productId) {
-        this.productId = productId;
-    }
 
     public String getProductName() {
         return productName;

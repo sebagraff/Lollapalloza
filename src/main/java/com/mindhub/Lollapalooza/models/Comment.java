@@ -1,5 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
+import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,17 +11,18 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
+
     private String description;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="Client_id")
+    @JoinColumn(name="client")
     private Client client;
 
     public Comment() {
     }
 
-    public Comment(String description, Client client) {
-        this.description = description;
+    public Comment(String posted, Client client) {
+        this.description = posted;
         this.client = client;
     }
 
@@ -39,6 +41,8 @@ public class Comment {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @JsonIgnore
 
     public Client getClient() {
         return client;
