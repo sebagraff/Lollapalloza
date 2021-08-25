@@ -19,7 +19,7 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                  //chequear permisos
-                .antMatchers("/api/products").permitAll()
+                .antMatchers("/api/products", "/Web/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/clients/**").permitAll()
                 .antMatchers("/api/clients").hasAuthority("ADMIN")
                 .antMatchers("/api/**").permitAll() // chequear
