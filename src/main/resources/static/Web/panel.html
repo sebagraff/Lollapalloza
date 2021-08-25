@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="./styles/panel.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- Header -->
+
+        <header class="d-flex justify-content-around align-items-center p-2">
+
+            <div class="d-flex mt-3">
+                <p>Administrador - Juan Diego Ferretto</p>
+            </div>
+            <i class='bx bx-log-out'></i>
+        </header>
+
+        <!-- Main -->
+
+        <div class="home-section">
+            <div id="container_panel">
+
+                <!-- Section cantidad de tickets -->
+
+                <section class="graphics">
+
+                    <div>
+                        <h5>Tickets disponibles</h5>
+                    </div>
+                    <div>
+                        <h5>Tickets vendidos</h5>
+                    </div>
+
+                </section>
+
+                <!-- Section eliminar/agregar productos -->
+                <div id="container_tables" class="d-flex gap-5">
+                    <section class="sections">
+                        <p class="text-center">Eliminar o agregar productos</p>
+                        <div id="tables">
+                            <table id="table_products" class="table table-active table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th>Stock</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="product in auxProducts">
+                                        <td>{{product.name}}</td>
+                                        <td>${{product.price}}</td>
+                                        <td>{{product.stock}}</td>
+                                        <td @click="deleteProduct(product)"><span class="span-delete"><i
+                                                    class='bx bxs-error-alt'></i></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="add_product">
+                            <form v-on:submit.prevent="onSubmit" class="d-flex flex-column gap-4 mb-3">
+                                <label class="ms-3 mt-3" for="nameProduct">
+                                    <span>Nombre del producto:</span>
+                                    <input v-model="nameProduct" class="ms-2" type="text" name="nameProduct" id="">
+                                </label>
+                                <label class="ms-3" for="precio">
+                                    <span>Precio:</span>
+                                    <input v-model="price" class="ms-2" type="text" name="precio" id="">
+                                </label>
+                                <label class="ms-3" for="stock">
+                                    <span>Stock:</span>
+                                    <input v-model="stock" class="ms-2" type="text" name="stock" id="">
+                                </label>
+                                <label class="ms-3" for="type">
+                                    <span>Tipo:</span>
+                                    <input v-model="type" class="ms-2" type="text" name="type" id="">
+                                </label>
+                                <label class="ms-3" for="image">
+                                    <span>Url (imagen):</span>
+                                    <input v-model="image" class="ms-2" type="text" name="image" id="">
+                                </label>
+                                <div class="d-flex justify-content-center">
+                                    <button @click="addProduct" class="mb-3 btn-dark" type="submit">Agregar
+                                        producto</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </section>
+
+                    <section class="sections">
+                        <p class="text-center">Agregar o eliminar artistas</p>
+                        <div id="tables">
+                            <table id="table_products" class="table table-success table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Artista</th>
+                                        <th>Horario</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="band in musicBands">
+                                        <td>{{band.bandName}}</td>
+                                        <td>{{band.hour}}</td>
+                                        <td @click="deleteArtist(band)"><span class="span-delete"><i
+                                                    class='bx bxs-error-alt'></i></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="add_product">
+                            <form v-on:submit.prevent="onSubmit" class="d-flex flex-column gap-4 mt-3 mb-3">
+                                <label class="ms-3 mt-3" for="nameBand">
+                                    <span>Nombre:</span>
+                                    <input v-model="nameBand" class="ms-2" type="text" name="nameBand" id="">
+                                </label>
+                                <label class="ms-3" for="genre">
+                                    <span>Género:</span>
+                                    <input v-model="genre" class="ms-2" type="text" name="genre" id="">
+                                </label>
+                                <label class="ms-3" for="Hour">
+                                    <span>Horario:</span>
+                                    <input v-model="hour" class="ms-2" type="text" name="Hour" id="">
+                                </label>
+                                <label class="ms-3" for="description">
+                                    <span>Descripción:</span>
+                                    <input v-model="description" class="ms-2" type="text" name="description"
+                                        id="description">
+                                </label>
+                                <label class="ms-3" for="imagen">
+                                    <span>Url (imagen):</span>
+                                    <input v-model="imageBand" class="ms-2" type="text" name="imagen" id="">
+                                </label>
+                                <div class="d-flex gap-3 ms-3">
+                                    <span>Elija el día:</span>
+                                    <select v-model="day" id="select_day">
+                                        <option selected disabled value="Elija el día">Elija el día</option>
+                                        <option value="0">Dia1</option>
+                                        <option value="1">Dia2</option>
+                                        <option value="2">Dia3</option>
+                                    </select>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <button @click="addArtist" class="mb-3 btn-dark" type="submit">Agregar artista</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- script vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    <script src="./js/panel.js"></script>
+</body>
+
+</html>
