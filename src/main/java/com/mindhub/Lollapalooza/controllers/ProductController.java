@@ -1,12 +1,12 @@
 package com.mindhub.Lollapalooza.controllers;
 
 import com.mindhub.Lollapalooza.dtos.ProductDTO;
+import com.mindhub.Lollapalooza.models.Product;
 import com.mindhub.Lollapalooza.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,5 +21,25 @@ public class ProductController {
     @GetMapping("/products")
     public List<ProductDTO> getAll(){
         return this.productRepository.findAll().stream().map(ProductDTO::new).collect(Collectors.toList());
+    }
+
+    @DeleteMapping("/products/{id}")
+    public ResponseEntity<?> deleteProduct(@PathVariable Long id){
+        Product product = productRepository.findById(id).get();
+        productRepository.delete(product);
+        return new ResponseEntity<>("Eliminado con éxito", HttpStatus.OK);
+    }
+
+    // Hay que hacer verificaciones con el usuario logueado
+
+    @PostMapping("/products")
+    public ResponseEntity<?> addProduct(@RequestBody ProductDTO productDTO){
+        if(productDTO.getName().isEmpty() || productDTO.getPrice() == 0 || productDTO.getImage().isEmpty()){
+            return new ResponseEntity<>("Por favor, rellena todos lo campos", HttpStatus.FORBIDDEN);
+        }
+
+        this.productRepository.save(new Product(productDTO.getName(), productDTO.getPrice(), productDTO.getType(), productDTO.getDescription(), productDTO.getStock(), productDTO.getImage()));
+        return new ResponseEntity<>("Producto agregado correctamente", HttpStatus.ACCEPTED);
+
     }
 }
