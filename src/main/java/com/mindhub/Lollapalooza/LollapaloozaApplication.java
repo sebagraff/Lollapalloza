@@ -22,7 +22,9 @@ public class LollapaloozaApplication {
 									  ClientEventRepository clientEventRepository,
 									  LocationRepository locationRepository,
 									  MusicBandRepository musicBandRepository,
-									  ClientRepository clientRepository){
+									  ClientRepository clientRepository,
+									  PhotoRepository photoRepository,
+									  CommentsRepository commentsRepository){
 		return(args) -> {
 			//---------------------------------------------------------------Products----------------------------------------
 			Product RemeraLogoVibes = productRepository.save(new Product("Remera Lolla Logo Vibes",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135701-c7f1c684c312f86fb715959866423406-640-0.jpg"));
@@ -192,6 +194,16 @@ public class LollapaloozaApplication {
 			MusicBand Rezz = musicBandRepository.save(new MusicBand("Rezz","Dance/electrónica/Techno","22:30","Isabelle Rezazadeh, más conocida por su nombre artístico Rezz, es una DJ y productora musical canadiense, proveniente de Niagara Falls, Ontario.",dia3,"https://allmusicspain.com/wp-content/uploads/2018/07/rezz-1500283305.81.2560x1440.jpeg"));
 
 			Client clientePrueba= clientRepository.save(new Client("jorgito","alfajor"));
+
+			//---------------------------------------------------------------comment----------------------------------------
+
+			Comment comment1 = commentsRepository.save(new Comment("1",clientePrueba));
+
+			//---------------------------------------------------------------Photo----------------------------------------
+
+			Photo Fotoprueba = photoRepository.save(new Photo("titulo","url","descripcion"));
+
+
 
 
 
