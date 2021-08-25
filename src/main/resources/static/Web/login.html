@@ -39,11 +39,11 @@
 
                 <!-- Login -->
 
-                <form v-on:submit.prevent="logearse" action="" class="form__login">
+                <form class="form__login">
                     <h2>Iniciar sesión</h2>
                     <input type="text" placeholder="Email" v-model="user">
                     <input type="password" placeholder="Contraseña" v-model="password">
-                    <button @click="logearse">Ingresar</button>
+                    <input type="button" value="Ingresar" class="btn-ingresar" @click="login">
                 </form>
 
                 <!-- Registro -->
@@ -64,12 +64,13 @@
 </div>
 
 
-    <script src="./js/login.js"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- script vue -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
+    <script src="../Web/js/login.js"></script>
+
 </body>
 
 </html>
