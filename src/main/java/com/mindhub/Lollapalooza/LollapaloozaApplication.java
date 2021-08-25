@@ -206,19 +206,19 @@ public class LollapaloozaApplication {
 
 			client.setCart(newCart);
 			clientRepository.save(client);
-
-			Ticket ticket1 = new Ticket(5000, dia1.getDate(), MyUtils.getNumberRandom(),1000,client);
-			Ticket ticket2 = new Ticket(5000, dia2.getDate(), MyUtils.getNumberRandom(),1000,client);
-			Ticket ticket3 = new Ticket(5000, dia3.getDate(), MyUtils.getNumberRandom(),1000,client);
-			Ticket ticketVIP = new Ticket (11500, dia3.getDate() + "" + dia2.getDate() + "" + dia1.getDate(),MyUtils.getNumberRandom() , 200,Event,client);
-			Ticket ticketFirst = new Ticket(9000, dia1.getDate() + "" + dia2.getDate(),MyUtils.getNumberRandom(),500,client);
-			Ticket ticketLast = new Ticket( 9000, dia2.getDate() + "" + dia3.getDate(),MyUtils.getNumberRandom(),500,client);
+//
+			Ticket ticket1 = new Ticket(5000, dia1.getDate(), MyUtils.getRandomNumber(1,3),1000,client);
+			Ticket ticket2 = new Ticket(5000, dia2.getDate(), MyUtils.getRandomNumber(1,3),1000,client);
+			Ticket ticket3 = new Ticket(5000, dia3.getDate(), MyUtils.getRandomNumber(1,3),1000,client);
+//			Ticket ticketVIP = new Ticket (11500, dia3.getDate() + "" + dia2.getDate() + "" + dia1.getDate(),MyUtils.getNumberRandom() , 200,Event,client);
+//			Ticket ticketFirst = new Ticket(9000, dia1.getDate() + "" + dia2.getDate(),MyUtils.getNumberRandom(),500,client);
+//			Ticket ticketLast = new Ticket( 9000, dia2.getDate() + "" + dia3.getDate(),MyUtils.getNumberRandom(),500,client);
 			ticketRepository.save(ticket1);
 			ticketRepository.save(ticket2);
 			ticketRepository.save(ticket3);
-			ticketRepository.save(ticketVIP);
-			ticketRepository.save(ticketFirst);
-			ticketRepository.save(ticketLast);
+//			ticketRepository.save(ticketVIP);
+//			ticketRepository.save(ticketFirst);
+//			ticketRepository.save(ticketLast);
 		};
 	}
 }

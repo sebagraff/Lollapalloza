@@ -18,7 +18,6 @@ public class TicketDTO {
         this.date = ticket.getDate();
         this.numberCode = ticket.getNumberCode();
         this.stock = ticket.getStock();
-        this.location = ticket.getLocation();
     }
 
     public long getId() { return id; }
@@ -41,7 +40,5 @@ public class TicketDTO {
 
     public void setStock(int stock) { this.stock = stock; }
 
-    public Location getLocation() { return location; }
 
-    public void setLocation(Location location) { this.location = location; }
 }
