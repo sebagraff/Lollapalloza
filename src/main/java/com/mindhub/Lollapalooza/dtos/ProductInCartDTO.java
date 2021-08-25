@@ -1,5 +1,7 @@
 package com.mindhub.Lollapalooza.dtos;
 
+import com.mindhub.Lollapalooza.models.ProductInCart;
+
 public class ProductInCartDTO {
 
     private long productId;
@@ -10,20 +12,16 @@ public class ProductInCartDTO {
     public ProductInCartDTO() {
     }
 
-    public ProductInCartDTO(long productId, String productName, int productQuantity, double productPrice) {
-        this.productId = productId;
-        this.productName = productName;
-        this.productQuantity = productQuantity;
-        this.productPrice = productPrice;
+    public ProductInCartDTO(ProductInCart productInCart) {
+
+        this.productName = productInCart.getProductName();
+        this.productQuantity = productInCart.getProductQuantity();
+        this.productPrice = productInCart.getProductPrice();
     }
 
-    public long getProductId() {
-        return productId;
-    }
 
-    public void setProductId(long productId) {
-        this.productId = productId;
-    }
+
+
 
     public String getProductName() {
         return productName;

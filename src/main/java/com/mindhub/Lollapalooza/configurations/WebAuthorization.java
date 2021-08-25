@@ -20,30 +20,51 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/login.html","/Web/**.html","/Web/styles/**","/Web/js/**","/Web/assets/**","/Web/merchandising.html","/events","/musicBands").permitAll() //chequear permisos
                 .antMatchers("/api/products").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/clients/**","/api/login").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/clients/**").permitAll()
                 .antMatchers("/api/clients").hasAuthority("ADMIN")
                 .antMatchers("/api/**").permitAll() // chequear
                 .antMatchers("/**").hasAuthority("CLIENT");
+
         http.formLogin()
+
                 .usernameParameter("user")
+
                 .passwordParameter("password")
+
                 .loginPage("/api/login");
+
+
+
         http.logout().logoutUrl("/api/logout");
 
+
+
+
+
         // turn off checking for CSRF tokens
+
         http.csrf().disable();
 
+
+
+
+
         // if user is not authenticated, just send an authentication failure response
+
         http.exceptionHandling().authenticationEntryPoint((req, res, exc) -> res.sendError(HttpServletResponse.SC_UNAUTHORIZED));
 
         // if login is successful, just clear the flags asking for authentication
+
         http.formLogin().successHandler((req, res, auth) -> clearAuthenticationAttributes(req));
 
         // if login fails, just send an authentication failure response
+
         http.formLogin().failureHandler((req, res, exc) -> res.sendError(HttpServletResponse.SC_UNAUTHORIZED));
 
         // if logout is successful, just send a success response
+
         http.logout().logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler());
+
     }
 
     private void clearAuthenticationAttributes(HttpServletRequest request) {
@@ -51,8 +72,9 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
         HttpSession session = request.getSession(false);
 
         if (session != null) {
+
             session.removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
+
         }
     }
-
 }
