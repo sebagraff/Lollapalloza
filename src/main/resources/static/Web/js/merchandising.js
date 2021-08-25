@@ -42,9 +42,9 @@ const app = Vue.createApp({
             if (atriculoIndexCarrito == -1) {
                 this.cart.push({
                     "id": product.id,
-                    "name": product.name,
-                    "count": 1,
-                    "price": product.price
+                    "productName": product.name,
+                    "productQuantity": 1,
+                    "productPrice": product.price
                 })
             } else {
                 this.cart[atriculoIndexCarrito].count += 1
@@ -60,14 +60,10 @@ const app = Vue.createApp({
             // this.productsInCart = this.productsInCart.filter(e => e.productName != product.name)
             console.log(this.productsInCart)
 
-            this.productsInCart.push({
-                "productName": product.name,
-                "productQuantity": 1,
-                "productPrice": product.price
-            })
+
 
             axios.put("/api/cart/" + this.currentClient.id,
-                (this.productsInCart)
+                (this.cart)
             ).then(res => {
                 console.log("agregado")
             })
