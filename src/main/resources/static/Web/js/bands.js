@@ -2,7 +2,9 @@ const app = Vue.createApp({
     data() {
         return {
             musicbands: {},
+            musicBandsAux: {},
             cart: [],
+            inputSearch: "",
 
         }
     },
@@ -11,18 +13,21 @@ const app = Vue.createApp({
         axios.get("http://localhost:8080/api/musicbands")
             .then(res => {
                 this.musicbands = res.data
+                this.musicBandsAux = this.musicbands.sort((a, b) => b.bandName - a.bandName)
+                console.log(this.musicBandsAux);
             })
 
     },
 
     methods: {
-        ticketsLoginButton() {
-            window.location.href = "login.html"
-        }
     },
 
     computed: {
-
+        filterArtist() {
+            if (this.inputSearch != "") {
+                this.musicBandsAux = this.musicbands.filter(artist => artist.bandName.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
+            }
+        }
 
     }
 

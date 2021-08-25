@@ -15,14 +15,8 @@ public class EventDTO {
         }
 
     public EventDTO(Event event) {
-        this.id = id;
-        this.date = date;
-        this.location = location;
-        this.festival = festival;
-    }
-
-    public long getId() {
-        return id;
+        this.date = event.getDate();
+        this.location = event.getLocation();
     }
 
     public String getDate() {
@@ -41,11 +35,4 @@ public class EventDTO {
         this.location = location;
     }
 
-    public Festival getFestival() {
-        return festival;
-    }
-
-    public void setFestival(Festival festival) {
-        this.festival = festival;
-    }
 }
