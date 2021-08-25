@@ -1,7 +1,13 @@
 const app = Vue.createApp({
     data() {
         return {
-
+            price: 0,
+            date:"",
+            numberCode:"",
+            stock:0,
+            detail:"",
+            
+            info:"",
         }
     },
 
