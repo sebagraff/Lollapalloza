@@ -6,7 +6,10 @@ const app = Vue.createApp({
     },
 
     created() {
-
+        axios.get('/api/tickets')
+        .then(res => {
+            console.log(res)
+        })
     },
 
     methods: {

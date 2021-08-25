@@ -54,4 +54,6 @@ public class Ticket {
     public void setDetail(Details detail) {
         this.detail = detail;
     }
+
+
 }

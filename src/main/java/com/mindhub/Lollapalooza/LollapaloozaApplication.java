@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import javax.swing.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @SpringBootApplication
@@ -22,7 +25,8 @@ public class LollapaloozaApplication {
 									  ClientEventRepository clientEventRepository,
 									  LocationRepository locationRepository,
 									  MusicBandRepository musicBandRepository,
-									  ClientRepository clientRepository){
+									  ClientRepository clientRepository,
+									  TicketRepository ticketRepository){
 		return(args) -> {
 			//---------------------------------------------------------------Products----------------------------------------
 			Product RemeraLogoVibes = productRepository.save(new Product("Remera Lolla Logo Vibes",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135701-c7f1c684c312f86fb715959866423406-640-0.jpg"));
@@ -193,7 +197,16 @@ public class LollapaloozaApplication {
 
 			Client clientePrueba= clientRepository.save(new Client("jorgito","alfajor"));
 
-
+			//public ArrayList ticketCreation(){
+				/*List<Ticket> ticketList = new ArrayList<>();
+				for(int i = 0; i < 2;i++){
+					Ticket ticket = new Ticket(5000, LocalDate.now(),5689,1000);
+					ticketList.add(ticket);
+					System.out.println(ticketList);
+				}*/
+				Ticket ticket1 = new Ticket(5000,LocalDate.now(),1234,1000);
+				ticketRepository.save(ticket1);
+			//}
 
 		};
 	}
