@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -39,12 +40,11 @@ public class CartController {
         Client client = this.clientRepository.findById(id).get();
         Cart cart = client.getCart();
 
-        if(cart.getProductsInCart().isEmpty()){
+            this.productInCartRepository.deleteAll(cart.getProductsInCart());
             productInCarts.forEach(productInCart -> productInCart.setCart(cart));
             cart.setProductsInCart(productInCarts);
 
             productInCartRepository.saveAll(productInCarts);
-        }
 
 
 
