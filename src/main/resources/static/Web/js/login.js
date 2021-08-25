@@ -1,34 +1,3 @@
-const app = Vue.createApp({
-    data() {
-        return {
-            user="",
-            password=""
-        }
-    },
-
-    created() {
-        
-    },
-
-    methods: {
-        /*ticketsLoginButton(){
-            window.location.href="login.html"
-        }*/
-        logearse(){
-            axios.post("/api/login","user="+this.user+"&password="+this.password)
-            .then(console.log("logeado"))
-            .then(window.location.href="/Web/merchandising.html")
-        }
-    },
-
-    computed: {
-        
-
-    }
-
-})
-
-app.mount("#app")
 
 /* Declaración de variables */
 let form_login = document.querySelector(".form__login")
@@ -40,12 +9,12 @@ let back__box = document.querySelector(".back__box")
 
 window.addEventListener("resize", widthPage);
 
-function widthPage(){
-    if(window.innerWidth > 850){
+function widthPage() {
+    if (window.innerWidth > 850) {
         back_box_login.style.display = "block";
         back_box_register.style.display = "block";
         back__box.style.background = "linear-gradient(0.25turn, #00af9a, #ff4034)"
-    }else{
+    } else {
         back_box_register.style.display = "block";
         back_box_register.style.opacity = "1";
         back_box_login.style.display = "none";
@@ -60,7 +29,7 @@ widthPage();
 
 /* Cuando se clickea, cambia de lugar */
 const singIn = () => {
-    
+
     if (window.innerWidth > 850) {
         form_register.style.display = "none";
         container_login_register.style.left = "10px";
@@ -78,13 +47,13 @@ const singIn = () => {
 
 /* Cuando se clickea cambia de lugar */
 const register = () => {
-    if(window.innerWidth > 850){      
+    if (window.innerWidth > 850) {
         form_register.style.display = "block";
         container_login_register.style.left = "410px";
         form_login.style.display = "none";
         back_box_register.style.opacity = "0";
         back_box_login.style.opacity = "1";
-    }else{
+    } else {
         form_register.style.display = "block";
         container_login_register.style.left = "0px";
         form_login.style.display = "none";
@@ -93,3 +62,38 @@ const register = () => {
         back_box_login.style.opacity = "1";
     }
 }
+
+const app = Vue.createApp({
+    data() {
+        return {
+            user: "",
+            password: ""
+        }
+    },
+
+    created() {
+
+    },
+
+    methods: {
+        /*ticketsLoginButton(){
+            window.location.href="login.html"
+        }*/
+        login() {
+
+
+            axios.post('/api/login', 'user=' + this.user + '&password=' + this.password)
+
+                .then(console.log("entro"))
+
+        },
+    },
+
+    computed: {
+
+
+    }
+
+})
+
+app.mount("#app")

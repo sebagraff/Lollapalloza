@@ -37,13 +37,13 @@
                 <h2>¿¡Qué esperás para conseguirlas!?</h2>
             </div>
 
-            <section class="ticket-container">
+            <section class="ticket-container" v-for="inf in info">
                 <h1 class="main-ticket-h1">Events</h1>
                   <div class="ticket-row">
                     <article class="ticket-card fl-left">
                       <section class="ticket-date">
                         <time datetime="23th feb">
-                          <span>23</span><span>feb</span>
+                          <span>{{inf.id}}</span>
                         </time>
                       </section>
                       <section class="ticket-card-cont">
@@ -52,7 +52,7 @@
                         <div class="even-date">
                          <i class="fa fa-calendar"></i>
                          <time>
-                           <span>wednesday 28 december 2014</span>
+                           <span>{{inf.date}}</span>
                            <span>08:55pm to 12:00 am</span>
                          </time>
                         </div>
@@ -65,19 +65,20 @@
                         <a href="#">tickets</a>
                       </section>
                     </article>
-                    <article class="ticket-card fl-left">
+
+                    <!-- <article class="ticket-card fl-left" v-for="inf in info">
                       <section class="ticket-date">
                         <time datetime="23th feb">
-                          <span>23</span><span>feb</span>
+                          <span>{{inf.id}}</span>
                         </time>
                       </section>
-                      <section class="ticket-card-cont">
+                      <section class="ticket-card-cont" v-for="inf in info">
                         <small>dj khaled</small>
                         <h3>corner obsest program</h3>
                         <div class="even-date">
                          <i class="fa fa-calendar"></i>
                          <time>
-                           <span>wednesday 28 december 2014</span>
+                           <span>{{inf.date}}</span>
                            <span>08:55pm to 12:00 am</span>
                          </time>
                         </div>
@@ -92,19 +93,19 @@
                     </article>
                   </div>
                   <div class="row">
-                    <article class="ticket-card fl-left">
+                    <article class="ticket-card fl-left" v-for="inf in info">
                       <section class="ticket-date">
                         <time datetime="23th feb">
-                          <span>23</span><span>feb</span>
+                          <span>{{inf.id}}</span>
                         </time>
                       </section>
-                      <section class="ticket-card-cont">
+                      <section class="ticket-card-cont" v-for="inf in info">
                         <small>dj khaled</small>
                         <h3>music kaboom festivel</h3>
                         <div class="even-date">
                          <i class="fa fa-calendar"></i>
                          <time>
-                           <span>wednesday 28 december 2014</span>
+                           <span>{{inf.date}}</span>
                            <span>08:55pm to 12:00 am</span>
                          </time>
                         </div>
@@ -114,23 +115,22 @@
                             nexen square for people australia, sydney
                           </p>
                         </div>
-                        <!-- <a href="#">booked</a> -->
+                        <a href="#">booked</a>
                       </section>
                     </article>
-                    <article class="ticket-card fl-left">
+                    <article class="ticket-card fl-left" v-for="inf in info">
                       <section class="ticket-date">
                         <time datetime="23th feb">
-                            <span>{{}}</span>
-                          <span>23</span><span>feb</span>
+                          <span>{{inf.id}}</span>
                         </time>
                       </section>
-                      <section class="ticket-card-cont">
+                      <section class="ticket-card-cont" v-for="inf in info">
                         <small>dj khaled</small>
                         <h3>hello dubai festivel</h3>
                         <div class="even-date">
                          <i class="fa fa-calendar"></i>
                          <time>
-                           <span>wednesday 28 december 2014</span>
+                           <span>{{inf.date}}</span>
                            <span>08:55pm to 12:00 am</span>
                          </time>
                         </div>
@@ -140,10 +140,11 @@
                             nexen square for people australia, sydney
                           </p>
                         </div>
-                        <!-- <a href="#">cancel</a> -->
+                        <a href="#">cancel</a>
                       </section>
-                    </article>
+                    </article> -->
                   </div>
+            </section>
                 </main>
                 <footer id="footer-tickets"><h2>&copy;Lollapalooza</h2></footer>
             </div>

@@ -15,6 +15,8 @@ const app = Vue.createApp({
         axios.get('/api/tickets')
         .then(res => {
             console.log(res)
+            this.info = res.data
+            console.log(this.info)
         })
     },
 

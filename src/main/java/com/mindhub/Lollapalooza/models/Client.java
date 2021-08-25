@@ -3,6 +3,7 @@ package com.mindhub.Lollapalooza.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -15,6 +16,7 @@ public class Client {
     private String user;
     private String password;
 
+
     @OneToMany(mappedBy="client", fetch=FetchType.EAGER)
     Set<Comment> comments;
 
@@ -23,6 +25,13 @@ public class Client {
 
     @OneToMany(mappedBy="client", fetch=FetchType.EAGER)
     Set<ClientEvent> clientEvents;
+
+    @OneToOne
+    @JoinColumn(name="Card_id")
+    private Cart cart;
+
+    @OneToMany(mappedBy = "client",fetch=FetchType.EAGER)
+    private List<Ticket> tickets;
 
     public Client(){}
 
@@ -43,11 +52,28 @@ public class Client {
 
     public void setPassword(String password) { this.password = password; }
 
-    public Set<Comment> getComments() {
-        return comments;
+    public Set<Comment> getComments() { return comments; }
+
+    public void setComments(Set<Comment> comments) { this.comments = comments; }
+
+    public Set<Recipt> getRecipts() { return recipts; }
+
+    public void setRecipts(Set<Recipt> recipts) { this.recipts = recipts; }
+
+    public Set<ClientEvent> getClientEvents() { return clientEvents; }
+
+    public void setClientEvents(Set<ClientEvent> clientEvents) { this.clientEvents = clientEvents; }
+
+    public Cart getCart() { return cart; }
+
+    public void setCart(Cart cart) { this.cart = cart; }
+
+    public List<Ticket> getTicket() { return tickets; }
+
+    public void addTickets(Ticket ticket) {
+        ticket.setClient(this);
+        tickets.add(ticket);
     }
 
-    public void setComments(Set<Comment> comments) {
-        this.comments = comments;
-    }
+    public void setTicket(List<Ticket> ticket) { this.tickets = ticket; }
 }
