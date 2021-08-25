@@ -27,12 +27,7 @@ public class LollapaloozaApplication {
 									  LocationRepository locationRepository,
 									  MusicBandRepository musicBandRepository,
 									  ClientRepository clientRepository,
-<<<<<<< HEAD
-									  PhotoRepository photoRepository,
-									  CommentsRepository commentsRepository){
-=======
 									  CartRepository cartRepository){
->>>>>>> a6a2a0b149bb9729250cc8f4bd1f7ca5c71a13f1
 		return(args) -> {
 			//---------------------------------------------------------------Products----------------------------------------
 			Product RemeraLogoVibes = productRepository.save(new Product("Remera Lolla Logo Vibes",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135701-c7f1c684c312f86fb715959866423406-640-0.jpg"));
@@ -201,23 +196,8 @@ public class LollapaloozaApplication {
 			MusicBand ChrisLake = musicBandRepository.save(new MusicBand("Chris Lake","Dance/electrónica","21:15","Chris Lake es un DJ y productor escocés de música house radicado en Aberdeen",dia3,"https://edm.com/.image/t_share/MTY2ODQ0MjAzNTkzMTE0NjQz/fisher-and-chris-lake.jpg"));
 			MusicBand Rezz = musicBandRepository.save(new MusicBand("Rezz","Dance/electrónica/Techno","22:30","Isabelle Rezazadeh, más conocida por su nombre artístico Rezz, es una DJ y productora musical canadiense, proveniente de Niagara Falls, Ontario.",dia3,"https://allmusicspain.com/wp-content/uploads/2018/07/rezz-1500283305.81.2560x1440.jpeg"));
 
-<<<<<<< HEAD
-			Client clientePrueba= clientRepository.save(new Client("jorgito","alfajor"));
-
-			//---------------------------------------------------------------comment----------------------------------------
-
-			Comment comment1 = commentsRepository.save(new Comment("1",clientePrueba));
-
-			//---------------------------------------------------------------Photo----------------------------------------
-
-			Photo Fotoprueba = photoRepository.save(new Photo("titulo","url","descripcion"));
-
-
-
-=======
 		Client client =	new Client("jorgito", passwordEncoder.encode("123"));
 			Cart newCart = cartRepository.save(new Cart());
->>>>>>> a6a2a0b149bb9729250cc8f4bd1f7ca5c71a13f1
 
 			client.setCart(newCart);
 			clientRepository.save(client);
