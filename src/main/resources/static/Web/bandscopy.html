@@ -104,11 +104,16 @@
                 </div>
             </div>
         </header>
-
+        <div class="search_artist d-flex gap-3 justify-content-center mt-4">
+            <input @change="filterArtist" v-model="inputSearch" class="form-control w-50" type="search"
+                placeholder="Buscar artista" aria-label="Search">
+            <i class="fas fa-search ms-2 fs-3 mt-2"></i>
+        </div>
         <main>
             <section class="hero-section">
                 <div class="card-grid">
-                    <a class="card" href="#" v-for="data in musicbands">
+                    <a class="card" :href="'http://localhost:8080/Web/viewBands.html?id=' + data.id"
+                        v-for="data in musicBandsAux">
                         <div class="card__background" :style="{ backgroundImage: `url(${data.image})` }">
                             <div class="card__content">
                                 <p class="card__category">{{data.genre}}</p>

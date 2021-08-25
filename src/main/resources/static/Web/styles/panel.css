@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  width: 100%;
+  background: rgba(2, 2, 70, 0.788);
+  color: white;
+}
+
+#container_panel {
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10vh;
+}
+
+.graphics {
+  width: 40%;
+  height: 15vh;
+  margin-top: 4vh;
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+}
+
+.graphics div {
+  width: 50%;
+  min-height: 10vh;
+  padding: 5px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-align: center;
+}
+
+#tables{
+  width: 35vw;
+  height: 40vh;
+  overflow-y: auto;
+}
+
+#tables::-webkit-scrollbar-thumb{
+  background: rgb(26, 3, 92)
+}
+
+#tables::-webkit-scrollbar{
+  width: 7px;
+  background:#000000!important;
+}
+
+table {
+  height: 20vh;
+  width: 5vw;
+  text-align: center;
+  color: white;
+}
+
+thead>tr th {
+  padding: 7px;
+}
+
+.add_product{
+  width: 35vw;
+  min-height: 10vh;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 10px;
+}
+
+form button{
+  width: 50%;
+}
+
+.span-delete{
+  cursor: pointer;
+}
+
+#select_day{
+  width: 10vw;
+}
+
+@media(max-width: 980px){
+  #container_tables{
+    flex-direction: column;
+  }
+
+  #tables{
+    width: 50vw;
+  }
+
+  .sections{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .add_product{
+    width: 50vw;
+  }
+
+  .graphics {
+    width: 50%;
+  }
+}
+
+@media(max-width: 690px){
+  #tables{
+    width: 93%;
+  }
+
+  .add_product{
+    width: 93%;
+  }
+
+  .graphics {
+    width: 70%;
+  }
+}
