@@ -15,6 +15,7 @@ public class Client {
     private String user;
     private String password;
 
+
     @OneToMany(mappedBy="client", fetch=FetchType.EAGER)
     Set<Comment> comments;
 
@@ -23,6 +24,10 @@ public class Client {
 
     @OneToMany(mappedBy="client", fetch=FetchType.EAGER)
     Set<ClientEvent> clientEvents;
+
+    @OneToOne
+    @JoinColumn(name="Card_id")
+    private Cart cart;
 
     public Client(){}
 
@@ -49,5 +54,29 @@ public class Client {
 
     public void setComments(Set<Comment> comments) {
         this.comments = comments;
+    }
+
+    public Set<Recipt> getRecipts() {
+        return recipts;
+    }
+
+    public void setRecipts(Set<Recipt> recipts) {
+        this.recipts = recipts;
+    }
+
+    public Set<ClientEvent> getClientEvents() {
+        return clientEvents;
+    }
+
+    public void setClientEvents(Set<ClientEvent> clientEvents) {
+        this.clientEvents = clientEvents;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }

@@ -35,4 +35,5 @@ public class Cart {
     public void setProductsInCart(Set<ProductInCart> productsInCart) {
         this.productsInCart = productsInCart;
     }
+
 }
