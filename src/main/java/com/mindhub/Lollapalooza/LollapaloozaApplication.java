@@ -2,6 +2,7 @@ package com.mindhub.Lollapalooza;
 
 import com.mindhub.Lollapalooza.models.*;
 import com.mindhub.Lollapalooza.repositories.*;
+import com.mindhub.Lollapalooza.utils.MyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.swing.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @SpringBootApplication
@@ -27,7 +31,8 @@ public class LollapaloozaApplication {
 									  LocationRepository locationRepository,
 									  MusicBandRepository musicBandRepository,
 									  ClientRepository clientRepository,
-									  CartRepository cartRepository){
+									  CartRepository cartRepository,
+									  TicketRepository ticketRepository){
 		return(args) -> {
 			//---------------------------------------------------------------Products----------------------------------------
 			Product RemeraLogoVibes = productRepository.save(new Product("Remera Lolla Logo Vibes",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135701-c7f1c684c312f86fb715959866423406-640-0.jpg"));
@@ -202,6 +207,18 @@ public class LollapaloozaApplication {
 			client.setCart(newCart);
 			clientRepository.save(client);
 
+			Ticket ticket1 = new Ticket(5000, dia1.getDate(), MyUtils.getNumberRandom(),1000,client);
+			Ticket ticket2 = new Ticket(5000, dia2.getDate(), MyUtils.getNumberRandom(),1000,client);
+			Ticket ticket3 = new Ticket(5000, dia3.getDate(), MyUtils.getNumberRandom(),1000,client);
+			Ticket ticketVIP = new Ticket (11500, dia3.getDate() + "" + dia2.getDate() + "" + dia1.getDate(),MyUtils.getNumberRandom() , 200,Event,client);
+			Ticket ticketFirst = new Ticket(9000, dia1.getDate() + "" + dia2.getDate(),MyUtils.getNumberRandom(),500,client);
+			Ticket ticketLast = new Ticket( 9000, dia2.getDate() + "" + dia3.getDate(),MyUtils.getNumberRandom(),500,client);
+			ticketRepository.save(ticket1);
+			ticketRepository.save(ticket2);
+			ticketRepository.save(ticket3);
+			ticketRepository.save(ticketVIP);
+			ticketRepository.save(ticketFirst);
+			ticketRepository.save(ticketLast);
 		};
 	}
 }
