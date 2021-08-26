@@ -84,7 +84,7 @@ const app = Vue.createApp({
 
             axios.post('/api/login', 'user=' + this.user + '&password=' + this.password)
 
-                .then(console.log("entro"))
+                .then(console.log("entro")).then(res => window.location.href="/Web/index.html")
 
         },
     },

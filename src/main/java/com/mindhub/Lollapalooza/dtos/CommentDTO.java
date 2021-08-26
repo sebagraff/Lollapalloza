@@ -7,13 +7,15 @@ public class CommentDTO {
 
     private long id;
     private String description;
-    private Client client;
+    private String user;
 
-    public CommentDTO(){}
+
 
     public CommentDTO(Comment comment){
-        this.id = id;
+        this.id = comment.getId();
         this.description = comment.getDescription();
+        this.user = comment.getUser();
+
     }
 
     public long getId() {
@@ -32,11 +34,11 @@ public class CommentDTO {
         this.description = description;
     }
 
-    public Client getClient() {
-        return client;
+    public String getUser() {
+        return user;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setUser(String user) {
+        this.user = user;
     }
 }

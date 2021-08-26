@@ -11,7 +11,9 @@ const app = Vue.createApp({
             bandsDayOne: [],
             bandsDayTwo: [],
             bandsDayThree: [],
-            bandsDayFour: []
+            bandsDayFour: [],
+            currentClient: [],
+            cart: [],
         }
     },
 
@@ -30,6 +32,19 @@ const app = Vue.createApp({
                 console.log(this.bandsDayThree)
                 console.log(this.bandsDayFour)
 
+            })
+        
+            axios.get("/api/clients/current")
+            .then(res => {
+                this.currentClient = res.data
+                console.log(this.currentClient.id)
+
+            }).then(() => {
+                axios.get("/api/cart/" + this.currentClient.id)
+                    .then(res => {
+                        this.cart = res.data;
+                        console.log(this.cart);
+                    })
             })
     },
 

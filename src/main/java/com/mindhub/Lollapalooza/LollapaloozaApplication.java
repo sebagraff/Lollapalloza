@@ -32,7 +32,9 @@ public class LollapaloozaApplication {
 									  MusicBandRepository musicBandRepository,
 									  ClientRepository clientRepository,
 									  CartRepository cartRepository,
-									  TicketRepository ticketRepository){
+									  TicketRepository ticketRepository,
+									  PhotoRepository photoRepository,
+									  CommentsRepository commentsRepository){
 		return(args) -> {
 			//---------------------------------------------------------------Products----------------------------------------
 			Product RemeraLogoVibes = productRepository.save(new Product("Remera Lolla Logo Vibes",1890.0,"Remera","",100,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo135701-c7f1c684c312f86fb715959866423406-640-0.jpg"));
@@ -157,6 +159,21 @@ public class LollapaloozaApplication {
 			ticketRepository.save(ticketFull);
 			ticketRepository.save(ticket12);
 			ticketRepository.save(ticket34);
+
+			Photo testphoto = new Photo("Titulo","url","descripcion");
+			photoRepository.save(testphoto);
+
+			Comment testcomment = new Comment("descript", client.getUser(), client, testphoto);
+			commentsRepository.save(testcomment);
+
+			Photo testphoto2 = new Photo("Titulo2","ur2l","descripcion2");
+			photoRepository.save(testphoto2);
+
+			Comment testcomment2 = new Comment("descript2", client.getUser(), client, testphoto2);
+			commentsRepository.save(testcomment2);
+
+			Comment testcomment3 = new Comment("descript3", client.getUser(), client, testphoto);
+			commentsRepository.save(testcomment3);
 		};
 	}
 }

@@ -16,6 +16,7 @@ const app = Vue.createApp({
             imageBand: "",
             day: "",
             event: {},
+            locations: {},
         }
     },
 
@@ -37,6 +38,10 @@ const app = Vue.createApp({
         .then(res => {
             this.event = res.data;
             this.event.sort((a, b) => a.date - b.date)
+        })
+        axios.get("/api/location")
+        .then(res => {
+            this.locations = res.data;
         })
 
     },
@@ -60,12 +65,21 @@ const app = Vue.createApp({
         addArtist(){
             axios.post("/api/musicbands", {bandName: this.nameBand, genre: this.genre, hour: this.hour, description: this.description, event: this.event[this.day], image: this.imageBand})
             .then(res => location.reload());
+        },
+
+        createPdf(){
+            let doc = new jsPDF();
+
+            doc.text(50, 50, "Hola");
+            doc.save("Test.pdf")
         }
 
     },
 
     computed: {
-
+        totalLocation(){
+            return this.locations.reduce((acumulador, item) => acumulador + item.maximumCapacity, 0)
+        }
     }
 
 })

@@ -26,6 +26,8 @@ const app = Vue.createApp({
         filterArtist() {
             if (this.inputSearch != "") {
                 this.musicBandsAux = this.musicbands.filter(artist => artist.bandName.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
+            }else if(this.inputSearch == ""){
+                this.musicBandsAux = this.musicbands
             }
         }
 
@@ -35,9 +37,3 @@ const app = Vue.createApp({
 
 app.mount("#app")
 
-
-let myCarousel = document.querySelector('#musicBandCarousel')
-let carousel = new bootstrap.Carousel(myCarousel, {
-    interval: 5000,
-    wrap: true
-})
