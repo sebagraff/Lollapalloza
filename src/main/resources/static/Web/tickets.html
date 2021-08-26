@@ -61,6 +61,20 @@
               <a href="bands.html"> <i class="fas fa-music"></i> Musica</a>
               <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
               <a href=""> <i class="fas fa-ticket-alt"></i> Entradas</a>
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-shopping-cart text-dark">&nbsp; </i> <!--{{cart.length}}-->
+                </button>
+                <ul class="dropdown-menu">
+                  <li v-for="product in cart"><a class="dropdown-item" href="#"></a>{{product.name}} ${{product.price}} <span class="text-success"> cantidad: {{product.count}} </span></a></li>
+                  <li><a class="dropdown-item" href="#">No hay ningun producto seleccionado</a></li>
+                  <hr class="dropdown-divider">
+                  <li><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
+                   <!-- v-show="(cart.length === 0)" v-show="(cart.length !== 0)"--><li><a class="dropdown-item" href="#">Continuar con la compra</a></li>
+                </ul>
+              </div>
+
               <!-- <i class="fas fa-shopping-cart">&nbsp; {{cart.length}} </i> -->
             </div>
           </div>
