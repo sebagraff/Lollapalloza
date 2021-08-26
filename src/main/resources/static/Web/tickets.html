@@ -86,17 +86,17 @@
                 <input type="button" value="Ingresar" id="ingresarButton" @click="ticketsLoginButton">
             </div>
         </header> -->
-        <main id="main-tickets">
-            <div>
+        <main id="main-tickets" style="background-color: coral;">
+            <div style="background-color: aqua;display: flex;">
               <h2>¿Todavía no tenés entradas?</h2>
               <h2>¿¡Qué esperás para conseguirlas!?</h2>
             </div>
 
-            <section class="ticket-container" v-for="inf in info">
+            <section class="ticket-container" v-for="inf in info" style="background-color: bisque;width: 44%;">
               <h1 class="main-ticket-h1">Events</h1>
                 <div class="ticket-row">
 
-                  <article class="ticket-card-css fl-left">
+                  <article class="ticket-card-css fl-left" style="width: 44%;">
 
                     <section class="ticket-date-css">
                       <!-- <time datetime="23th feb"> -->
@@ -125,9 +125,9 @@
                     </section>
                     
                   </article>
-                  <!-- <div>
+                  <div class="purchaseButton">
                     <input type="button" value="Comprar">
-                  </div> -->
+                  </div>
 
                 </div>
             </section>

@@ -573,8 +573,6 @@ a:hover{
     background-color: #F23838;
 }
 
-
-
 #main-tickets{
     min-height: 150vh;
     /* background-color: #0D0D0D; */
@@ -583,6 +581,11 @@ a:hover{
 #main-tickets h2{
     display: flex;
     justify-content: center;
+}
+
+.ticket-row{
+    display: flex;
+    justify-content: space-between;
 }
 
 .ticket-card-css{
@@ -621,6 +624,15 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.purchaseButton{
+    display: flex;
+    align-items: flex-end;
+}
+
+input[type="button"]{
+    height: 5vh;
 }
 
 #footer-tickets{
