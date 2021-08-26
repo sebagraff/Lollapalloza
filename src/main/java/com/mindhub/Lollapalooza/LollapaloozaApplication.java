@@ -104,10 +104,10 @@ public class LollapaloozaApplication {
 			Product EcoLapizMix= productRepository.save(new Product("Lapiz Plantable Lolla Mix",150,"Lapiz","",32,"https://d2r9epyceweg5n.cloudfront.net/stores/698/172/products/sesion-sin-titulo1294311-811e9d97d08954823515959772724598-640-0.jpg"));
 
 			//---------------------------------------------------------------Locations----------------------------------------
-			Location sede1 = locationRepository.save(new Location("Sede 1",1000)) ;
-			Location sede2 = locationRepository.save(new Location("Sede 2",1000)) ;
-			Location sede3 = locationRepository.save(new Location("Sede 3",1000)) ;
-			Location sede4 = locationRepository.save(new Location("Sede 4",1000)) ;
+			Location sede1 = locationRepository.save(new Location("CABA",1000)) ;
+			Location sede2 = locationRepository.save(new Location("Rosario",1000)) ;
+			Location sede3 = locationRepository.save(new Location("Córdoba",1000)) ;
+			Location sede4 = locationRepository.save(new Location("Tucumán",1000)) ;
 
 
 

@@ -6,23 +6,20 @@ const app = Vue.createApp({
             numberCode: "",
             stock: 0,
             detail: "",
-            info: "",
-
+            tickets: "",
 
         }
     },
-
     created() {
         axios.get('/api/tickets')
             .then(res => {
                 console.log(res)
-                this.info = res.data
-                console.log(this.info)
+                this.tickets = res.data
+                console.log(this.tickets)
             })
 
 
     },
-
     methods: {
         ticketsLoginButton() {
             window.location.href = "login.html"
@@ -30,14 +27,9 @@ const app = Vue.createApp({
 
 
     },
-
     computed: {
-
-
     }
-
 })
-
 app.mount("#app")
 
 
