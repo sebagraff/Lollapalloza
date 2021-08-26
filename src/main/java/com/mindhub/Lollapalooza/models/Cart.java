@@ -12,6 +12,10 @@ public class Cart {
     @OneToMany(mappedBy="cart", fetch=FetchType.EAGER)
     Set<ProductInCart> productsInCart;
 
+    @OneToOne
+    @JoinColumn(name = "Client_id")
+    private Client client;
+
     public Cart() {
     }
 

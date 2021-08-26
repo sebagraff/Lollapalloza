@@ -60,9 +60,9 @@ public class Client {
 
     public void setRecipts(Set<Recipt> recipts) { this.recipts = recipts; }
 
-    public Set<ClientEvent> getClientEvents() { return clientEvents; }
+    /*public Set<ClientEvent> getClientEvents() { return clientEvents; }
 
-    public void setClientEvents(Set<ClientEvent> clientEvents) { this.clientEvents = clientEvents; }
+    public void setClientEvents(Set<ClientEvent> clientEvents) { this.clientEvents = clientEvents; }*/
 
     public Cart getCart() { return cart; }
 

@@ -22,14 +22,11 @@ public class Photo {
         return comments;
     }
 
-
-
     public Photo(){
 
     }
 
     public Photo(String imgTitle, String imgUrl, String description) {
-
         this.imgTitle = imgTitle;
         this.imgUrl = imgUrl;
         this.description = description;
@@ -39,7 +36,7 @@ public class Photo {
         return id;
     }
 
-
+    public void setId(long id) { this.id = id; }
 
     public String getImgTitle() {
         return imgTitle;
@@ -64,8 +61,5 @@ public class Photo {
     public void setDescription(String description) {
         this.description = description;
     }
-
-
-
 
 }
