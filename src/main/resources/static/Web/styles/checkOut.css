@@ -1,0 +1,113 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app{
+    height: 90%;
+    width: 100%;
+    padding: 2vh 2vw;
+    background-color: cornsilk;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    height: 20%;
+    background-image: url(https://wallpaperaccess.com/full/5528297.jpg);
+    background-position: center;
+    background-size: contain;
+    border-radius: 1vh;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    height:80% ;
+}
+#choose>div{
+    text-align: center;
+}
+
+#mp,#dc,#pp{
+    background-size:cover;
+    background-position: center;
+    height: 65px;
+    border-radius: 0.3rem;
+    width: 200px;
+}
+#mp{background-image: url(https://www.infozona.com.ar/wp-content/uploads/2020/11/mercado-pago.jpg);}
+#dc{background-image: url(https://logos-download.com/wp-content/uploads/2018/07/Credit_Card_logo_color.png);}
+#pp{background-image: url(https://logos-marcas.com/wp-content/uploads/2020/04/PayPal-Logo.png);}
+
+#izquierda{
+    width:57%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#choose{
+    border-bottom: 1px solid grey;
+    padding-bottom: 2.5vh;
+
+}
+
+#datos{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 2.5vh;
+}
+#datos>div{
+    max-width: min-content;
+    display: flex;
+    height: 35vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.line{
+    width: 0px;
+    height: 100%;
+    border-left: 1px solid grey;
+}
+
+/*-------------------------------------------*/
+
+#derecha{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#derecha>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#carrito{
+    height: 45%;
+    border-bottom: 1px solid grey;
+}
+#carrito>div{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 25%;
+    justify-content: space-between;
+}
+#taxes{
+    border-bottom: 1px solid grey;
+}
+#divider{
+    margin-right: 3%;
+    margin-top: 1vh;
+}
