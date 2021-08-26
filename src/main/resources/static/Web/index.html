@@ -70,7 +70,7 @@
                         <a href="index.html"> <i class="fas fa-home"></i> Incio</a>
                         <a href="bands.html"> <i class="fas fa-music"></i> Bandas</a>
                         <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
-                        <a href="tickets.html"> <i class="fas fa-ticket-alt"></i> Entradas</a>
+                        <a href="tickets.html" v-if="currentClient.user != null"> <i class="fas fa-ticket-alt"></i> Entradas</a>
 
                         <!-- <div class="btn-group">
                             <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -337,14 +337,14 @@
     </div>
 
     <!-- bootstrap -->
+    <!-- script axios -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- script vue -->
+    <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
-    <!-- script axios -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- script vue -->
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
     <!-- mis scripts -->
     <script src="../Web/js/index.js"> </script>
 </body>

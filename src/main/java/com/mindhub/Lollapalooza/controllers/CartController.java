@@ -12,6 +12,7 @@ import com.mindhub.Lollapalooza.repositories.ProductInCartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,7 +37,11 @@ public class CartController {
 
     @GetMapping("/cart/{id}")
     public CartDTO getClientCart(@PathVariable Long id){
-        return new CartDTO(this.cartRepository.findById(id).get());
+        if (id != 0){
+            return new CartDTO(this.cartRepository.findById(id).get());
+        }else{
+            return new CartDTO();
+        }
     }
 
     @PutMapping("/cart/{id}")

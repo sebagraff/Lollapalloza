@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/checkOut.css">
+</head>
+<body>
+    <div id="app">
+        <header></header>
+        <main>
+            <section id="izquierda">
+                <div id="choose">
+                    <h2>Choose a payment method</h2>
+                    <div>
+                        <button id="mp"></button>
+                        <button id="dc"></button>
+                        <button id="pp"></button>
+                    </div>
+                </div>
+                <div id="datos">
+                    <div>
+                        <h2>Billing address</h2>
+                        <input type="text" placeholder="Street & Number">
+                        <input type="text" placeholder="City">
+                        <input type="text" placeholder="Postal Code">
+                    </div>
+                    <div class="line"></div>
+                    <div>
+                        <h2>Card Info</h2>
+                        <input type="text" placeholder="Number">
+                        <input type="text" placeholder="Thru Date">
+                        <input type="text" placeholder="Card holder's Name and LastName">
+                        <input type="text" placeholder="3 Digit code (CVV)">
+                    </div>
+                </div>
+            </section>
+            <div class="line" id="divider"></div>
+            <section id="derecha">
+                <div id="carrito">
+                    <div v-for="item in carrito">
+                        <p>{{item.productName}}</p>
+                        <p>${{item.productPrice}}</p>
+                        <p>{{item.productQuantity}}</p>
+                    </div>
+                </div>
+                <div>
+                    <h5>Subtotal</h5>
+                    <h5>234234</h5>
+                </div>
+                <div id="taxes">
+                    <h5>Taxes (estimated)</h5>
+                    <h5>234</h5>
+                </div>
+                <div>
+                    <h4>Total</h4>
+                    <h4>28973462398</h4>
+                </div>
+                <button>Pay Now!</button>
+            </section>
+        </main>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- script vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
+    <script src="js/checkOut.js"></script>
+</body>
+</html>
