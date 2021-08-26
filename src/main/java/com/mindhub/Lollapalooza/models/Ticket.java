@@ -11,7 +11,8 @@ public class Ticket {
     private double price;
     private String date;
     private int numberCode;
-    private int stock;
+    private String sede;
+    //private int stock;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="Detail_id")
@@ -23,12 +24,13 @@ public class Ticket {
 
     public Ticket(){}
 
-    public Ticket(double price, String date, int numberCode, int stock,Client client) {
+    public Ticket(double price, String date, int numberCode,Client client,String sede) {
         this.price = price;
         this.date = date;
         this.numberCode = numberCode;
-        this.stock = stock;
+        //this.stock = stock;
         this.client = client;
+        this.sede = sede;
     }
 
     public long getId() { return id; }
@@ -47,16 +49,19 @@ public class Ticket {
 
     public void setNumberCode(int numberCode) { this.numberCode = numberCode; }
 
-    public int getStock() { return stock; }
+    /*public int getStock() { return stock; }
 
-    public void setStock(int stock) { this.stock = stock; }
+    public void setStock(int stock) { this.stock = stock; }*/
 
     //public Details getDetail() { return detail; }
 
     //public void setDetail(Details detail) { this.detail = detail; }
 
-
     public Client getClient() { return client; }
 
     public void setClient(Client client) { this.client = client; }
+
+    public String getSede() { return sede; }
+
+    public void setSede(String sede) { this.sede = sede; }
 }
