@@ -28,6 +28,7 @@ header {
   margin-top: 4vh;
   padding: 5px;
   display: flex;
+  justify-content: center;
   gap: 5px;
 }
 
@@ -106,8 +107,16 @@ form button{
   }
 
   .graphics {
-    width: 50%;
+    width: 100%;
   }
+}
+
+#table_factura{
+  width: 50%;
+}
+
+#app{
+  height: 70vh;
 }
 
 @media(max-width: 690px){
@@ -120,6 +129,6 @@ form button{
   }
 
   .graphics {
-    width: 70%;
+    width: 100%;
   }
 }

@@ -1,6 +1,7 @@
 package com.mindhub.Lollapalooza.controllers;
 
 import com.mindhub.Lollapalooza.dtos.EventDTO;
+import com.mindhub.Lollapalooza.dtos.LocationDTO;
 import com.mindhub.Lollapalooza.dtos.MusicBandDTO;
 import com.mindhub.Lollapalooza.repositories.EventRepository;
 import com.mindhub.Lollapalooza.repositories.LocationRepository;
@@ -29,5 +30,10 @@ public class EventController {
     @GetMapping("/events")
     public List<EventDTO> getAll(){
         return this.eventRepository.findAll().stream().map(EventDTO::new).collect(Collectors.toList());
+    }
+
+    @GetMapping("/location")
+    public List<LocationDTO> getLocation(){
+        return this.locationRepository.findAll().stream().map(LocationDTO::new).collect(Collectors.toList());
     }
 }

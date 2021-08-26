@@ -1,7 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 public class Ticket {
@@ -10,7 +9,7 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private double price;
-    private LocalDate date;
+    private String date;
     private int numberCode;
     private int stock;
 
@@ -18,13 +17,18 @@ public class Ticket {
     @JoinColumn(name="Detail_id")
     private Details detail;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="Client_id")
+    private Client client;
+
     public Ticket(){}
 
-    public Ticket(double price, LocalDate date, int numberCode, int stock) {
+    public Ticket(double price, String date, int numberCode, int stock,Client client) {
         this.price = price;
         this.date = date;
         this.numberCode = numberCode;
         this.stock = stock;
+        this.client = client;
     }
 
     public long getId() { return id; }
@@ -35,9 +39,9 @@ public class Ticket {
 
     public void setPrice(double price) { this.price = price; }
 
-    public LocalDate getDate() { return date; }
+    public String getDate() { return date; }
 
-    public void setDate(LocalDate date) { this.date = date; }
+    public void setDate(String date) { this.date = date; }
 
     public int getNumberCode() { return numberCode; }
 
@@ -47,11 +51,12 @@ public class Ticket {
 
     public void setStock(int stock) { this.stock = stock; }
 
-    public Details getDetail() {
-        return detail;
-    }
+    //public Details getDetail() { return detail; }
 
-    public void setDetail(Details detail) {
-        this.detail = detail;
-    }
+    //public void setDetail(Details detail) { this.detail = detail; }
+
+
+    public Client getClient() { return client; }
+
+    public void setClient(Client client) { this.client = client; }
 }

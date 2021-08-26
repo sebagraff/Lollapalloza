@@ -31,6 +31,7 @@ public class ProductInCart {
         return productId;
     }
 
+    public void setProductId(long productId) { this.productId = productId; }
 
     public String getProductName() {
         return productName;

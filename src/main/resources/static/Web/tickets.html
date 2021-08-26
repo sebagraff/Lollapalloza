@@ -13,13 +13,73 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Estilos -->
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/header.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 <body class="body-tickets">
     <div id="app">
-        <header id="header-tickets">
+
+      <header>
+        <div class="content-header">
+          <a href="../Web/index.html">
+            <img src="assets/lola.png" alt="logo" id="imgHeader">
+          </a>
+            <!-- ------------MOBILEEEE---------------- -->
+          <button class="btn-canvas btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fas fa-ellipsis-h"></i></button>
+
+          <div class="offcanvas offcanvas-end  bg-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+              <div class="links">
+                <h3 class="text-white">Lollapalooza</h3>
+                <a href="index.html"><i class="fas fa-circle"></i> Inicio</a>
+                <a href="#"><i class="fas fa-circle"></i> Musica</a>
+                <a href="merchandising.html"><i class="fas fa-circle"></i> Merchandising</a>
+                <a href="#"><i class="fas fa-circle"></i> Entradas</a>
+              </div>
+
+
+              <div class="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+              </div>
+
+              <div class="logOut">
+                <a href="#">Log Out</a>
+                <a href="#">Settings</a>
+              </div>
+            </div>
+
+          </div>
+            <!-- -------------------DESKTOP------------ -->
+          <div class="links-desktop">
+            <div class="content-links">
+              <a href="index.html"> <i class="fas fa-home"></i> Incio</a>
+              <a href="bands.html"> <i class="fas fa-music"></i> Musica</a>
+              <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
+              <a href=""> <i class="fas fa-ticket-alt"></i> Entradas</a>
+              <!-- <i class="fas fa-shopping-cart">&nbsp; {{cart.length}} </i> -->
+            </div>
+          </div>
+
+          <div class="login-user">
+            <div class="user-icon">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="user">
+              <p class="text-white">Maria de los Andes</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+        <!-- <header id="header-tickets">
             <div class="div1-tickets">
                 <a href="../Web/index.html">
                     <img src="assets/lola.png" alt="logo" id="tickets-logo">
@@ -29,60 +89,58 @@
                 </a>
                 <input type="button" value="Ingresar" id="ingresarButton" @click="ticketsLoginButton">
             </div>
-        </header>
-        
+        </header> -->
+
+
+
         <main id="main-tickets">
             <div>
-                <h2>¿Todavía no tenés entradas?</h2>
-                <h2>¿¡Qué esperás para conseguirlas!?</h2>
+              <h2>¿Todavía no tenés entradas?</h2>
+              <h2>¿¡Qué esperás para conseguirlas!?</h2>
             </div>
-            <div class="div-ticket">
-                <span>tipo</span>
-                <span>precio</span>
-                <span>dia</span>
-                <span>stock</span>
-            </div>
-            <section class="ticket-container">
-                <h1 class="main-ticket-h1">Events</h1>
-                  <div class="ticket-row">
-                    <article class="ticket-card fl-left">
+
+            <section class="ticket-container" v-for="inf in info">
+              <h1 class="main-ticket-h1">Events</h1>
+                <div class="ticket-row">
+                  <article class="ticket-card-css fl-left">
+                    <section class="ticket-date-css">
+                      <time datetime="23th feb">
+                        <span>{{inf.id}}</span>
+                      </time>
+                    </section>
+                    <section class="ticket-card-cont">
+                      <small>dj khaled</small>
+                      <h3>live in sydney</h3>
+                      <div class="even-date">
+                       <i class="fa fa-calendar"></i>
+                       <time>
+                         <span>{{inf.date}}</span>
+                         <span>08:55pm to 12:00 am</span>
+                       </time>
+                      </div>
+                      <div class="even-info">
+                        <i class="fa fa-map-marker"></i>
+                        <p>
+                          nexen square for people australia, sydney
+                        </p>
+                      </div>
+                      <!-- <a href="#">tickets</a> -->
+                    </section>
+                  </article>
+
+                    <!-- <article class="ticket-card fl-left" v-for="inf in info">
                       <section class="ticket-date">
                         <time datetime="23th feb">
-                          <span>23</span><span>feb</span>
+                          <span>{{inf.id}}</span>
                         </time>
                       </section>
-                      <section class="ticket-card-cont">
-                        <small>dj khaled</small>
-                        <h3>live in sydney</h3>
-                        <div class="even-date">
-                         <i class="fa fa-calendar"></i>
-                         <time>
-                           <span>wednesday 28 december 2014</span>
-                           <span>08:55pm to 12:00 am</span>
-                         </time>
-                        </div>
-                        <div class="even-info">
-                          <i class="fa fa-map-marker"></i>
-                          <p>
-                            nexen square for people australia, sydney
-                          </p>
-                        </div>
-                        <a href="#">tickets</a>
-                      </section>
-                    </article>
-                    <article class="ticket-card fl-left">
-                      <section class="ticket-date">
-                        <time datetime="23th feb">
-                          <span>23</span><span>feb</span>
-                        </time>
-                      </section>
-                      <section class="ticket-card-cont">
+                      <section class="ticket-card-cont" v-for="inf in info">
                         <small>dj khaled</small>
                         <h3>corner obsest program</h3>
                         <div class="even-date">
                          <i class="fa fa-calendar"></i>
                          <time>
-                           <span>wednesday 28 december 2014</span>
+                           <span>{{inf.date}}</span>
                            <span>08:55pm to 12:00 am</span>
                          </time>
                         </div>
@@ -97,19 +155,19 @@
                     </article>
                   </div>
                   <div class="row">
-                    <article class="ticket-card fl-left">
+                    <article class="ticket-card fl-left" v-for="inf in info">
                       <section class="ticket-date">
                         <time datetime="23th feb">
-                          <span>23</span><span>feb</span>
+                          <span>{{inf.id}}</span>
                         </time>
                       </section>
-                      <section class="ticket-card-cont">
+                      <section class="ticket-card-cont" v-for="inf in info">
                         <small>dj khaled</small>
                         <h3>music kaboom festivel</h3>
                         <div class="even-date">
                          <i class="fa fa-calendar"></i>
                          <time>
-                           <span>wednesday 28 december 2014</span>
+                           <span>{{inf.date}}</span>
                            <span>08:55pm to 12:00 am</span>
                          </time>
                         </div>
@@ -122,19 +180,19 @@
                         <a href="#">booked</a>
                       </section>
                     </article>
-                    <article class="ticket-card fl-left">
+                    <article class="ticket-card fl-left" v-for="inf in info">
                       <section class="ticket-date">
                         <time datetime="23th feb">
-                          <span>23</span><span>feb</span>
+                          <span>{{inf.id}}</span>
                         </time>
                       </section>
-                      <section class="ticket-card-cont">
+                      <section class="ticket-card-cont" v-for="inf in info">
                         <small>dj khaled</small>
                         <h3>hello dubai festivel</h3>
                         <div class="even-date">
                          <i class="fa fa-calendar"></i>
                          <time>
-                           <span>wednesday 28 december 2014</span>
+                           <span>{{inf.date}}</span>
                            <span>08:55pm to 12:00 am</span>
                          </time>
                         </div>
@@ -146,9 +204,10 @@
                         </div>
                         <a href="#">cancel</a>
                       </section>
-                    </article>
+                    </article> -->
                   </div>
-                </main>
+            </section>
+        </main>
                 <footer id="footer-tickets"><h2>&copy;Lollapalooza</h2></footer>
             </div>
     </div>
