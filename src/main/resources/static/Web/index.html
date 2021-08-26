@@ -203,7 +203,7 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card">
-                            <img src=" assets/eminem.jpg" class="card-img-top" alt="...">
+                            <img :src="bandsDayOne[0].image" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">{{bandsDayOne[0].bandName}}</h2>
                                 <h5 class="card-subtitle">{{bandsDayOne[1].bandName}} - {{bandsDayOne[2].bandName}}
@@ -213,12 +213,13 @@
                                 <div>
                                     <div class="dateEventContainer">
                                         <div class="dateEvent">
-                                            <h3>Martes</h3>
-                                            <h2>17</h2>
-                                            <p>Agosto 2021</p>
+                                            <h3>{{splitForSpace(0,bandsDayOne[0].eventDate)}}</h3>
+                                            <h2>{{splitForSpace(1,bandsDayOne[0].eventDate)}}</h2>
+                                            <p>{{splitForSpace(3,bandsDayOne[0].eventDate)}}</p>
+
                                         </div>
                                         <div class="redirectToPurchase">
-                                            <h2>Sede</h2>
+                                            <h2>{{bandsDayOne[0].eventLocation.name}}</h2>
                                             <input type="button" value="Comprar Entrada">
                                         </div>
                                     </div>
@@ -229,19 +230,23 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img src="assets/ratm.jpg" class="card-img-top" alt="...">
+                            <img :src="bandsDayTwo[0].image" class="card-img-top">
                             <div class="card-body">
-                                <h2 class="card-title">Ratm</h2>
+                                <h2 class="card-title">{{bandsDayTwo[0].bandName}}</h2>
+                                <h5 class="card-subtitle">{{bandsDayTwo[1].bandName}} - {{bandsDayTwo[2].bandName}}
+                                    -{{bandsDayTwo[3].bandName}}</h5>
+
 
                                 <div>
                                     <div class="dateEventContainer">
                                         <div class="dateEvent">
-                                            <h3>Miercoles</h3>
-                                            <h2>18</h2>
-                                            <p>Agosto 2021</p>
+                                            <h3>{{splitForSpace(0,bandsDayTwo[0].eventDate)}}</h3>
+                                            <h2>{{splitForSpace(1,bandsDayTwo[0].eventDate)}}</h2>
+                                            <p>{{splitForSpace(3,bandsDayTwo[0].eventDate)}}</p>
+
                                         </div>
                                         <div class="redirectToPurchase">
-                                            <h2>Sede</h2>
+                                            <h2>{{bandsDayTwo[0].eventLocation.name}}</h2>
                                             <input type="button" value="Comprar Entrada">
                                         </div>
                                     </div>
@@ -252,21 +257,54 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img src="assets/redondos.jpg" class="card-img-top" alt="...">
+                            <img :src="bandsDayThree[0].image" class="card-img-top">
                             <div class="card-body">
-                                <h2 class="card-title">Redondos</h2>
+                                <h2 class="card-title">{{bandsDayThree[0].bandName}}</h2>
+                                <h5 class="card-subtitle">{{bandsDayThree[1].bandName}} - {{bandsDayThree[2].bandName}}
+                                    -{{bandsDayThree[3].bandName}}</h5>
+
+
                                 <div>
                                     <div class="dateEventContainer">
                                         <div class="dateEvent">
-                                            <h3>Jueves</h3>
-                                            <h2>19</h2>
-                                            <p>Agosto 2021</p>
+                                            <h3>{{splitForSpace(0,bandsDayThree[0].eventDate)}}</h3>
+                                            <h2>{{splitForSpace(1,bandsDayThree[0].eventDate)}}</h2>
+                                            <p>{{splitForSpace(3,bandsDayThree[0].eventDate)}}</p>
+
                                         </div>
                                         <div class="redirectToPurchase">
-                                            <h2>Sede</h2>
+                                            <h2>{{bandsDayThree[0].eventLocation.name}}</h2>
                                             <input type="button" value="Comprar Entrada">
                                         </div>
                                     </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img :src="bandsDayFour[0].image" class="card-img-top">
+                            <div class="card-body">
+                                <h2 class="card-title">{{bandsDayFour[0].bandName}}</h2>
+                                <h5 class="card-subtitle">{{bandsDayFour[1].bandName}} - {{bandsDayFour[2].bandName}}
+                                    -{{bandsDayFour[3].bandName}}</h5>
+
+
+                                <div>
+                                    <div class="dateEventContainer">
+                                        <div class="dateEvent">
+                                            <h3>{{splitForSpace(0,bandsDayFour[0].eventDate)}}</h3>
+                                            <h2>{{splitForSpace(1,bandsDayFour[0].eventDate)}}</h2>
+                                            <p>{{splitForSpace(3,bandsDayFour[0].eventDate)}}</p>
+
+                                        </div>
+                                        <div class="redirectToPurchase">
+                                            <h2>{{bandsDayFour[0].eventLocation.name}}</h2>
+                                            <input type="button" value="Comprar Entrada">
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
