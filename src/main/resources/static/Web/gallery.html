@@ -60,9 +60,9 @@
                         <div class="links">
                             <h3 class="text-white">Lollapalooza</h3>
                             <a href="index.html"><i class="fas fa-circle"></i> Inicio</a>
-                            <a href="bands.html"><i class="fas fa-circle"></i> Musica</a>
+                            <a href="bands.html"><i class="fas fa-circle"></i> Bandas</a>
                             <a href="merchandising.html"><i class="fas fa-circle"></i> Merchandising</a>
-                            <a href="#"><i class="fas fa-circle"></i> Entradas</a>
+                            <a href="tickets.html"><i class="fas fa-circle"></i> Entradas</a>
                             <a href="gallery.html"><i class="fas fa-circle"></i> Galeria</a>
 
                         </div>
@@ -84,9 +84,9 @@
                 <div class="links-desktop">
                     <div class="content-links">
                         <a href="index.html"> <i class="fas fa-home"></i> Incio</a>
-                        <a href=""> <i class="fas fa-music"></i> Musica</a>
+                        <a href="bands.html"> <i class="fas fa-music"></i> Bandas</a>
                         <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
-                        <a href=""> <i class="fas fa-ticket-alt"></i> Entradas</a>
+                        <a href="tickets.html"> <i class="fas fa-ticket-alt"></i> Entradas</a>
 
 
                         <i class="fas fa-shopping-cart">&nbsp; {{cart.length}} </i>
@@ -111,81 +111,90 @@
             <div class="container">
 
                 <div class="gallery">
-                    <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
-                        class="gallery-image" alt="">                         </button>
-        
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            class="gallery-image" alt=""> </button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
                         <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
+                                        class="gallery-image" alt="">
+                                </div>
+                                <div class="modal-footer">
+                                    <form action="">
+                                        <input type="text" name="" id="">
+                                    </form>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
-                                class="gallery-image" alt="">
-                            </div>
-                            <div class="modal-footer">
-                                <form action="">
-                                    <input type="text" name="" id="">
-                                </form>
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                      <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
-                        class="gallery-image" alt="">                         </button>
-        
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            class="gallery-image" alt=""> </button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
                         <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
+                                        class="gallery-image" alt="">
+                                </div>
+                                <div class="modal-footer">
+                                    <form action="">
+                                        <input type="text" name="" id="">
+                                    </form>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
-                                class="gallery-image" alt="">
-                            </div>
-                            <div class="modal-footer">
-                                <form action="">
-                                    <input type="text" name="" id="">
-                                </form>
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                      <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </div>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
-                        class="gallery-image" alt="">                         </button>
-        
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            class="gallery-image" alt=""> </button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
                         <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
+                                        class="gallery-image" alt="">
+                                </div>
+                                <div class="modal-footer">
+                                    <form action="">
+                                        <input type="text" name="" id="">
+                                    </form>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop"
-                                class="gallery-image" alt="">
-                            </div>
-                            <div class="modal-footer">
-                                <form action="">
-                                    <input type="text" name="" id="">
-                                </form>
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                          </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <!-- End of gallery -->
 
@@ -194,7 +203,7 @@
             </div>
             <!-- End of container -->
 
-        <!-- Modal -->
+            <!-- Modal -->
 
         </main>
 
@@ -205,7 +214,8 @@
             <a href="https://soundcloud.com/dennis-bojang" title="Dennis Bojang" target="_blank"
                 style="color: #cccccc; text-decoration: none;">Dennis Bojang</a> · <a
                 href="https://soundcloud.com/dennis-bojang/sets/fest" title="Fest" target="_blank"
-                style="color: #cccccc; text-decoration: none;">Fest</a></div>
+                style="color: #cccccc; text-decoration: none;">Fest</a>
+        </div>
 
     </div>
 

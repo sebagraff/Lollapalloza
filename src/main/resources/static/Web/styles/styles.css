@@ -21,6 +21,15 @@ body{
     display: flex;
     justify-content: center;
 }
+
+body::-webkit-scrollbar{
+    width: 7px;
+    background:#000000!important;
+}
+body::-webkit-scrollbar-thumb{
+    background:var(--color1)!important;
+}
+
 .wrapper{
     min-height: 100vh;
     width: 100vw;
