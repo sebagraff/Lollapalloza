@@ -54,7 +54,14 @@ main{
 #choose{
     border-bottom: 1px solid grey;
     padding-bottom: 2.5vh;
-
+    width: 90%;
+}
+#choose>div{
+    display: flex;
+    justify-content: space-evenly;
+}
+#choose>h2{
+    text-align: center;
 }
 
 #datos{
@@ -103,6 +110,7 @@ main{
     flex-direction: row;
     height: 25%;
     justify-content: space-between;
+    border-bottom: 1px solid grey;
 }
 #taxes{
     border-bottom: 1px solid grey;
@@ -110,4 +118,13 @@ main{
 #divider{
     margin-right: 3%;
     margin-top: 1vh;
+}
+#derecha>button{
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+    border: unset;
+    border-radius: 0.5rem;
+    width: 50%;
+    align-self: center;
 }

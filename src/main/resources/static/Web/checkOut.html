@@ -42,11 +42,10 @@
             <div class="line" id="divider"></div>
             <section id="derecha">
                 <div id="carrito">
-                    <div>
-                        <img src="https://image.shutterstock.com/image-vector/vector-poop-emoji-260nw-1149798785.jpg" alt="">
-                        <p>name</p>
-                        <p>23423</p>
-                        <p>quantity</p>
+                    <div v-for="item in carrito">
+                        <p>{{item.productName}}</p>
+                        <p>${{item.productPrice}}</p>
+                        <p>{{item.productQuantity}}</p>
                     </div>
                 </div>
                 <div>
