@@ -204,7 +204,13 @@ main{
     color: gray;
     text-align: center;
     margin-top: 1vh;
-    border-bottom: rgba(128, 128, 128, 0.466) 1px solid;
+    margin: 3vw;
+    min-width: 75vw;
+}
+
+.card-body .card-subtitle{
+    color: gray;
+    text-align: center;
     margin: 3vw;
     min-width: 75vw;
 }

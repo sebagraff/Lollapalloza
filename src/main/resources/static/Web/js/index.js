@@ -6,10 +6,12 @@ const app = Vue.createApp({
             numberCode: "",
             stock: 0,
             detail: "",
-
             info: "",
 
-            bandsDayOne: []
+            bandsDayOne: [],
+            bandsDayTwo: [],
+            bandsDayThree: [],
+            bandsDayFour: []
         }
     },
 
@@ -24,9 +26,9 @@ const app = Vue.createApp({
         axios.get("/api/musicbands")
             .then(res => {
                 this.bandsDayOne = res.data.filter(e => e.eventDate == "JUEVES 27 DE MARZO").sort((a, b) => a.id - b.id)
-                this.bandsDayTwo = res.data.filter(e => e.eventDate == "VIERNES 28 DE MARZO")
-                this.bandsDayThree = res.data.filter(e => e.eventDate == "SABADO 29 DE MARZO")
-                this.bandsDayFour = res.data.filter(e => e.eventDate == "DOMINGO 30 DE MARZO")
+                this.bandsDayTwo = res.data.filter(e => e.eventDate == "VIERNES 28 DE MARZO").sort((a, b) => a.id - b.id)
+                this.bandsDayThree = res.data.filter(e => e.eventDate == "SABADO 29 DE MARZO").sort((a, b) => a.id - b.id)
+                this.bandsDayFour = res.data.filter(e => e.eventDate == "DOMINGO 30 DE MARZO").sort((a, b) => a.id - b.id)
 
                 console.log(this.bandsDayOne)
                 console.log(this.bandsDayTwo)
@@ -39,7 +41,9 @@ const app = Vue.createApp({
     methods: {
         ticketsLoginButton() {
             window.location.href = "login.html"
-        }
+        },
+
+
     },
 
     computed: {
