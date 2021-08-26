@@ -47,9 +47,9 @@
                         <div class="links">
                             <h3 class="text-white">Lollapalooza</h3>
                             <a href="index.html"><i class="fas fa-circle"></i> Inicio</a>
-                            <a href="#"><i class="fas fa-circle"></i> Musica</a>
+                            <a href="bands.html"><i class="fas fa-circle"></i> Bandas</a>
                             <a href="merchandising.html"><i class="fas fa-circle"></i> Merchandising</a>
-                            <a href="../Web/tickets.html"><i class="fas fa-circle"></i> Entradas</a>
+                            <a href="tickets.html"><i class="fas fa-circle"></i> Entradas</a>
                         </div>
 
                         <div class="search">
@@ -68,9 +68,9 @@
                 <div class="links-desktop">
                     <div class="content-links">
                         <a href="index.html"> <i class="fas fa-home"></i> Incio</a>
-                        <a href="bands.html"> <i class="fas fa-music"></i> Musica</a>
+                        <a href="bands.html"> <i class="fas fa-music"></i> Bandas</a>
                         <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
-                        <a href=""> <i class="fas fa-ticket-alt"></i> Entradas</a>
+                        <a href="tickets.html"> <i class="fas fa-ticket-alt"></i> Entradas</a>
 
 
                         <!-- <i class="fas fa-shopping-cart">&nbsp; {{cart.length}} </i> -->
@@ -115,52 +115,8 @@
                     </div>
                 </div>
             </section>
-            <!-- Filter -->
-            <section class="filter">
-                <div class="accordion" id="filtros">
-                    <div class="accodion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <strong>Busca tus eventos!</strong>
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="labels">
-                                    <label for="genero">Genero:</label>
-                                    <label for="fecha">Fechas:</label>
-                                    <label for="banda">Tu banda favorita:</label>
-                                </div>
-                                <div class="selects">
-                                    <select name="genero" id="genero">
-                                        <option value="todos">Todos</option>
-                                        <option value="rock">Rock</option>
-                                        <option value="pop">Pop</option>
-                                        <option value="electronica">Electronica</option>
-                                        <option value="reggae">Reggae</option>
-                                    </select>
-                                    <select name="fecha" id="fecha">
-                                        <option value="todas">Todas</option>
-                                        <option value="veinteDos">Noviembre 22</option>
-                                        <option value="veinteTres">Noviembre 23</option>
-                                        <option value="veinteCuatro">Noviembre 24</option>
-                                        <option value="veinteCinco">Noviembre 25</option>
-                                    </select>
-                                    <select name="banda" id="banda">
-                                        <option value="todos">Todas</option>
-                                        <option value="eminem">Eminem</option>
-                                        <option value="ratm">Rage Against The Machine</option>
-                                        <option value="rdr">Redonditos de Ricotta</option>
-                                    </select>
-                                </div>
-                                <button>Buscar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--
+
+            <!--
                 <div id="filtros">
                     <h3>Busca tus eventos!</h3>
                     <div>
@@ -202,19 +158,24 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card">
-                            <img src=" assets/eminem.jpg" class="card-img-top" alt="...">
+                            <div :style="{ backgroundImage: `url(${bandsDayOne[0].image})` }" class="card-img-top">
+                            </div>
                             <div class="card-body">
-                                <h2 class="card-title">Eminem</h2>
+                                <h2 class="card-title">{{bandsDayOne[0].bandName}}</h2>
+                                <h5 class="card-subtitle">{{bandsDayOne[1].bandName}} - {{bandsDayOne[2].bandName}}
+                                    -{{bandsDayOne[3].bandName}}</h5>
+
 
                                 <div>
                                     <div class="dateEventContainer">
                                         <div class="dateEvent">
-                                            <h3>Martes</h3>
-                                            <h2>17</h2>
-                                            <p>Agosto 2021</p>
+                                            <h3>{{splitForSpace(0,bandsDayOne[0].eventDate)}}</h3>
+                                            <h2>{{splitForSpace(1,bandsDayOne[0].eventDate)}}</h2>
+                                            <p>{{splitForSpace(3,bandsDayOne[0].eventDate)}}</p>
+
                                         </div>
                                         <div class="redirectToPurchase">
-                                            <h2>Sede</h2>
+                                            <h2>{{bandsDayOne[0].eventLocation.name}}</h2>
                                             <input type="button" value="Comprar Entrada">
                                         </div>
                                     </div>
@@ -225,19 +186,24 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img src="assets/ratm.jpg" class="card-img-top" alt="...">
+                            <div :style="{ backgroundImage: `url(${bandsDayTwo[0].image})` }" class="card-img-top">
+                            </div>
                             <div class="card-body">
-                                <h2 class="card-title">Ratm</h2>
+                                <h2 class="card-title">{{bandsDayTwo[0].bandName}}</h2>
+                                <h5 class="card-subtitle">{{bandsDayTwo[1].bandName}} - {{bandsDayTwo[2].bandName}}
+                                    -{{bandsDayTwo[3].bandName}}</h5>
+
 
                                 <div>
                                     <div class="dateEventContainer">
                                         <div class="dateEvent">
-                                            <h3>Miercoles</h3>
-                                            <h2>18</h2>
-                                            <p>Agosto 2021</p>
+                                            <h3>{{splitForSpace(0,bandsDayTwo[0].eventDate)}}</h3>
+                                            <h2>{{splitForSpace(1,bandsDayTwo[0].eventDate)}}</h2>
+                                            <p>{{splitForSpace(3,bandsDayTwo[0].eventDate)}}</p>
+
                                         </div>
                                         <div class="redirectToPurchase">
-                                            <h2>Sede</h2>
+                                            <h2>{{bandsDayTwo[0].eventLocation.name}}</h2>
                                             <input type="button" value="Comprar Entrada">
                                         </div>
                                     </div>
@@ -248,21 +214,58 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img src="assets/redondos.jpg" class="card-img-top" alt="...">
+                            <div :style="{ backgroundImage: `url(${bandsDayThree[0].image})` }" class="card-img-top">
+                            </div>
                             <div class="card-body">
-                                <h2 class="card-title">Redondos</h2>
+                                <h2 class="card-title">{{bandsDayThree[0].bandName}}</h2>
+                                <h5 class="card-subtitle">{{bandsDayThree[1].bandName}} -
+                                    {{bandsDayThree[2].bandName}}
+                                    -{{bandsDayThree[3].bandName}}</h5>
+
+
                                 <div>
                                     <div class="dateEventContainer">
                                         <div class="dateEvent">
-                                            <h3>Jueves</h3>
-                                            <h2>19</h2>
-                                            <p>Agosto 2021</p>
+                                            <h3>{{splitForSpace(0,bandsDayThree[0].eventDate)}}</h3>
+                                            <h2>{{splitForSpace(1,bandsDayThree[0].eventDate)}}</h2>
+                                            <p>{{splitForSpace(3,bandsDayThree[0].eventDate)}}</p>
+
                                         </div>
                                         <div class="redirectToPurchase">
-                                            <h2>Sede</h2>
+                                            <h2>{{bandsDayThree[0].eventLocation.name}}</h2>
                                             <input type="button" value="Comprar Entrada">
                                         </div>
                                     </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div :style="{ backgroundImage: `url(${bandsDayFour[0].image})` }" class="card-img-top">
+                            </div>
+                            <div class="card-body">
+                                <h2 class="card-title">{{bandsDayFour[0].bandName}}</h2>
+                                <h5 class="card-subtitle">{{bandsDayFour[1].bandName}} -
+                                    {{bandsDayFour[2].bandName}}
+                                    -{{bandsDayFour[3].bandName}}</h5>
+
+
+                                <div>
+                                    <div class="dateEventContainer">
+                                        <div class="dateEvent">
+                                            <h3>{{splitForSpace(0,bandsDayFour[0].eventDate)}}</h3>
+                                            <h2>{{splitForSpace(1,bandsDayFour[0].eventDate)}}</h2>
+                                            <p>{{splitForSpace(3,bandsDayFour[0].eventDate)}}</p>
+
+                                        </div>
+                                        <div class="redirectToPurchase">
+                                            <h2>{{bandsDayFour[0].eventLocation.name}}</h2>
+                                            <input type="button" value="Comprar Entrada">
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

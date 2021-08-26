@@ -35,8 +35,10 @@ p{
 }
 
 #tittle-color{
-    color: var(--color2);
     font-size: 1.6rem;
+    text-align: center;
+    color: var(--color2)!important;
+
 }
 
 
@@ -73,6 +75,15 @@ main{
     color: white;
     letter-spacing: 1px;
 }
+.buscador{
+    margin-top: 5vh;
+    margin-bottom: 13vh;
+}
+
+.tituloTienda{
+    margin-top: 15vh;
+}
+
 
 .tittle-filter h5{
     font-size: 1.4rem;

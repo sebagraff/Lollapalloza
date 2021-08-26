@@ -116,8 +116,8 @@ public class LollapaloozaApplication {
 			Event dia4 = eventRepository.save(new Event("DOMINGO 30 DE MARZO",sede4));
 
 			//---------------------------------------------------------------Bands----------------------------------------
-			MusicBand DUKI = musicBandRepository.save(new MusicBand("DUKI","Trap","18:15","Mauro Ezequiel Lombardo, más conocido como Duki, es un cantante de trap argentino. Es conocido por sus participaciones en El Quinto Escalón",dia1,"https://www.themusicrepublic.es/wp-content/uploads/2021/01/cover_0012_duki_21.jpg"));
 			MusicBand TravisScott = musicBandRepository.save(new MusicBand("Travis Scott","Hip-hop/rap","22:30","Jacques Berman Webster II, conocido como Travis Scott, es un rapero, compositor y productor musical estadounidense.",dia1,"https://lofficiel.imgix.net/production/cyprus/images/1621507018780729-travis-cover-edited.jpg?w=1920&h=800&fit=clip&crop=edges&auto=%5B%22format%22%2C%20%22compress%22%5D&cs=srgb"));
+			MusicBand DUKI = musicBandRepository.save(new MusicBand("DUKI","Trap","18:15","Mauro Ezequiel Lombardo, más conocido como Duki, es un cantante de trap argentino. Es conocido por sus participaciones en El Quinto Escalón",dia1,"https://www.themusicrepublic.es/wp-content/uploads/2021/01/cover_0012_duki_21.jpg"));
 			MusicBand WOS = musicBandRepository.save(new MusicBand("WOS","Hip-hop/rap","17:15","Valentín Oliva, conocido por su nombre artístico Wos, es un rapero, freestyler y actor argentino. Wos surgió en la escena de las batallas de rap entre freestylers",dia1,"https://img2.rtve.es/v/5980931?w=1600&preview=1625760451770.jpg"));
 			MusicBand Bizarrap = musicBandRepository.save(new MusicBand("Bizarrap","Hip-hop/rap","20:15","Gonzalo Julián Conde, conocido artísticamente como Bizarrap, es un productor musical y DJ argentino. Se especializa en géneros como el trap, la música electrónica y el hip hop.",dia1,"https://cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/PQZYJ56R3FCRFDL2DQDJ6TSYL4.jpg"));
 
@@ -143,19 +143,20 @@ public class LollapaloozaApplication {
 			client.setCart(newCart);
 			clientRepository.save(client);
 //
-			Ticket ticket1 = new Ticket(5000, dia1.getDate(), MyUtils.getRandomNumber(1,3),1000,client);
-			Ticket ticket2 = new Ticket(5000, dia2.getDate(), MyUtils.getRandomNumber(1,3),1000,client);
-			Ticket ticket3 = new Ticket(5000, dia3.getDate(), MyUtils.getRandomNumber(1,3),1000,client);
-//			Ticket ticket4 = new Ticket(5000, dia4.getDate(), MyUtils.getRandomNumber(1,3),1000,client);
-//			Ticket ticketVIP = new Ticket (11500, dia1.getDate() + "" + dia2.getDate() + "" + dia3.getDate() + "" + dia4.getDate(),MyUtils.getNumberRandom() , 200,Event,client);
-//			Ticket ticketFirst = new Ticket(9000, dia1.getDate() + "" + dia2.getDate(),MyUtils.getNumberRandom(),500,client);
-//			Ticket ticketLast = new Ticket( 9000, dia2.getDate() + "" + dia3.getDate(),MyUtils.getNumberRandom(),500,client);
+			Ticket ticket1 = new Ticket(5000, dia1.getDate(), MyUtils.getRandomNumber(1,10000),client,sede1.getName());
+			Ticket ticket2 = new Ticket(5000, dia2.getDate(), MyUtils.getRandomNumber(1,10000),client,sede2.getName());
+			Ticket ticket3 = new Ticket(5000, dia3.getDate(), MyUtils.getRandomNumber(1,10000),client, sede3.getName());
+			Ticket ticket4 = new Ticket(5000, dia4.getDate(), MyUtils.getRandomNumber(1,10000),client, sede4.getName());
+			Ticket ticketFull = new Ticket(11500, dia1.getDate() + ", " + dia2.getDate() + ", " + dia3.getDate() + ", " + dia4.getDate(), MyUtils.getRandomNumber(1,10000),client, sede1.getName() + ", " + sede2.getName() + ", " + sede3.getName() + " y " + sede4.getName());
+			Ticket ticket12 = new Ticket(9000,    dia1.getDate() + ", " + dia2.getDate(),MyUtils.getRandomNumber(1,10000),client, sede1.getName() + " y " + sede2.getName());
+			Ticket ticket34 = new Ticket(9000,    dia2.getDate() + ", " + dia3.getDate(),MyUtils.getRandomNumber(1,10000),client, sede3.getName()+ " y " + sede4.getName());
 			ticketRepository.save(ticket1);
 			ticketRepository.save(ticket2);
 			ticketRepository.save(ticket3);
-//			ticketRepository.save(ticketVIP);
-//			ticketRepository.save(ticketFirst);
-//			ticketRepository.save(ticketLast);
+			ticketRepository.save(ticket4);
+			ticketRepository.save(ticketFull);
+			ticketRepository.save(ticket12);
+			ticketRepository.save(ticket34);
 		};
 	}
 }
