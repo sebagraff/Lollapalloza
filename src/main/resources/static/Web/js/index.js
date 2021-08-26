@@ -1,13 +1,13 @@
+
+let myCarousel = document.querySelector('#musicBandCarousel')
+let carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 5000,
+    wrap: true
+})
+
 const app = Vue.createApp({
     data() {
         return {
-            price: 0,
-            date: "",
-            numberCode: "",
-            stock: 0,
-            detail: "",
-            info: "",
-
             bandsDayOne: [],
             bandsDayTwo: [],
             bandsDayThree: [],
@@ -16,12 +16,7 @@ const app = Vue.createApp({
     },
 
     created() {
-        axios.get('/api/tickets')
-            .then(res => {
-                console.log(res)
-                this.info = res.data
-                console.log(this.info)
-            })
+
 
         axios.get("/api/musicbands")
             .then(res => {
@@ -39,10 +34,11 @@ const app = Vue.createApp({
     },
 
     methods: {
-        ticketsLoginButton() {
-            window.location.href = "login.html"
-        },
 
+        splitForSpace(index, date) {
+            let newArray = date.split(" ")
+            return newArray[index]
+        }
 
     },
 
@@ -55,9 +51,3 @@ const app = Vue.createApp({
 
 app.mount("#app")
 
-
-let myCarousel = document.querySelector('#musicBandCarousel')
-let carousel = new bootstrap.Carousel(myCarousel, {
-    interval: 5000,
-    wrap: true
-})

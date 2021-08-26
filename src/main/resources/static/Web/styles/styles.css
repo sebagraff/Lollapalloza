@@ -162,19 +162,24 @@ option:hover{
 }
 /*------------------------Main------------------------*/
 main{
-    padding-bottom: 25vw;
     max-width: 100vw!important;
 }
 /*------------------------info Cards-----------------*/
-
+.card-img-top{
+    width: 100%!important;
+    height: 35vh!important;
+    background-size: cover;
+}
 
 .info-cards{
-    height: 85vh;
+    height: 78vh!important;
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
     overflow-y: scroll;
     overflow-x: hidden;
+    margin-bottom: 5vh;
+    margin-top: 2vh;
 }
 
 .card{
@@ -186,13 +191,12 @@ main{
     margin-top: 5vh;
     box-shadow: 2px 2px 10px 2px;
     margin-bottom: 5vw;
-
+    height: 70vh!important;
+    padding-bottom: 4vh;
 }
 
 
-.card img{
-    width:100%;
-}
+
 .row{
     min-height: 100vh!important;
 }
@@ -211,8 +215,7 @@ main{
 .card-body .card-subtitle{
     color: gray;
     text-align: center;
-    margin: 3vw;
-    min-width: 75vw;
+    margin: 0 3vw 3vw 3vw;
 }
 
 .card-body .card-text{
@@ -354,7 +357,11 @@ a:hover{
 
 /*------------------------info Cards-----------------*/
 
-
+.card-img-top{
+    width: 106%!important;
+    height: 25vh!important;
+    background-size: cover;
+}
 
 
 .col{
@@ -362,11 +369,15 @@ a:hover{
 }
 
 .info-cards{
-    height: 75vh;
+   
     display: flex;
     justify-content: center;
     max-width: 100vw!important;
     min-height: 50vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 5vh;
+    height: 68vh!important;
 }
 
 .card{
@@ -375,13 +386,11 @@ a:hover{
     align-items: center;
     justify-content: space-around;
     width: 40vw;
-    margin-top: 15vh;
     padding: 0 1vw;
+    height: 65vh!important;
+    margin: 1vw ;
+}
 
-}
-.card img{
-    width:40vw;
-}
 
 .card-body{
     max-height: 50vw!important;
@@ -392,7 +401,6 @@ a:hover{
     color: gray;
     text-align: center;
     margin-top: 1vh;
-    border-bottom: rgba(128, 128, 128, 0.466) 1px solid;
     margin: 1vw;
     min-width: 25%;
 }
@@ -456,36 +464,66 @@ a:hover{
 
 }
 @media only screen and (min-width: 900px){
+    .card-img-top{
+        width: 107%!important;
+        height: 25vh!important;
+        background-size: cover;
+    }
 
     .col{
         width: 33vw!important;
     }
 
-    .card img{
-        width: 108%!important;
-    }
+
 
     .info-cards{
-        overflow: unset !important;
-        margin-left: 1vw;
+       
+        height: 68vh!important;
+        margin-top: 5vh;
+
     }
 
     .card{
-        height: 50vh;
+        height: 65vh!important;
+        margin: 1vw ;
     }
 
 }
 
 @media only screen and (min-width: 985px){
     .card{
-        height: 60vh;
+        height: 65vh!important;
+        margin: 1vw ;
     }
+    .card-img-top{
+    width: 107%!important;
+    height: 25vh!important;
+    background-size: cover;
+}
+.info-cards{
+    height: 68vh!important;
+    margin-top: 5vh;
+}
 }
 
 @media only screen and (min-width: 1200px){
     .card{
-        height: 65vh;
-        
+        height: 65vh!important;
+        margin: 1vw ;
+    }
+
+    .card-img-top{
+        width: 107%!important;
+        height: 25vh!important;
+        background-size: cover;
+    }
+    .col{
+        max-height: 85vh;
+    }
+
+    .info-cards{
+        height: 68vh!important;
+        margin-top: 5vh;
     }
 }
 /* ------------------TICKETS------------------ */
