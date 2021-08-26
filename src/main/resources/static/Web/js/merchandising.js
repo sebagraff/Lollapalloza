@@ -76,6 +76,8 @@ const app = Vue.createApp({
         filterProducts() {
             if (this.inputSearch != "") {
                 this.AuxProducts = this.products.filter(product => product.name.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
+            }else if(this.inputSearch == ""){
+                this.AuxProducts = this.products
             }
         }
     }

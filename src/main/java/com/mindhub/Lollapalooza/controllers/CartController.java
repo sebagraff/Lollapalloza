@@ -33,7 +33,11 @@ public class CartController {
 
     @GetMapping("/cart/{id}")
     public CartDTO getClientCart(@PathVariable Long id){
-        return new CartDTO(this.cartRepository.findById(id).get());
+        if (id != 0){
+            return new CartDTO(this.cartRepository.findById(id).get());
+        }else{
+            return new CartDTO();
+        }
     }
 
     @PutMapping("/cart/{id}")
