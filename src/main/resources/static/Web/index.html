@@ -104,13 +104,17 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="assets/redondos.jpg" class="d-block " alt="music_band">
+                            <div :style="{ backgroundImage: `url(${bandsDayOne[0].image})` }" class="imgSlider d-block">
+                            </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/ratm.jpg" class="d-block " alt="music_band">
+                            <div :style="{ backgroundImage: `url(${bandsDayTwo[0].image})` }" class="imgSlider d-block">
+                            </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/eminem.jpg" class="d-block " alt="music_band">
+                            <div :style="{ backgroundImage: `url(${bandsDayFour[0].image})` }"
+                                class="imgSlider d-block">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -152,6 +156,7 @@
                     <button>Buscar</button>
                 </div>
             -->
+
             </section>
             <!-- Info cards -->
             <section class="info-cards">
