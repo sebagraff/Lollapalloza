@@ -1,8 +1,6 @@
 package com.mindhub.Lollapalooza.models;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Random;
 
 @Entity
 public class Ticket {
@@ -53,9 +51,9 @@ public class Ticket {
 
     public void setStock(int stock) { this.stock = stock; }
 
-    public Details getDetail() { return detail; }
+    //public Details getDetail() { return detail; }
 
-    public void setDetail(Details detail) { this.detail = detail; }
+    //public void setDetail(Details detail) { this.detail = detail; }
 
 
     public Client getClient() { return client; }

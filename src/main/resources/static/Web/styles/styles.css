@@ -541,9 +541,38 @@ a:hover{
     justify-content: center;
 }
 
-/* .container{
-    width: 100vw;
-} */
+.ticket-card-css{
+    margin-bottom: 10px;
+    width: 49%;
+    color: #989898;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: table-row;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    /* display: flex;
+    align-items: center; */
+}
+
+.ticket-date-css {
+    width: 25%;
+    border-right: 2px dashed #dadde6;
+    display: table-cell;
+    /* position: relative; */
+    text-align: center;
+} 
+
+.ticket-date-css time span:last-child {
+    /* margin-top: -10px; */
+    margin: 5% 0 0 0;
+    color: #2b2b2b;
+    font-size: 250%;
+    font-weight: 600;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: absolute;
+}
 
 #footer-tickets{
     height: 10vh;
