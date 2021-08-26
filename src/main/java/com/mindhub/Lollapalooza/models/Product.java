@@ -58,9 +58,7 @@ public class Product {
         return detail;
     }
 
-    public void setDetail(Details detail) {
-        this.detail = detail;
-    }
+    public void setDetail(Details detail) { this.detail = detail; }
 
     public String getImage() {
         return image;

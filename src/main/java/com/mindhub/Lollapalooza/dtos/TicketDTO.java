@@ -1,5 +1,4 @@
 package com.mindhub.Lollapalooza.dtos;
-import com.mindhub.Lollapalooza.models.Location;
 import com.mindhub.Lollapalooza.models.Ticket;
 import java.time.LocalDate;
 
@@ -9,15 +8,16 @@ public class TicketDTO {
     private double price;
     private String date;
     private int numberCode;
-    private int stock;
-    private Location location;
+    //private int stock;
+    private String sede;
 
     public TicketDTO(Ticket ticket){
         this.id = ticket.getId();
         this.price = ticket.getPrice();
         this.date = ticket.getDate();
         this.numberCode = ticket.getNumberCode();
-        this.stock = ticket.getStock();
+        //this.stock = ticket.getStock();
+        this.sede = ticket.getSede();
     }
 
     public long getId() { return id; }
@@ -36,9 +36,11 @@ public class TicketDTO {
 
     public void setNumberCode(int numberCode) { this.numberCode = numberCode; }
 
-    public int getStock() { return stock; }
+    /*public int getStock() { return stock; }
 
-    public void setStock(int stock) { this.stock = stock; }
+    public void setStock(int stock) { this.stock = stock; }*/
 
+    public String getSede() { return sede; }
 
+    public void setSede(String sede) { this.sede = sede; }
 }
