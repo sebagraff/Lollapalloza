@@ -577,7 +577,7 @@ a:hover{
 #footer-tickets{
     height: 10vh;
     color: #F23838;
-    background-color: #03A688;
+    background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
