@@ -25,8 +25,6 @@ public class ProductInCart {
         this.productPrice = productPrice;
     }
 
-
-
     public long getProductId() {
         return productId;
     }

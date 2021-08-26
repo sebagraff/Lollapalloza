@@ -5,6 +5,7 @@ import com.mindhub.Lollapalooza.dtos.ProductInCartDTO;
 import com.mindhub.Lollapalooza.models.Cart;
 import com.mindhub.Lollapalooza.models.Client;
 import com.mindhub.Lollapalooza.models.ProductInCart;
+import com.mindhub.Lollapalooza.models.TicketInCart;
 import com.mindhub.Lollapalooza.repositories.CartRepository;
 import com.mindhub.Lollapalooza.repositories.ClientRepository;
 import com.mindhub.Lollapalooza.repositories.ProductInCartRepository;
@@ -30,6 +31,9 @@ public class CartController {
     @Autowired
     ProductInCartRepository productInCartRepository;
 
+    /*@Autowired
+    TicketRepository ticketRepository;*/
+
     @GetMapping("/cart/{id}")
     public CartDTO getClientCart(@PathVariable Long id){
         return new CartDTO(this.cartRepository.findById(id).get());
@@ -46,8 +50,18 @@ public class CartController {
 
             productInCartRepository.saveAll(productInCarts);
 
-
-
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    /*@PutMapping("/tickets/{id}")
+    public ResponseEntity<?> addTicketToCart(@PathVariable Long id, @RequestBody Set<TicketInCart>){
+        Client client = this.clientRepository.findById(id).get();
+        Cart cart = client.getTicket();
+
+        this.ticketRepository.deleteAl(ticket.getTicketsInCart());
+        ticketInCarts.forEach(ticketInCart -> ticketInCart.setCart(ticket));
+        ticket.setTicketsInCart(ticketCarts);
+
+        ticketInCartRepository.saveAll(ticketInCarts);
+    }*/
 }
