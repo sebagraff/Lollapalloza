@@ -29,9 +29,12 @@ public class ClientController {
 
     @GetMapping("/clients/current")
     public ClientDTO getCurrent(Authentication authentication){
-        Client clientAuthenticated= this.clientRepository.findByUser(authentication.getName());
-
+        if (authentication != null) {
+            Client clientAuthenticated = this.clientRepository.findByUser(authentication.getName());
             return new ClientDTO(clientAuthenticated);
+        }else{
+            return new ClientDTO();
+        }
 
     }
 
