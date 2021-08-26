@@ -202,7 +202,8 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card">
-                            <img :src="bandsDayOne[0].image" class="card-img-top">
+                            <div :style="{ backgroundImage: `url(${bandsDayOne[0].image})` }" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <h2 class="card-title">{{bandsDayOne[0].bandName}}</h2>
                                 <h5 class="card-subtitle">{{bandsDayOne[1].bandName}} - {{bandsDayOne[2].bandName}}
@@ -229,7 +230,8 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img :src="bandsDayTwo[0].image" class="card-img-top">
+                            <div :style="{ backgroundImage: `url(${bandsDayTwo[0].image})` }" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <h2 class="card-title">{{bandsDayTwo[0].bandName}}</h2>
                                 <h5 class="card-subtitle">{{bandsDayTwo[1].bandName}} - {{bandsDayTwo[2].bandName}}
@@ -256,10 +258,12 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img :src="bandsDayThree[0].image" class="card-img-top">
+                            <div :style="{ backgroundImage: `url(${bandsDayThree[0].image})` }" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <h2 class="card-title">{{bandsDayThree[0].bandName}}</h2>
-                                <h5 class="card-subtitle">{{bandsDayThree[1].bandName}} - {{bandsDayThree[2].bandName}}
+                                <h5 class="card-subtitle">{{bandsDayThree[1].bandName}} -
+                                    {{bandsDayThree[2].bandName}}
                                     -{{bandsDayThree[3].bandName}}</h5>
 
 
@@ -283,10 +287,12 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img :src="bandsDayFour[0].image" class="card-img-top">
+                            <div :style="{ backgroundImage: `url(${bandsDayFour[0].image})` }" class="card-img-top">
+                            </div>
                             <div class="card-body">
                                 <h2 class="card-title">{{bandsDayFour[0].bandName}}</h2>
-                                <h5 class="card-subtitle">{{bandsDayFour[1].bandName}} - {{bandsDayFour[2].bandName}}
+                                <h5 class="card-subtitle">{{bandsDayFour[1].bandName}} -
+                                    {{bandsDayFour[2].bandName}}
                                     -{{bandsDayFour[3].bandName}}</h5>
 
 

@@ -1,3 +1,10 @@
+
+let myCarousel = document.querySelector('#musicBandCarousel')
+let carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 5000,
+    wrap: true
+})
+
 const app = Vue.createApp({
     data() {
         return {
@@ -44,9 +51,3 @@ const app = Vue.createApp({
 
 app.mount("#app")
 
-
-let myCarousel = document.querySelector('#musicBandCarousel')
-let carousel = new bootstrap.Carousel(myCarousel, {
-    interval: 5000,
-    wrap: true
-})
