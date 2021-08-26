@@ -212,7 +212,6 @@ main{
     color: gray;
     text-align: center;
     margin: 3vw;
-    min-width: 75vw;
 }
 
 .card-body .card-text{
@@ -471,21 +470,24 @@ a:hover{
     }
 
     .card{
-        height: 50vh;
+        height: 65vh!important;
     }
 
 }
 
 @media only screen and (min-width: 985px){
     .card{
-        height: 60vh;
+        height: 60vh!important;
     }
 }
 
 @media only screen and (min-width: 1200px){
     .card{
-        height: 65vh;
+        height: 75vh!important;
         
+    }
+    .col{
+        max-height: 85vh;
     }
 }
 /* ------------------TICKETS------------------ */
