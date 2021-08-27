@@ -577,10 +577,6 @@ input[type="button"]{
     border: 1px solid grey;
 }
 
-.evento-titulo{
-
-}
-
 .evento-boton button{
     background-color: #198754;
     color: #fff;padding: .375rem .75rem;
@@ -703,10 +699,6 @@ input[type="button"]{
         border: 1px solid grey;
     }
     
-    .evento-titulo{
-    
-    }
-    
     .evento-boton button{
         background-color: #198754;
         color: #fff;padding: .375rem .75rem;
@@ -793,6 +785,128 @@ input[type="button"]{
         justify-content: center;
         align-items: center;
     }
+}
+
+@media (max-width: 680px){
+    
+.pregunta{
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenedor{
+    margin: 2rem;
+    width: 60vw;
+    height: 40vh;
+    background-color: wheat;
+}
+
+.evento{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 10vh;
+    background-color: #F23838;
+    border: 1px solid grey;
+}
+
+.evento-boton button{
+    background-color: #198754;
+    color: #fff;padding: .375rem .75rem;
+}
+
+.evento-img img{
+    width: 45px;
+}
+/*  */
+.contenedor-ticket{
+    height:30vh;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.separador-ticket{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.cabeza-ticket{
+    width: 28%;
+    height:100%;
+    /* background-color:tomato; */
+    border-right: 1px dashed grey;
+    display: flex;
+    /* justify-content: flex-start;
+    align-items: center; */
+    flex-direction: column;
+}
+
+.cabeza-uno{
+    width: 100%;
+    height: 50%;
+    border-bottom: 1px dashed grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabeza-dos{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuerpo-ticket{
+    width: 58%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.fila-ticket{
+    padding-left: 1rem;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fila-ticket p{
+    font-weight: bold;
+}
+
+.fila-ticket:nth-child(2){
+    line-height: 15px;
+}
+
+.cola-ticket{
+    height: 100%;
+    width: 14%;
+    border-left: 1px dashed grey;
+}
+
+.cola-uno{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-tickets{
+    height: 10vh;
+    color: #F23838;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 }
 
 
