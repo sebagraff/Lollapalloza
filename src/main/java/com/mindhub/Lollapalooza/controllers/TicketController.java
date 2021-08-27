@@ -29,8 +29,6 @@ public class TicketController {
     public List<TicketDTO> getAll(){
         return this.ticketRepository.findAll().stream().map(TicketDTO::new).collect(Collectors.toList());
     }
-
-    /*@PostMapping("/tickets")
     public ResponseEntity<?> addProduct(@RequestBody TicketDTO ticketDTO){
         if(ticketDTO.getNumberCode() == 0 || ticketDTO.getPrice() == 0){
             return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
@@ -39,5 +37,5 @@ public class TicketController {
         Client client = clientRepository.findByUser();
         this.ticketRepository.save(new Ticket(ticketDTO.getPrice(),ticketDTO.getDate(), MyUtils.getRandomNumber(1,10000), client, ticketDTO.getSede()));
         return new ResponseEntity<>("Producto agregado correctamente", HttpStatus.ACCEPTED);
-    }*/
+    }
 }
