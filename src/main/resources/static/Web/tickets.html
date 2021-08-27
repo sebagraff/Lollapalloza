@@ -121,12 +121,13 @@
 
       </div>
     </header>
-    <main id="main-tickets" style="background-color: coral;">
-      <div style="background-color: aqua;">
+    
+    <main id="main-tickets" style="background-color: #f2f2f2;">
+      <div class="pregunta">
         <h2>¿Todavía no tenés entradas?</h2>
         <h2>¿¡Qué esperás para conseguirlas!?</h2>
       </div>
-
+  <!-- -->
       <!-- <section class="ticket-container" v-for="ticket in tickets" style="background-color: bisque;">
         <h1 class="main-ticket-h1">Events</h1>
           <div class="ticket-row">
@@ -145,7 +146,7 @@
                   </time>
                 </div>
                 <div class="eveticketo">
-                  <i class="fa fa-map-marker"></i>
+                  <i class="fa fa-map-marker"></i>  
                   <p>{{ticket.sede}}</p>
                 </div>
               </section>  
@@ -156,36 +157,53 @@
   
           </div>
       </section> -->
+<!--class="ticket-container"class="ticket-row" class="main-ticket-h1"-->
 
-      <section class="ticket-container" v-for="ticket in tickets" style="background-color: bisque;">
-        <h1 class="main-ticket-h1">Events</h1>
-        <div class="ticket-row">
+      <div class="contenedor"v-for="ticket in tickets">
+        <div class="evento">
+          <div class="evento-titulo">
+            <h1>Event</h1>
+          </div>
+          <div class="evento-boton">
+            <button>Comprar</button>
+          </div>
+          <div class="evento-img">
+            <img src="../Web/assets/logo.png" alt="">
+          </div>
+        </div>
+        <div class="contenedor-ticket">
+          <div class="separador-ticket">
 
-          <article class="ticket-card-css fl-left" style="width: 44%;">
-            <section class="ticket-date-css">
-              <span>{{ticket.id}}</span>
-            </section>
-            <section class="ticket-card-cont">
-              <small>dj khaled</small>
-              <h3>live</h3>
-              <div class="even-date" style="display: flex;">
-                <i class="fa fa-calendar"></i>
-                <time>
-                  <span>{{ticket.date}}</span>
-                </time>
+            <div class="cabeza-ticket">
+              <div class="cabeza-uno">
+                <h2 style="transform: rotate(-90deg);">Tipo {{ticket.id}}</h2>
+                <!-- <h2>Ticket</h2> -->
               </div>
-              <div class="eveticketo">
-                <i class="fa fa-map-marker"></i>
-                <p>{{ticket.sede}}</p>
+              <div class="cabeza-dos">
+                <h2 style="transform: rotate(-90deg);">Ticket</h2>
+                <!-- <h2>Tipo {{ticket.id}}</h2> -->
               </div>
-            </section>
-          </article>
-          <div class="purchaseButton">
-            <input type="button" value="Comprar">
+            </div>
+          
+            <div class="cuerpo-ticket">
+              <!-- <div> -->
+                <div class="fila-ticket"><p>${{ticket.price}}</p></div>
+              <!-- </div> -->
+              <div class="fila-ticket" style="width: 100%;height: 50%;"><div style="align-content: center;"><i class="fa fa-calendar"></i><p>{{splitForSpace(ticket)}} de marzo</p></div></div>
+              <!-- <div class="fila-ticket" style="width: 100%;height: 25%;"><p>{{ticket.numberCode}}</p></div> -->
+              <div class="fila-ticket" style="width: 100%;height: 25%;"><div><i class="fa fa-map-marker"></i><p>{{ticket.sede}}</p></div></div>
+            </div>
+
+            <div class="cola-ticket">
+              <div class="cola-uno">
+                <p style="transform: rotate(-90deg);line-height: 15px;">PIN: {{ticket.numberCode}}</p>
+              </div>
+            </div>
           </div>
 
+
         </div>
-      </section>
+      </div>
 
 
     </main>

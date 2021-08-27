@@ -57,12 +57,16 @@ const app = Vue.createApp({
                 }
                 product.stock--
 
+<<<<<<< HEAD
 
 
 
 
 
                 product.stock--
+=======
+                axios.put("/api/products/", "id=" + product.id)
+>>>>>>> 70bb237d544640f5dbfe28df94d5d993ebfa2815
 
                 axios.put("/api/cart/" + this.currentClient.id,
                     (this.cart)

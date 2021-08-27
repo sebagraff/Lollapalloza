@@ -38,9 +38,9 @@ public class Cart {
 
     public void setProductsInCart(Set<ProductInCart> productsInCart) {this.productsInCart = productsInCart;}
 
-    /*public Set<TicketInCart> getTicketsInCart() {return ticketsInCart;}
+    public Set<TicketInCart> getTicketsInCart() {return ticketsInCart;}
 
-    public void setTicketsInCart(Set<TicketInCart> ticketsInCart) {this.ticketsInCart = ticketsInCart;}*/
+    public void setTicketsInCart(Set<TicketInCart> ticketsInCart) {this.ticketsInCart = ticketsInCart;}
 
     public Client getClient() {return client;}
 
