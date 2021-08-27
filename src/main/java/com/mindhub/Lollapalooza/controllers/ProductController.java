@@ -41,10 +41,12 @@ public class ProductController {
         this.productRepository.save(new Product(productDTO.getName(), productDTO.getPrice(), productDTO.getType(), productDTO.getDescription(), productDTO.getStock(), productDTO.getImage()));
         return new ResponseEntity<>("Producto agregado correctamente", HttpStatus.ACCEPTED);
     }
-    @PutMapping("/products/{id}")
-    public ResponseEntity<?> discountStock(@PathVariable Long id){
+    @PutMapping("/products")
+    public ResponseEntity<?> discountStock(@RequestParam long id){
         Product product = productRepository.findById(id).get();
         product.setStock(product.getStock() - 1);
+
+        productRepository.save(product);
         return new ResponseEntity<>("Descontado con éxito", HttpStatus.OK);
     }
 }
