@@ -16,7 +16,7 @@ public class Photo {
     private String imgUrl;
     private String description;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "photo", fetch = FetchType.EAGER)
     private Set<Comment> comments = new HashSet<>();
     public Set<Comment> getComments() {
         return comments;
