@@ -15,20 +15,21 @@ const app = Vue.createApp({
             .then(res => {
                 this.products = res.data
                 this.AuxProducts = this.products.sort((a, b) => b.price - a.price);
+                console.log(this.AuxProducts);
 
             })
         axios.get("/api/clients/current")
             .then(res => {
                 this.currentClient = res.data
-                console.log(this.currentClient.id)
+                console.log(this.currentClient);
 
             }).then(() => {
                 axios.get("/api/cart/" + this.currentClient.id)
                     .then(res => {
-                        this.cart = res.data.productsInCart
-                    })
-            })
+                        this.cart = res.data.productsInCart;
 
+                    })
+            }).catch(res => console.log(res.response))
 
     },
 
@@ -71,11 +72,11 @@ const app = Vue.createApp({
                     console.log("agregado")
                 })
 
-            }else{
+            } else {
                 Swal.fire({
                     title: 'Por favor, inicie sesión',
-                  })
-                  
+                })
+
             }
 
 
