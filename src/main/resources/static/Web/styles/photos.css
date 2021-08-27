@@ -25,7 +25,6 @@ body {
     min-height: 100vh;
     background-color: #fafafa;
     color: #262626;
-    padding-bottom: 3rem;
 }
 
 img {
@@ -569,3 +568,559 @@ Remove or comment-out the code block below to see how the browser will fall-back
     vertical-align: middle;
     border-radius: 2px;
   }
+
+  /* -----------------------------------Footer-------------------------*/
+
+
+#up{
+    height: 35vh;
+    background-color: black;
+    display: flex;
+    color: white;
+
+}
+
+#up > div{
+    width: 100vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.upBlock > h3{
+    margin-top: 1.5rem;
+}
+
+.upBlock > p{
+    margin: 0.4rem;
+}
+
+.upBlock4 > h3{
+    margin-top: 1.5rem;
+}
+
+input[type=text]{
+    margin-top: 0.5rem;
+    width: 70%;
+}
+
+.btn-newsLetter{
+    width: 50%;
+    margin: 0.5rem;
+    padding: 0.7rem;
+    border-radius: 40%;
+    -webkit-border-radius: 4;
+}
+
+#down{
+    height: 15vh;
+    border-top: 1px solid rgb(66, 93, 110);
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-family: var(--bs-font-sans-serif);
+}
+
+a:hover{
+    color: white;
+}
+
+#down p {
+    margin: 0;
+    text-align: center;
+}
+.ancle{
+    color: white;
+    text-decoration: none;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.ancle:hover{
+    color: white;
+}
+#button{
+    width: 50%;
+    margin: 0.5rem;
+    padding: 0.7rem;
+    border-radius: 40%;
+    -webkit-border-radius: 4;
+}
+/* -----------------------------------Media Queries -------------------------*/
+@media only screen and (min-width: 693px){
+
+/*------------------------info Cards-----------------*/
+
+.card-img-top{
+    width: 106%!important;
+    height: 25vh!important;
+    background-size: cover;
+}
+
+
+.col{
+    width: 50vw!important;
+}
+
+.info-cards{
+   
+    display: flex;
+    justify-content: center;
+    max-width: 100vw!important;
+    min-height: 50vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 5vh;
+    height: 68vh!important;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 40vw;
+    padding: 0 1vw;
+    height: 65vh!important;
+    margin: 1vw ;
+}
+
+
+.card-body{
+    max-height: 50vw!important;
+    padding: 0!important;
+}
+
+.card-body .card-title{
+    color: gray;
+    text-align: center;
+    margin-top: 1vh;
+    margin: 1vw;
+    min-width: 25%;
+}
+
+.card-body .card-text{
+    font-size: 3vh;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dateEvent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5vw;
+
+}
+
+.dateEvent p{
+    font-weight: bold;
+
+}
+.dateEvent h2{
+    font-size: 6vh;
+    color: var(--color1)!important;
+}
+
+
+
+.dateEventContainer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1.5vh;
+
+}
+
+/*-------------------------Slider--------------------*/
+
+.slider{
+    max-width: 100vw!important;
+}
+
+.d-block{
+    width: 100%;
+    background-size: cover;
+}
+
+
+}
+@media only screen and (min-width: 900px){
+    .card-img-top{
+        width: 107%!important;
+        height: 25vh!important;
+        background-size: cover;
+    }
+
+    .col{
+        width: 33vw!important;
+    }
+
+
+
+    .info-cards{
+       
+        height: 68vh!important;
+        margin-top: 5vh;
+
+    }
+
+    .card{
+        height: 65vh!important;
+        margin: 1vw ;
+    }
+
+}
+
+@media only screen and (min-width: 985px){
+    .card{
+        height: 65vh!important;
+        margin: 1vw ;
+    }
+    .card-img-top{
+    width: 107%!important;
+    height: 25vh!important;
+    background-size: cover;
+}
+.info-cards{
+    height: 68vh!important;
+    margin-top: 5vh;
+}
+}
+
+@media only screen and (min-width: 1200px){
+    .card{
+        height: 65vh!important;
+        margin: 1vw ;
+    }
+
+    .card-img-top{
+        width: 107%!important;
+        height: 25vh!important;
+        background-size: cover;
+    }
+    .col{
+        max-height: 85vh;
+    }
+
+    .info-cards{
+        height: 68vh!important;
+        margin-top: 5vh;
+    }
+}
+/* ------------------TICKETS------------------ */
+.body-tickets{
+    margin: 0;
+    width: 100vw;
+}
+
+#header-tickets{
+    width: 100vw;
+    height: 90vh;
+    background-color: lightskyblue;
+    background-image: url(../assets/fondologin.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;    
+}
+
+.div1-tickets{
+    width: 100vw;
+    height: 17vh;
+    background-color: #03A688;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+}
+
+.div1-tickets h1{
+    color: #F23838;
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+}
+
+#tickets-logo{
+    /* margin: 0 2rem; */
+    width: 10vw;
+}
+
+#ingresarButton{
+    /* margin: 0rem 2rem ; */
+    padding: 0.5rem;
+    height: 6vh;
+    color: #0D0D0D;
+    background-color: #F23838;
+}
+
+#main-tickets{
+    min-height: 150vh;
+    /* background-color: #0D0D0D; */
+}
+
+#main-tickets h2{
+    display: flex;
+    justify-content: center;
+}
+
+.ticket-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-card-css{
+    margin-bottom: 10px;
+    width: 49%;
+    color: #989898;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: table-row;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    /* display: flex;
+    align-items: center; */
+}
+
+.ticket-date-css {
+    width: 25%;
+    height: 100%;
+    border-right: 2px dashed #dadde6;
+    display: table-cell;
+    /* position: relative; */
+    text-align: center;
+} 
+
+.ticket-date-css span:last-child {
+    /* margin-top: -10px; */
+    /* height: 100%; */
+    /* margin: 100% 0 0 0; */
+    color: #2b2b2b;
+    font-size: 250%;
+    font-weight: 600;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purchaseButton{
+    display: flex;
+    align-items: flex-end;
+}
+
+input[type="button"]{
+    height: 5vh;
+}
+
+#footer-tickets{
+    height: 10vh;
+    color: #F23838;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+.fl-left{float: left}
+
+.fl-right{float: right}
+
+.ticket-container
+{
+  width: 90%;
+  margin: 100px auto
+}
+
+.main-ticket-h1
+{
+  text-transform: uppercase;
+  font-weight: 900;
+  border-left: 10px solid #fec500;
+  padding-left: 10px;
+  margin-bottom: 30px
+}
+
+.ticket-row{overflow: hidden}
+
+.ticket-card
+{
+  display: table-row;
+  width: 49%;
+  background-color: #fff;
+  color: #989898;
+  margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  border-radius: 4px;
+  position: relative
+}
+
+.ticket-card + .ticket-card{margin-left: 2%}
+
+.ticket-date
+{
+  display: table-cell;
+  width: 25%;
+  position: relative;
+  text-align: center;
+  border-right: 2px dashed #dadde6
+}
+
+.ticket-date:before,
+.ticket-date:after
+{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #DADDE6;
+  position: absolute;
+  top: -15px ;
+  right: -15px;
+  /* z-index: 1; */
+  border-radius: 50%
+}
+
+.ticket-date:after
+{
+  top: auto;
+  bottom: -15px
+}
+
+.ticket-date time
+{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+
+.ticket-date time span{display: block}
+
+.ticket-date time span:first-child
+{
+  color: #2b2b2b;
+  font-weight: 600;
+  font-size: 250%
+}
+
+.ticket-date time span:last-child
+{
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: -10px
+}
+
+.ticket-card-cont
+{
+  display: table-cell;
+  width: 75%;
+  font-size: 85%;
+  padding: 10px 10px 30px 50px
+}
+
+.ticket-card-cont h3
+{
+  color: #3C3C3C;
+  font-size: 130%
+}
+
+.ticket-row:last-child .ticket-card:last-of-type .ticket-card-cont h3
+{
+  text-decoration: line-through
+}
+
+.ticket-card-cont > div
+{
+  display: table-row
+}
+
+.ticket-card-cont .even-date i,
+.ticket-card-cont .even-info i,
+.ticket-card-cont .even-date time,
+.ticket-card-cont .even-info p
+{
+  display: table-cell
+}
+
+.ticket-card-cont .even-date i,
+.ticket-card-cont .even-info i
+{
+  padding: 5% 5% 0 0
+}
+
+.ticket-card-cont .even-info p
+{
+  padding: 30px 50px 0 0
+}
+
+.ticket-card-cont .even-date time span
+{
+  display: block
+}
+
+.ticket-card-cont a
+{
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  background-color: #D8DDE0;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+
+.ticket-row:last-child .ticket-card:first-child .ticket-card-cont a
+{
+  background-color: #037FDD
+}
+
+.ticket-row:last-child .ticket-card:last-child .ticket-card-cont a
+{
+  background-color: #F8504C
+}
+
+@media screen and (max-width: 860px)
+{
+  .ticket-card
+  {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-bottom: 10px
+  }
+  
+  .ticket-card + .ticket-card{margin-left: 0}
+  
+  .ticket-card-cont .even-date,
+  .ticket-card-cont .even-info
+  {
+    font-size: 75%
+  }
+}
