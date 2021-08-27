@@ -39,6 +39,12 @@ const app = Vue.createApp({
     },
 
     computed: {
+
+        logout() {
+            axios.post('/api/logout')
+                .then(response => window.location.href = "/index.html")
+        },  
+        
         filterArtist() {
             if (this.inputSearch != "") {
                 this.musicBandsAux = this.musicbands.filter(artist => artist.bandName.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
