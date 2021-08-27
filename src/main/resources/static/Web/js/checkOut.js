@@ -39,7 +39,7 @@ const app = Vue.createApp({
     computed: {
         ecuacionTotal(){
             let suma=0;
-            for(let i=0;i<this.carrito.length;i++){
+            for(let i=0;i<this.carrito.lista.length;i++){
                 console.log(this.carrito);
             }
             console.log(suma)

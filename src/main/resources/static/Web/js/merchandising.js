@@ -6,7 +6,7 @@ const app = Vue.createApp({
             inputSearch: "",
             cart: [],
             totalCart: 0,
-            currentClient: "",
+            currentClient: [],
         }
     },
 
@@ -26,10 +26,11 @@ const app = Vue.createApp({
             }).then(() => {
                 axios.get("/api/cart/" + this.currentClient.id)
                     .then(res => {
-                        this.cart = res.data.productsInCart;
-
+                        this.cart = res.data.productsInCart
+                        this.totalCart = res.data.totalPrice
                     })
-            }).catch(res => console.log(res.response))
+            })
+            .catch(res => console.log(res.response))
 
     },
 
@@ -52,25 +53,16 @@ const app = Vue.createApp({
                     this.cart[atriculoIndexCarrito].count += 1
                     this.cart[atriculoIndexCarrito].price += this.cart[atriculoIndexCarrito].price
                 }
+
                 product.stock--
-
-
-
-
-                localStorage.setItem("cart", JSON.stringify(this.cart))
-                console.log(this.cart)
-
-                // this.productsInCart = this.productsInCart.filter(e => e.productName != product.name)
-                console.log(this.productsInCart)
-
-
-
 
                 axios.put("/api/cart/" + this.currentClient.id,
                     (this.cart)
                 ).then(res => {
                     console.log("agregado")
                 })
+
+                axios.post("/api/cart/" + this.currentClient.id + "/totalPrice", "totalPrice=" + this.totalCart)
 
             } else {
                 Swal.fire({
@@ -84,6 +76,7 @@ const app = Vue.createApp({
 
         }
     },
+
     computed: {
 
         filterProducts() {
