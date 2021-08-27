@@ -140,19 +140,30 @@ public class LollapaloozaApplication {
 
 
 			Client client =	new Client("jorgito", passwordEncoder.encode("123"));
-			Client client1 =	new Client("carlitos", passwordEncoder.encode("123"));
-			Client client2 =	new Client("maria", passwordEncoder.encode("123"));
-			Client client3 =	new Client("juanita", passwordEncoder.encode("123"));
-			Client client4 =	new Client("romina", passwordEncoder.encode("123"));
+			Client client1 =new Client("carlitos", passwordEncoder.encode("123"));
+			Client client2 =new Client("maria", passwordEncoder.encode("123"));
+			Client client3 =new Client("juanita", passwordEncoder.encode("123"));
+			Client client4 =new Client("romina", passwordEncoder.encode("123"));
+
+
+			Cart newCart = cartRepository.save(new Cart());
+			client.setCart(newCart);
+
+			Cart newCart1 = cartRepository.save(new Cart());
+			client1.setCart(newCart1);
+
+			Cart newCart2 = cartRepository.save(new Cart());
+			client2.setCart(newCart2);
+
+			Cart newCart3 = cartRepository.save(new Cart());
+			client3.setCart(newCart3);
+
+			Cart newCart4 = cartRepository.save(new Cart());
+			client4.setCart(newCart4);
 			clientRepository.save(client2);
 			clientRepository.save(client3);
 			clientRepository.save(client4);
 			clientRepository.save(client1);
-
-
-			Cart newCart = cartRepository.save(new Cart());
-
-			client.setCart(newCart);
 			clientRepository.save(client);
 //
 			Ticket ticket1 = new Ticket(5000, dia1.getDate(), MyUtils.getRandomNumber(1,10000),client,sede1.getName());

@@ -59,6 +59,7 @@ body::-webkit-scrollbar-thumb{
     width: 100vw;
     height: 90vh;
     background-size: cover!important;
+    background-position: center;
 }
 /*-------------------------Filter--------------------*/
 #filtros{
