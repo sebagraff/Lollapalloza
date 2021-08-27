@@ -18,7 +18,6 @@ const app = Vue.createApp({
                 console.log(res)
                 this.tickets = res.data
                 console.log(this.tickets)
-                // this.date = res.data.date.split
             })
 
         axios.get("/api/clients/current")
