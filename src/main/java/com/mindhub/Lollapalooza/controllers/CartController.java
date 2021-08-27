@@ -28,8 +28,8 @@ public class CartController {
     @Autowired
     ProductInCartRepository productInCartRepository;
 
-    @Autowired
-    TicketInCartRepository ticketInCartRepository;
+    /*@Autowired
+    TicketInCartRepository ticketInCartRepository;*/
 
     @GetMapping("/cart/{id}")
     public CartDTO getClientCart(@PathVariable Long id){
@@ -52,7 +52,7 @@ public class CartController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/cart/{id}")
+    /*@PutMapping("/cart/{id}")
     public ResponseEntity<?> addTicketToCart(@PathVariable Long id, @RequestBody Set<TicketInCart> ticketInCarts){
         Client client = this.clientRepository.findById(id).get();
         Cart cart = client.getCart();
@@ -62,6 +62,6 @@ public class CartController {
         cart.setTicketsInCart(ticketInCarts);
         ticketInCartRepository.saveAll(ticketInCarts);
         return new ResponseEntity<>(HttpStatus.CREATED);
-    }
+    }*/
 
 }
