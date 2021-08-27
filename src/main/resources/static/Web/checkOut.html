@@ -42,6 +42,11 @@
             <div class="line" id="divider"></div>
             <section id="derecha">
                 <div id="carrito">
+                    <div class="tags">
+                        <h6>Product</h6>
+                        <h6>Price per unit</h6>
+                        <h6>Quantity</h6>
+                    </div>
                     <div v-for="item in carrito">
                         <p>{{item.productName}}</p>
                         <p>${{item.productPrice}}</p>
@@ -50,15 +55,15 @@
                 </div>
                 <div>
                     <h5>Subtotal</h5>
-                    <h5>{{subTotal}}</h5>
+                    <h5>${{subTotal}}</h5>
                 </div>
                 <div id="taxes">
                     <h5>Taxes (estimated)</h5>
-                    <h5>{{taxes}}</h5>
+                    <h5>${{taxes}}</h5>
                 </div>
                 <div>
                     <h4>Total</h4>
-                    <h4>{{total}}</h4>
+                    <h4>${{total}}</h4>
                 </div>
                 <button>Pay Now!</button>
             </section>
