@@ -755,7 +755,6 @@ input[type="button"]{
 }
 
 .fila-ticket:nth-child(2){
-    color: red;
     line-height: 15px;
 }
 
@@ -781,7 +780,7 @@ input[type="button"]{
     align-items: center;
 }
 /* and  */
-@media (max-width: 1020px){
+@media (min-width: 900px){
 
     .pregunta{
         height: 15vh;
@@ -798,6 +797,7 @@ input[type="button"]{
     }
     
     .evento{
+        padding: 0.5rem;
         display: flex;
         justify-content: space-between; 
         align-items: center;
@@ -881,7 +881,6 @@ input[type="button"]{
     }
     
     .fila-ticket:nth-child(2){
-        color: red;
         line-height: 15px;
     }
     
