@@ -32,6 +32,11 @@ main{
     text-align: center;
 }
 
+.table-responsive{
+    width: 100%;
+    overflow-y: auto;
+}
+
 #mp,#dc,#pp{
     background-size:cover;
     background-position: center;
@@ -102,18 +107,25 @@ main{
 }
 #carrito{
     height: 45%;
-    border-bottom: 1px solid grey;
+    width: 100%;
+    /*border-bottom: 1px solid grey;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;*/
+}/*
+
+.tags{
+    background-color: red;
 }
 #carrito>div{
     display: flex;
-    width: 100%;
+    width: 33%;
     flex-direction: row;
     height: 25%;
     justify-content: space-between;
     border-bottom: 1px solid grey;
-}
+    align-content: center;
+    background-color: violet;
+}*/
 #taxes{
     border-bottom: 1px solid grey;
 }

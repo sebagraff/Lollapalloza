@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             currentClient:0,
-            carrito:{lista:[]},
+            carrito:[],
             subTotal:0,
             total:0,
             taxes:0,
@@ -15,38 +15,40 @@ const app = Vue.createApp({
                 this.currentClient = res.data
 
             }).then(() => {
-                axios.get("/api/cart/" + this.currentClient.id)
+                axios.get("/api/cart/")
                     .then(qwer => {
-                        //res.data.productsInCart.forEach(item=>this.carrito.push(item));
-                        /*this.carrito = Object.values(qwer.data.productsInCart);
-                        console.log(this.carrito)*/
-                        //console.log(qwer.data.productsInCart)
-                        let caca=[]
                         qwer.data.productsInCart.forEach(item=>{
-                            caca.push(item)
+                            this.carrito.push(item)
                         })
-                        this.carrito.lista=(caca)
-                        console.log(this.carrito.lista)
+                        this.ecuacionTotal;
                     })
             })
-        .then(this.ecuacionTotal)
+        
     },
 
     methods: {
-        
+        createPdf(){
+            let table = document.getElementById("table")
+            let doc = new jsPDF();
+
+            doc.fromHTML(table, 15, 15)
+            doc.text(10, 200, "Total:  $" + this.total)
+
+            doc.save("factura.pdf")
+        }
     },
 
     computed: {
         ecuacionTotal(){
             let suma=0;
-            for(let i=0;i<this.carrito.lista.length;i++){
-                console.log(this.carrito);
-            }
+            this.carrito.forEach(item=>{
+                suma=suma+item.productPrice;
+            })
             console.log(suma)
             this.subTotal=suma;
             this.taxes=(suma*0.1);
             this.total=suma+this.taxes;
-        }
+        },
     },
 
 })

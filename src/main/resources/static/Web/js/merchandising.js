@@ -24,8 +24,10 @@ const app = Vue.createApp({
                 console.log(this.currentClient);
 
             }).then(() => {
-                axios.get("/api/cart/" + this.currentClient.id)
+                axios.get("/api/cart/")
                     .then(res => {
+
+                        console.log(res.data)
                         this.cart = res.data.productsInCart
                         this.totalCart = res.data.totalPrice
                     })
@@ -53,6 +55,12 @@ const app = Vue.createApp({
                     this.cart[atriculoIndexCarrito].count += 1
                     this.cart[atriculoIndexCarrito].price += this.cart[atriculoIndexCarrito].price
                 }
+                product.stock--
+
+
+
+
+
 
                 product.stock--
 
