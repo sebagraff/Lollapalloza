@@ -81,7 +81,8 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li v-for="product in cart"><a class="dropdown-item"
-                                        href="#"></a>{{product.productName}}<span class="text-success"> cantidad:
+                                        href="#"></a>{{product.productName}} ${{product.productPrice}}<span
+                                        class="text-success"> cantidad:
                                         {{product.productQuantity}} </span></a></li>
                                 <li v-show="(cart.length === 0)"><a class="dropdown-item" href="#">No hay ningun
                                         producto
