@@ -26,7 +26,7 @@ const app = Vue.createApp({
             }).then(() => {
                 axios.get("/api/cart/" + this.currentClient.id)
                     .then(res => {
-                        console.log(res.data)
+                        this.cart = res.data.productsInCart
                     })
             })
 
@@ -35,38 +35,46 @@ const app = Vue.createApp({
 
     methods: {
         handlePushCarrito(product) {
-            this.totalCart += product.price;
-            console.log(this.totalCart)
-            let atriculoIndexCarrito = this.cart.findIndex(e => e.id == product.id)
+            if (this.currentClient.user != null) {
+                this.totalCart += product.price;
+                console.log(this.totalCart)
+                let atriculoIndexCarrito = this.cart.findIndex(e => e.id == product.id)
 
-            if (atriculoIndexCarrito == -1) {
-                this.cart.push({
-                    "id": product.id,
-                    "productName": product.name,
-                    "productQuantity": 1,
-                    "productPrice": product.price
+                if (atriculoIndexCarrito == -1) {
+                    this.cart.push({
+                        "id": product.id,
+                        "productName": product.name,
+                        "productQuantity": 1,
+                        "productPrice": product.price
+                    })
+                } else {
+                    this.cart[atriculoIndexCarrito].count += 1
+                    this.cart[atriculoIndexCarrito].price += this.cart[atriculoIndexCarrito].price
+                }
+                product.stock--
+
+
+
+                localStorage.setItem("cart", JSON.stringify(this.cart))
+                console.log(this.cart)
+
+                // this.productsInCart = this.productsInCart.filter(e => e.productName != product.name)
+                console.log(this.productsInCart)
+
+
+
+                axios.put("/api/cart/" + this.currentClient.id,
+                    (this.cart)
+                ).then(res => {
+                    console.log("agregado")
                 })
-            } else {
-                this.cart[atriculoIndexCarrito].count += 1
-                this.cart[atriculoIndexCarrito].price += this.cart[atriculoIndexCarrito].price
+
+            }else{
+                Swal.fire({
+                    title: 'Por favor, inicie sesión',
+                  })
+                  
             }
-            product.stock--
-
-
-
-            localStorage.setItem("cart", JSON.stringify(this.cart))
-            console.log(this.cart)
-
-            // this.productsInCart = this.productsInCart.filter(e => e.productName != product.name)
-            console.log(this.productsInCart)
-
-
-
-            axios.put("/api/cart/" + this.currentClient.id,
-                (this.cart)
-            ).then(res => {
-                console.log("agregado")
-            })
 
 
         }
@@ -76,7 +84,7 @@ const app = Vue.createApp({
         filterProducts() {
             if (this.inputSearch != "") {
                 this.AuxProducts = this.products.filter(product => product.name.toUpperCase().indexOf(this.inputSearch.toUpperCase()) !== -1)
-            }else if(this.inputSearch == ""){
+            } else if (this.inputSearch == "") {
                 this.AuxProducts = this.products
             }
         }
