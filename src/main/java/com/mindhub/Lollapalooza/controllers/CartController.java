@@ -31,10 +31,12 @@ public class CartController {
     /*@Autowired
     TicketInCartRepository ticketInCartRepository;*/
 
-    @GetMapping("/cart/{id}")
-    public CartDTO getClientCart(@PathVariable Long id){
-        if (id != 0){
-            return new CartDTO(this.cartRepository.findById(id).get());
+    @GetMapping("/cart/")
+    public CartDTO getClientCart( Authentication authentication){
+
+        Client client = this.clientRepository.findByUser(authentication.getName());
+        if (client.getCart() != null){
+            return new CartDTO(client.getCart());
         }else{
             return new CartDTO();
         }
