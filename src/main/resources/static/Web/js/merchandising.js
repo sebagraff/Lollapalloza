@@ -34,6 +34,7 @@ const app = Vue.createApp({
 
     methods: {
         handlePushCarrito(product) {
+
             if (this.currentClient.user != null) {
                 this.totalCart += product.price;
                 console.log(this.totalCart)
@@ -54,11 +55,13 @@ const app = Vue.createApp({
 
 
 
+
                 localStorage.setItem("cart", JSON.stringify(this.cart))
                 console.log(this.cart)
 
                 // this.productsInCart = this.productsInCart.filter(e => e.productName != product.name)
                 console.log(this.productsInCart)
+
 
 
 
@@ -74,6 +77,7 @@ const app = Vue.createApp({
                   })
                   
             }
+
 
             console.log(this.cart)
 
