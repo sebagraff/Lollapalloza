@@ -49,7 +49,6 @@ public class CommentController {
                                         @RequestBody CommentDTO commentDTO){
         Client client = clientRepository.findByUser(authentication.getName());
 
-
         return new ResponseEntity<>("Comentario creado", HttpStatus.ACCEPTED);
     };
 

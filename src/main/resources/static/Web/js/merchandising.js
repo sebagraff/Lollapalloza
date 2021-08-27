@@ -7,7 +7,6 @@ const app = Vue.createApp({
             cart: [],
             totalCart: 0,
             currentClient: "",
-            productsInCart: []
         }
     },
 
@@ -27,6 +26,10 @@ const app = Vue.createApp({
                 axios.get("/api/cart/" + this.currentClient.id)
                     .then(res => {
                         this.cart = res.data.productsInCart
+<<<<<<< HEAD
+=======
+                        console.log(this.cart)
+>>>>>>> 3f5acad127c8f2b3dbd1bde5d08044ea6fd74ca2
                     })
             })
 
@@ -35,6 +38,7 @@ const app = Vue.createApp({
 
     methods: {
         handlePushCarrito(product) {
+<<<<<<< HEAD
             if (this.currentClient.user != null) {
                 this.totalCart += product.price;
                 console.log(this.totalCart)
@@ -53,13 +57,35 @@ const app = Vue.createApp({
                 }
                 product.stock--
 
+=======
+            this.totalCart += product.price;
+            console.log(this.totalCart)
+            let atriculoIndexCarrito = this.cart.findIndex(e => e.id == product.id)
+
+            if (atriculoIndexCarrito == -1) {
+                this.cart.push({
+                    "id": product.id,
+                    "productName": product.name,
+                    "productQuantity": 1,
+                    "productPrice": product.price
+                })
+            } else {
+                this.cart[atriculoIndexCarrito].count += 1
+                this.cart[atriculoIndexCarrito].price += this.cart[atriculoIndexCarrito].price
+            }
+            product.stock--
+            axios.put("/api/products/" + product.id)
+>>>>>>> 3f5acad127c8f2b3dbd1bde5d08044ea6fd74ca2
 
 
                 localStorage.setItem("cart", JSON.stringify(this.cart))
                 console.log(this.cart)
 
+<<<<<<< HEAD
                 // this.productsInCart = this.productsInCart.filter(e => e.productName != product.name)
                 console.log(this.productsInCart)
+=======
+>>>>>>> 3f5acad127c8f2b3dbd1bde5d08044ea6fd74ca2
 
 
 
@@ -76,6 +102,7 @@ const app = Vue.createApp({
                   
             }
 
+            console.log(this.cart)
 
         }
     },

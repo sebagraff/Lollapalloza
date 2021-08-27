@@ -67,9 +67,9 @@
                         <div class="links">
                             <h3 class="text-white">Lollapalooza</h3>
                             <a href="index.html"><i class="fas fa-circle"></i> Inicio</a>
-                            <a href="bands.html"><i class="fas fa-circle"></i> Musica</a>
+                            <a href="bands.html"><i class="fas fa-circle"></i> Bandas</a>
                             <a href="merchandising.html"><i class="fas fa-circle"></i> Merchandising</a>
-                            <a href="#"><i class="fas fa-circle"></i> Entradas</a>
+                            <a href="tickets.html"><i class="fas fa-circle"></i> Entradas</a>
                         </div>
 
                         <div class="logOut">
@@ -82,25 +82,48 @@
                 <!-- -------------------DESKTOP------------ -->
                 <div class="links-desktop">
                     <div class="content-links">
+<<<<<<< HEAD
                         <a href="index.html"> <i class="fas fa-home"></i> Inicio</a>
                         <a href=""> <i class="fas fa-music"></i> Bandas</a>
+=======
+                        <a href="index.html"> <i class="fas fa-home"></i> Incio</a>
+                        <a href="bands.html"> <i class="fas fa-music"></i> Bandas</a>
+>>>>>>> 3f5acad127c8f2b3dbd1bde5d08044ea6fd74ca2
                         <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
-                        <a href=""> <i class="fas fa-ticket-alt"></i> Entradas</a>
+                        <a href="tickets.html"> <i class="fas fa-ticket-alt"></i> Entradas</a>
 
                         <div class="btn-group" v-if="currentClient.user != null">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 <i class="fas fa-shopping-cart text-dark">&nbsp; {{cart.length}} </i>
                             </button>
                             <ul class="dropdown-menu">
+<<<<<<< HEAD
                               <li v-for="product in cart" class="ms-2"><a class="dropdown-item" href="#"></a>{{product.productName}} ${{product.productPrice}}<span class="text-success"> cantidad: {{product.productQuantity}} </span></a></li>
                               <li v-show="(cart.length === 0)" ><a class="dropdown-item" href="#">No hay ningun producto seleccionado</a></li>
                               <hr class="dropdown-divider">
                               <li><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
                               <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="checkOut.html">Continuar con la compra</a></li>
+=======
+                                <li v-for="product in cart"><a class="dropdown-item"
+                                        href="#"></a>{{product.productName}}<span class="text-success"> cantidad:
+                                        {{product.productQuantity}} </span></a></li>
+                                <li v-show="(cart.length === 0)"><a class="dropdown-item" href="#">No hay ningun
+                                        producto seleccionado</a></li>
+                                <hr class="dropdown-divider">
+                                <li><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
+                                <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="#">Continuar con la
+                                        compra</a></li>
+>>>>>>> 3f5acad127c8f2b3dbd1bde5d08044ea6fd74ca2
                             </ul>
-                        </div> 
+                        </div>
 
+<<<<<<< HEAD
                         <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none" v-if="currentClient.user == null">Iniciar sesión</a>
+=======
+                        <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none"
+                            v-if="currentClient == null">Iniciar sesión</a>
+>>>>>>> 3f5acad127c8f2b3dbd1bde5d08044ea6fd74ca2
                     </div>
                 </div>
 
@@ -124,9 +147,11 @@
                 <div class="bg_image_view" :style='{ backgroundImage: `url(${artist.image})` }'></div>
                 <div id="content_description" class="d-flex flex-column justify-content-aroud">
                     <div>
-                        <h3 class="fst-italic text-dark fw-bolder rounded-3 text-light name_genre text-center">{{artist.bandName}}
+                        <h3 class="fst-italic text-dark fw-bolder rounded-3 text-light name_genre text-center">
+                            {{artist.bandName}}
                         </h3>
-                        <h3 class="fst-italic text-dark fw-bolder rounded-3 text-light name_genre text-center">{{artist.genre}}</h3>
+                        <h3 class="fst-italic text-dark fw-bolder rounded-3 text-light name_genre text-center">
+                            {{artist.genre}}</h3>
                     </div>
                     <div class="d-flex flex-column">
                         <p class="text-center fw-bolder description__view">{{artist.description}}</p>
@@ -139,6 +164,49 @@
                 </div>
             </section>
         </main>
+        <footer>
+            <div>
+                <div id="up">
+                    <div class="upBlock">
+                        <h3>FESTIVAL</h3>
+                        <p><a class="ancle" href="../Web/tickets.html" target="_blank">Tickets</a></p>
+                        <p>Sponsors</p>
+                        <p>Prensa</p>
+                        <p><a class="ancle" href="../Web/merchandising.html" target="_blank">Merch</a></p>
+                    </div>
+                    <div class="upBlock">
+                        <h3>AYUDA</h3>
+                        <p>Contacto</p>
+                        <p>Información</p>
+                    </div>
+                    <div class="upBlock">
+                        <h3>SOCIAL</h3>
+                        <div class="d-flex"><i class="fab fa-instagram d-flex"><a class="ancle"
+                                    href="https://www.instagram.com/lollapaloozaar/?hl=es-la" target="_blank">
+                                    <p class="ms-1">Instagram</p>
+                                </a></i></div>
+                        <div class="d-flex"><i class="fab fa-facebook d-flex"><a class="ancle"
+                                    href="https://www.facebook.com/lollapaloozaar/" target="_blank">
+                                    <p class="ms-1">Facebook</p>
+                                </a></i></div>
+                        <div class="d-flex"><i class="fab fa-twitter d-flex"><a class="ancle"
+                                    href="https://twitter.com/lollapaloozaar" target="_blank">
+                                    <p class="ms-1">Twitter</p>
+                                </a></i></div>
+                        <div class="d-flex"><i class="fab fa-youtube d-flex"><a class="ancle"
+                                    href="https://www.youtube.com/channel/UC87T78G5VWLc28nKMd5KAHw" target="_blank">
+                                    <p class="ms-1">YouTube</p>
+                                </a></i></div>
+                    </div>
+
+                </div>
+                <div id="down">
+                    <p>&copy Lollapalooza</p>
+                    <p>Privacidad</p>
+                    <p>Términos y Condiciones</p>
+                </div>
+            </div>
+        </footer>
         <!-- script vue -->
         <script src="https://unpkg.com/vue@next"></script>
         <!-- script axios -->

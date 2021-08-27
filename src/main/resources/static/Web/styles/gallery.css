@@ -12,6 +12,8 @@ Flexbox and floats are used as a fallback so that browsers which don't support g
 
 :root {
     font-size: 10px;
+    --color1: rgb(250, 66, 56);
+    --color2: rgb(0,173,153);
 }
 
 *,
@@ -26,6 +28,14 @@ body {
     background-color: #fafafa;
     color: #262626;
     padding-bottom: 3rem;
+}
+
+body::-webkit-scrollbar{
+    width: 7px;
+    background:#000000!important;
+}
+body::-webkit-scrollbar-thumb{
+    background:var(--color1)!important;
 }
 
 img {
