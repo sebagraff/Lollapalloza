@@ -15,8 +15,8 @@ public class Cart {
 
 
 
-    /*@ManyToMany(mappedBy="Cart", fetch = FetchType.EAGER)
-    Set<TicketInCart> ticketsInCart;*/
+//    @ManyToMany(mappedBy="Cart", fetch = FetchType.EAGER)
+//    Set<TicketInCart> ticketsInCart;
 
     @OneToOne
     @JoinColumn(name = "Client_id")

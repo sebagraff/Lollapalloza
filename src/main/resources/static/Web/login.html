@@ -52,9 +52,9 @@
                         <h2>Registrarse</h2>
                         <input type="text" placeholder="Nombre completo">
                         <input type="text" placeholder="Email">
-                        <input type="text" placeholder="Usuario">
-                        <input type="password" placeholder="Contraseña">
-                        <button>Registrarse</button>
+                        <input v-model="userRegister" type="text" placeholder="Usuario">
+                        <input v-model="passwordRegister" type="password" placeholder="Contraseña">
+                        <button @click="register">Registrarse</button>
                     </form>
 
                 </div>

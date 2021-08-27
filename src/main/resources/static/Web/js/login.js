@@ -3,7 +3,9 @@ const app = Vue.createApp({
     data() {
         return {
             user: "",
-            password: ""
+            password: "",
+            userRegister: "",
+            passwordRegister: "",
         }
     },
 
@@ -12,9 +14,7 @@ const app = Vue.createApp({
     },
 
     methods: {
-        /*ticketsLoginButton(){
-            window.location.href="login.html"
-        }*/
+    
         login() {
 
 
@@ -23,6 +23,11 @@ const app = Vue.createApp({
                 .then(console.log("entro")).then(res => window.location.href="/Web/index.html")
 
         },
+
+        register(){
+            axios.post("/api/clients", "user=" + this.userRegister + "&password=" + this.passwordRegister)
+                .then(res => window.location.href="/Web/index.html")
+        }
     },
 
     computed: {
