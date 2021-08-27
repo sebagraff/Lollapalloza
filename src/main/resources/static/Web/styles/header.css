@@ -152,6 +152,11 @@ header{
     color: black;
 }
 
+.dropdown-menu.show {
+    padding: 3vh;
+    width: 25vw;
+}
+
 @media (min-width: 881px) {
 
     .btn-canvas{
