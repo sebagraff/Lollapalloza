@@ -29,7 +29,7 @@ const app = Vue.createApp({
             }).then(() => {
                 axios.get("/api/cart/" + this.currentClient.id)
                     .then(res => {
-                        this.cart = res.data.productsInCart;
+                        this.cart = res.data.ticketsInCart;
                     })
             }).catch(res => console.log(res.response))
     },
@@ -77,12 +77,6 @@ const app = Vue.createApp({
                     array.push(newArray[i]);
                 }
             }
-            // console.log(array)
-            // if(newArray.length > 1){
-            //     let arr = newArray.splice(1,newArray.length,"y")
-            //     console.log(arr)
-
-            // }
             return array.join(", ");
         }
 
