@@ -35,6 +35,11 @@ const app = Vue.createApp({
             }).catch(res => console.log(res.response))
     },
     methods: {
+        logout() {
+            axios.post('/api/logout')
+                .then(response => window.location.href = "index.html")
+        },  
+
         ticketsLoginButton() {
             window.location.href = "login.html"
         },

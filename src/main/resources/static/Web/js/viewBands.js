@@ -34,6 +34,10 @@ const app = Vue.createApp({
     },
 
     methods: {
+        logout() {
+            axios.post('/api/logout')
+                .then(response => window.location.href = "index.html")
+        },  
     },
 
     computed: {
