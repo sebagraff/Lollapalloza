@@ -14,6 +14,9 @@ const app = Vue.createApp({
             currentClient: {},
             cart: [],
             photos: {},
+            comment: "",
+            user: "",
+
         }
     },
 
@@ -37,7 +40,9 @@ const app = Vue.createApp({
         axios.get("/api/clients/current")
             .then(res => {
                 this.currentClient = res.data
+                this.user = this.currentClient.user
                 console.log(this.currentClient);
+                console.log(this.user);
 
             }).catch(res => console.log(res.response))
 
@@ -64,6 +69,10 @@ const app = Vue.createApp({
         splitForSpace(index, date) {
             let newArray = date.split(" ")
             return newArray[index]
+        },
+
+        submitComment(data){
+            axios.post("/api/comments", "description=" + this.comment + "&user=" + this.user + "&id=" + data.id).then(res => window.location.reload())
         }
 
     },

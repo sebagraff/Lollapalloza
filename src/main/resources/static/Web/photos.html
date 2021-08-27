@@ -219,11 +219,11 @@
                             <div class="body_comment">
                                 <div class="row">
                                     <div class="box_comment col-md-11">
-                                        <textarea class="commentar" placeholder="Agregar comentario..."></textarea>
+                                        <textarea v-model="comment" class="commentar" placeholder="Agregar comentario..."></textarea>
                                         <div class="box_post">
                                             <div class="pull-right">
 
-                                                <button onclick="submit_comment()" type="button" value="1">Post</button>
+                                                <button @click="submitComment(data)" type="button" value="1">Post</button>
                                             </div>
                                         </div>
                                     </div>
