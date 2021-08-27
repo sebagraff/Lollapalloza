@@ -133,13 +133,10 @@
                                         compra</a></li>
                             </ul>
                         </div>
-
-                        <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none"
-                            v-if="currentClient.user == null">Iniciar sesión</a>
                     </div>
                 </div>
 
-                <div class="login-user">
+                <div class="login-user" v-if="currentClient.user != null">
 
                     <div class="user-icon">
                         <i class="fas fa-user-circle"></i>
