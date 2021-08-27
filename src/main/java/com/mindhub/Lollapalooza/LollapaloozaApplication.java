@@ -140,6 +140,16 @@ public class LollapaloozaApplication {
 
 
 			Client client =	new Client("jorgito", passwordEncoder.encode("123"));
+			Client client1 =	new Client("carlitos", passwordEncoder.encode("123"));
+			Client client2 =	new Client("maria", passwordEncoder.encode("123"));
+			Client client3 =	new Client("juanita", passwordEncoder.encode("123"));
+			Client client4 =	new Client("romina", passwordEncoder.encode("123"));
+			clientRepository.save(client2);
+			clientRepository.save(client3);
+			clientRepository.save(client4);
+			clientRepository.save(client1);
+
+
 			Cart newCart = cartRepository.save(new Cart());
 
 			client.setCart(newCart);
@@ -160,20 +170,71 @@ public class LollapaloozaApplication {
 			ticketRepository.save(ticket12);
 			ticketRepository.save(ticket34);
 
-			Photo testphoto = new Photo("Titulo","url","descripcion");
-			photoRepository.save(testphoto);
+//			Photo testphoto = new Photo("Titulo","url","descripcion");
+//			photoRepository.save(testphoto);
+//
+//			Comment testcomment = new Comment("descript", client.getUser(), client, testphoto);
+//			commentsRepository.save(testcomment);
 
-			Comment testcomment = new Comment("descript", client.getUser(), client, testphoto);
-			commentsRepository.save(testcomment);
+			Photo photo1 = new Photo("Lenny Kravitz","https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/03/31221612/Lollapalooza-2019-Dia-3-Domingo-Lenny-Kravitz-39.jpg","Lenny Kravitz en el Lolla del 2019");
+			photoRepository.save(photo1);
 
-			Photo testphoto2 = new Photo("Titulo2","ur2l","descripcion2");
-			photoRepository.save(testphoto2);
+			Photo photo2 = new Photo("Dj Tiesto","https://i.ytimg.com/vi/eTGKyjCBVBU/hqdefault.jpg","Dj Tiesto en el Lolla del 2019");
+			photoRepository.save(photo2);
 
-			Comment testcomment2 = new Comment("descript2", client.getUser(), client, testphoto2);
-			commentsRepository.save(testcomment2);
+			Photo photo3 = new Photo("LineUp 2019","https://i.ytimg.com/vi/N6s3keuNIGI/maxresdefault.jpg","Este fue el LineUp de 2019, agradecemos a todas las bandas");
+			photoRepository.save(photo3);
 
-			Comment testcomment3 = new Comment("descript3", client.getUser(), client, testphoto);
-			commentsRepository.save(testcomment3);
+			Photo photo4 = new Photo("Yeeahhhhh","https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_750,h_663/http://mibuenosairesquerido.com/wp-content/uploads/2018/09/LOLLA_AR2017_0331_123157_3046_ALIVECOVERAGE.jpg","Lista la previa!");
+			photoRepository.save(photo4);
+
+			Photo photo5 = new Photo("Espiritu verde","https://www.elfederal.com.ar/wp-content/uploads/2019/04/domo-cesped-lollapalooza-espiritu-verde-matilde-moyano-el-federal.jpg","el espacio 'Espíritu Verde' del festival Lollapalooza Argentina 2019");
+			photoRepository.save(photo5);
+
+			Photo photo6 = new Photo("Cuidemos el planeta","https://www.elfederal.com.ar/wp-content/uploads/2019/04/rock-and-recycle-lollapalooza-el-federal.jpg","Colaboremos entre todos! Recuerden que hay espacios para reciclar");
+			photoRepository.save(photo6);
+
+			Photo photo7 = new Photo("LolaPalloza Argentina","https://cdn2www.mundo.com/fotos/201807/tiyu-600x400.jpg",";)");
+			photoRepository.save(photo7);
+
+			Photo photo8 = new Photo("La Mona Gimenez","https://indiehoy.com/wp-content/uploads/2019/04/36-mona_lollapalooza_dia1_matiascasalh-1.jpg","Quien se ha tomado todo el vino, oh oh oh oh oh oh");
+			photoRepository.save(photo8);
+
+			Photo photo9 = new Photo("Campo","https://video-images.vice.com/_uncategorized/1554137953044-color_lollapalooza_dia3_matiascasalh-11.jpeg","Foto de campo");
+			photoRepository.save(photo9);
+
+			Photo photo10 = new Photo("Patio de comidas","https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/03/31152342/Lollapalooza-Dia-3-Gastronomia-2.jpg","Empanadas de colores y helados veganos: las estrellas gourmet del Lollapalooza 2019");
+			photoRepository.save(photo10);
+
+
+			Comment comment1 = new Comment("Excelente", client.getUser(), client, photo1);
+			commentsRepository.save(comment1);
+
+			Comment comment2 = new Comment("Estuve ahi", client2.getUser(), client2, photo1);
+			commentsRepository.save(comment2);
+
+			Comment comment3 = new Comment("Que te parecio jorgito?", client3.getUser(), client3, photo1);
+			commentsRepository.save(comment3);
+
+			Comment comment4 = new Comment("Alta fiesta", client.getUser(), client, photo1);
+			commentsRepository.save(comment4);
+
+			Comment comment5 = new Comment("Buenisimo", client.getUser(), client, photo2);
+			commentsRepository.save(comment5);
+
+			Comment comment6 = new Comment("como extraño ese dia", client4.getUser(), client4, photo2);
+			commentsRepository.save(comment6);
+
+			Comment comment7 = new Comment("la pasamos bomba", client3.getUser(), client3, photo2);
+			commentsRepository.save(comment7);
+
+			Comment comment8 = new Comment("Fiiiiieeestaaaa", client.getUser(), client, photo3);
+			commentsRepository.save(comment8);
+
+			Comment comment9 = new Comment("eeeesaaaaaaa", client2.getUser(), client2, photo4);
+			commentsRepository.save(comment9);
+
+
 		};
 	}
 }

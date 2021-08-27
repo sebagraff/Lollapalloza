@@ -205,16 +205,20 @@ body::-webkit-scrollbar-thumb{
   word-spacing: 100vw;
 }
 
-/* Footer */
 
-#up {
+
+/* -----------------------------------Footer-------------------------*/
+
+
+#up{
   height: 35vh;
   background-color: black;
   display: flex;
   color: white;
+
 }
 
-#up>div {
+#up > div{
   width: 100vw;
   height: 35vh;
   display: flex;
@@ -223,24 +227,24 @@ body::-webkit-scrollbar-thumb{
   flex-wrap: wrap;
 }
 
-.upBlock>h3 {
+.upBlock > h3{
   margin-top: 1.5rem;
 }
 
-.upBlock>p {
+.upBlock > p{
   margin: 0.4rem;
 }
 
-.upBlock4>h3 {
+.upBlock4 > h3{
   margin-top: 1.5rem;
 }
 
-input[type=text] {
+input[type=text]{
   margin-top: 0.5rem;
   width: 70%;
 }
 
-.btn-newsLetter {
+.btn-newsLetter{
   width: 50%;
   margin: 0.5rem;
   padding: 0.7rem;
@@ -248,22 +252,22 @@ input[type=text] {
   -webkit-border-radius: 4;
 }
 
-#down {
+#down{
   height: 15vh;
   border-top: 1px solid rgb(66, 93, 110);
   background-color: black;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center ;
 }
 
-a {
+a{
   color: white;
   text-decoration: none;
   font-family: var(--bs-font-sans-serif);
 }
 
-a:hover {
+a:hover{
   color: white;
 }
 
@@ -271,18 +275,16 @@ a:hover {
   margin: 0;
   text-align: center;
 }
-
-.ancle {
+.ancle{
   color: white;
   text-decoration: none;
   font-family: var(--bs-font-sans-serif);
 }
 
-.ancle:hover {
+.ancle:hover{
   color: white;
 }
-
-#button {
+#button{
   width: 50%;
   margin: 0.5rem;
   padding: 0.7rem;

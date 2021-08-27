@@ -1,3 +1,9 @@
+
+:root{
+    --color1: rgb(250, 66, 56);
+    --color2: rgb(0,173,153);
+}
+
 header{
     height: 10vh;
     width: 100vw;
@@ -25,6 +31,27 @@ header{
     height: 8vh;
 }
 
+#imgHeader{
+    height: 8vh;
+    animation: sk-rotateplane 2.2s infinite ease-in-out;}
+
+    @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+@keyframes sk-rotateplane {
+    0% { 
+        transform: rotate(0deg);
+    }  100% { 
+        transform: rotate(360deg);
+    }
+      }
 
 .links{
     height: 50%;

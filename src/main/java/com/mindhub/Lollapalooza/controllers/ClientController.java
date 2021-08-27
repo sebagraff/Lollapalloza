@@ -13,6 +13,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -38,8 +40,12 @@ public class ClientController {
 
     }
 
-    @PostMapping("/clients")
+    @GetMapping("/clients")
+    public List<ClientDTO> getClients (){
+        return clientRepository.findAll().stream().map(ClientDTO::new).collect(Collectors.toList());
+    }
 
+    @PostMapping("/clients")
     public ResponseEntity<?> register(
 
 
