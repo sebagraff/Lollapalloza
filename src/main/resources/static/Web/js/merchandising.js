@@ -51,7 +51,7 @@ const app = Vue.createApp({
                 this.cart[atriculoIndexCarrito].price += this.cart[atriculoIndexCarrito].price
             }
             product.stock--
-
+            axios.put("/api/products/" + product.id)
 
 
             localStorage.setItem("cart", JSON.stringify(this.cart))
