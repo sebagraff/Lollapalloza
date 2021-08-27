@@ -5,6 +5,8 @@ const app = Vue.createApp({
             musicBandsAux: {},
             cart: [],
             inputSearch: "",
+            currentClient: [],
+            cart: [],
 
         }
     },
@@ -16,6 +18,19 @@ const app = Vue.createApp({
                 this.musicBandsAux = this.musicbands.sort((a, b) => b.bandName - a.bandName)
                 console.log(this.musicBandsAux);
             })
+
+            axios.get("/api/clients/current")
+            .then(res => {
+                this.currentClient = res.data
+                console.log(this.currentClient);
+
+            }).then(() => {
+                axios.get("/api/cart/" + this.currentClient.id)
+                    .then(res => {
+                        this.cart = res.data.productsInCart;
+                      
+                    })
+            }).catch(res => console.log(res.response))
 
     },
 

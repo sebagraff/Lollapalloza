@@ -44,13 +44,7 @@ public class CommentController {
         return this.commentsRepository.findById(id).map(CommentDTO::new).orElse(null);
     }
 
-    @PostMapping("/photos/current/comments")
-    public ResponseEntity<?> addComment(Authentication authentication,
-                                        @RequestBody CommentDTO commentDTO){
-        Client client = clientRepository.findByUser(authentication.getName());
 
 
-        return new ResponseEntity<>("Comentario creado", HttpStatus.ACCEPTED);
-    };
 
 }

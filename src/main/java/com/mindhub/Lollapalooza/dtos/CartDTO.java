@@ -10,12 +10,13 @@ public class CartDTO {
 
     private long id;
     private Set<ProductInCartDTO> productsInCart;
-
+    private Double totalPrice;
     public CartDTO() {
     }
 
     public CartDTO(Cart cart) {
         this.productsInCart = cart.getProductsInCart().stream().map(ProductInCartDTO::new).collect(Collectors.toSet());
+        this.totalPrice = cart.getTotalPrice();
     }
 
     public long getId() {
@@ -32,5 +33,13 @@ public class CartDTO {
 
     public void setProductsInCart(Set<ProductInCartDTO> productsInCart) {
         this.productsInCart = productsInCart;
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }

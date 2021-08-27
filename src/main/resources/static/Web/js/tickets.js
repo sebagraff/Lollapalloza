@@ -7,7 +7,8 @@ const app = Vue.createApp({
             stock: 0,
             detail: "",
             tickets: "",
-            currentClient: "",
+            currentClient: [],
+            cart: [],
 
         }
     },
@@ -21,11 +22,16 @@ const app = Vue.createApp({
             })
 
         axios.get("/api/clients/current")
-        .then(res => {
-            this.currentClient = res.data;
-            console.log(this.currentClient)
-        })
+            .then(res => {
+                this.currentClient = res.data
+                console.log(this.currentClient);
 
+            }).then(() => {
+                axios.get("/api/cart/" + this.currentClient.id)
+                    .then(res => {
+                        this.cart = res.data.productsInCart;
+                    })
+            }).catch(res => console.log(res.response))
     },
     methods: {
         ticketsLoginButton() {

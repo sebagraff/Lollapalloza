@@ -1,4 +1,3 @@
-
 let myCarousel = document.querySelector('#musicBandCarousel')
 let carousel = new bootstrap.Carousel(myCarousel, {
     interval: 5000,
@@ -14,6 +13,7 @@ const app = Vue.createApp({
             bandsDayFour: [],
             currentClient: {},
             cart: [],
+            photos: {},
         }
     },
 
@@ -42,9 +42,15 @@ const app = Vue.createApp({
             }).then(() => {
                 axios.get("/api/cart/" + this.currentClient.id)
                     .then(res => {
-                        this.cart = res.data.productsInCart;
+                        this.cart = res.data;
+                        console.log(this.cart.productsInCart);
                     })
             }).catch(res => console.log(res.response))
+
+            axios.get("http://localhost:8080/api/photos")
+            .then(res => {
+                this.photos = res.data
+            })
     },
 
     methods: {
@@ -64,4 +70,3 @@ const app = Vue.createApp({
 })
 
 app.mount("#app")
-

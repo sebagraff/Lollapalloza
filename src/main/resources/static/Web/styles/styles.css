@@ -182,7 +182,20 @@ main{
 /*------------------------info Cards-----------------*/
 
 
+.redirectToPurchase{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.redirectToPurchase input{
+    padding: 0vw 1vw!important;
+    border: none;
+    border-radius: 4%;
+    background-color: var(--color1);
+    color: white;
+    margin: 0 1vw;
+}
 
 .card-img-top{
     width: 100%!important;
@@ -447,20 +460,7 @@ a:hover{
     color: var(--color1)!important;
 }
 
-.redirectToPurchase{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.redirectToPurchase input{
-    padding: 1vw;
-    border: none;
-    border-radius: 4%;
-    background-color: var(--color1);
-    color: white;
-    margin: 0 1vw;
-}
 
 .dateEventContainer{
     display: flex;
@@ -672,9 +672,25 @@ input[type="button"]{
 }
 
 .evento{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
     height:5vh;
     background-color: orange;
     border: 1px solid grey;
+}
+
+.evento-titulo{
+
+}
+
+.evento-boton button{
+    background-color: #198754;
+    color: #f2f2f2;padding: .375rem .75rem;
+}
+
+.evento-img img{
+    width: 45px;
 }
 
 .contenedor-ticket{
@@ -765,117 +781,123 @@ input[type="button"]{
     align-items: center;
 }
 /* and  */
-@media (min-width: 1024px){
+@media (max-width: 1020px){
 
-#main-tickets{
-    min-height: 200vh;
+    .pregunta{
+        height: 15vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .contenedor{
+        margin: 2rem;
+        width: 60vw;
+        height: 44vh;
+        background-color: wheat;
+    }
+    
+    .evento{
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        height:11vh;
+        background-color: orange;
+        border: 1px solid grey;
+    }
+    
+    .evento-titulo{
+    
+    }
+    
+    .evento-boton button{
+        background-color: #198754;
+        color: #f2f2f2;padding: .375rem .75rem;
+    }
+    
+    .evento-img img{
+        width: 45px;
+    }
+    
+    .contenedor-ticket{
+        height:33vh;
+        background-color: white;
+        border: 1px solid black;
+    }
+    
+    .separador-ticket{
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    
+    .cabeza-ticket{
+        width: 28%;
+        height:100%;
+        /* background-color:tomato; */
+        border-right: 1px dashed grey;
+        display: flex;
+        /* justify-content: flex-start;
+        align-items: center; */
+        flex-direction: column;
+    }
+    
+    .cabeza-uno{
+        width: 100%;
+        height: 50%;
+        border-bottom: 1px dashed grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cabeza-dos{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .cuerpo-ticket{
+        width: 58%;
+        height:100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .fila-ticket{
+        padding-left: 1rem;
+        width: 100%;
+        height: 25%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .fila-ticket p{
+        font-weight: bold;
+    }
+    
+    .fila-ticket:nth-child(2){
+        color: red;
+        line-height: 15px;
+    }
+    
+    .cola-ticket{
+        height: 100%;
+        width: 14%;
+        border-left: 1px dashed grey;
+    }
+    
+    .cola-uno{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
-
-.pregunta{
-    padding: 15vh;
-    height: 15vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.contenedor{
-    margin: 2rem;
-    width: 50vw;
-    height: 40vh;
-    background-color: wheat;
-}
-
-.evento{
-    height: 10vh;
-    background-color: orange;
-    border: 1px solid grey;
-}
-
-.contenedor-ticket{
-    height: 30vh;
-    background-color: white;
-    border: 1px solid black;
-}
-
-.separador-ticket{
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-.cabeza-ticket{
-    width: 28%;
-    height:100%;
-    /* background-color:tomato; */
-    border-right: 1px dashed grey;
-    display: flex;
-    /* justify-content: flex-start;
-    align-items: center; */
-    flex-direction: column;
-}
-
-.cabeza-uno{
-    width: 100%;
-    height: 50%;
-    border-bottom: 1px dashed grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cabeza-dos{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cuerpo-ticket{
-    width: 58%;
-    height:100%;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.fila-ticket{
-    padding-left: 1rem;
-    width: 100%;
-    height: 25%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.fila-ticket p{
-    font-weight: bold;
-}
-
-.fila-ticket:nth-child(2){
-    color: red;
-    line-height: 15px;
-}
-
-.cola-ticket{
-    height: 100%;
-    width: 14%;
-    border-left: 1px dashed grey;
-}
-
-.cola-uno{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-}
-
-
-
-
 
 
 .fl-left{float: left}
