@@ -82,7 +82,7 @@
                 <!-- -------------------DESKTOP------------ -->
                 <div class="links-desktop">
                     <div class="content-links">
-                        <a href="index.html"> <i class="fas fa-home"></i> Incio</a>
+                        <a href="index.html"> <i class="fas fa-home"></i> Inicio</a>
                         <a href="bands.html"> <i class="fas fa-music"></i> Bandas</a>
                         <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
                         <a href="tickets.html"> <i class="fas fa-ticket-alt"></i> Entradas</a>
@@ -100,11 +100,10 @@
                             </ul>
                         </div> 
 
-                        <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none" v-if="currentClient.user == null">Iniciar sesión</a>
                     </div>
                 </div>
 
-                <div class="login-user">
+                <div class="login-user" v-if="currentClient.user != null">
 
                     <div class="user-icon">
                         <i class="fas fa-user-circle"></i>
@@ -112,6 +111,17 @@
 
                     <div class="user" v-if="currentClient.user != null">
                         <p class="text-white">{{currentClient.user}}</p>
+                    </div>
+
+                </div>
+                <div class="login-user" v-if="currentClient.user == null">
+
+                    <div class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+
+                    <div class="user">
+                        <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none" v-if="currentClient.user == null">Iniciar sesión</a>
                     </div>
 
                 </div>
