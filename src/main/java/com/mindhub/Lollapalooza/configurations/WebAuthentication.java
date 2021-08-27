@@ -23,36 +23,25 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
     @Autowired
     ClientRepository clientRepository;
 
-
-
     @Override
 
     public void init(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.userDetailsService(inputName-> {
-
             Client client = clientRepository.findByUser(inputName);
-
             if (client != null) {
-
                 if (client.getUser().equals("admin")) {
                     return new User(client.getUser(), client.getPassword(),
-
                             AuthorityUtils.createAuthorityList("ADMIN"));
                 } else{
-
                     return new User(client.getUser(), client.getPassword(),
 
                             AuthorityUtils.createAuthorityList("CLIENT"));
                 }
             } else {
-
                 throw new UsernameNotFoundException("Unknown user: " + inputName);
-
             }
-
         });
-
     }
     @Bean
 

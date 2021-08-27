@@ -25,10 +25,10 @@ public class TicketController {
     @Autowired
     ClientRepository clientRepository;
 
-//    @GetMapping("/tickets")
-//    public List<TicketDTO> getAll(){
-//        return this.ticketRepository.findAll().stream().map(TicketDTO::new).collect(Collectors.toList());
-//    }
+    @GetMapping("/tickets")
+    public List<TicketDTO> getAll(){
+        return this.ticketRepository.findAll().stream().map(TicketDTO::new).collect(Collectors.toList());
+   }
 //    public ResponseEntity<?> addProduct(@RequestBody TicketDTO ticketDTO){
 //        if(ticketDTO.getNumberCode() == 0 || ticketDTO.getPrice() == 0){
 //            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);

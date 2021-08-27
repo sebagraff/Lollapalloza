@@ -37,28 +37,34 @@ const app = Vue.createApp({
 
             })
 
-            axios.get("/api/clients/current")
+        axios.get("/api/clients/current")
             .then(res => {
                 this.currentClient = res.data
                 this.user = this.currentClient.user
                 console.log(this.currentClient);
                 console.log(this.user);
 
-            })/* .then(() => {
-                axios.get("/api/cart/" + this.currentClient.id)
-                    .then(res => {
-                        this.cart = res.data;
-                        console.log(this.cart.productsInCart);
-                    })
-            }) */.catch(res => console.log(res.response))
+            }).catch(res => console.log(res.response))
 
-            axios.get("http://localhost:8080/api/photos")
+        axios.get("http://localhost:8080/api/photos")
             .then(res => {
                 this.photos = res.data
+            })
+
+        axios.get("/api/cart/")
+            .then(res => {
+
+                console.log(res.data)
+                this.cart = res.data.productsInCart
+                this.totalCart = res.data.totalPrice
             })
     },
 
     methods: {
+        logout() {
+            axios.post('/api/logout')
+                .then(response => window.location.href = "index.html")
+        },  
 
         splitForSpace(index, date) {
             let newArray = date.split(" ")
