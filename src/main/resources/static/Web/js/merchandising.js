@@ -41,8 +41,11 @@ const app = Vue.createApp({
 
             if (this.currentClient.user != null) {
                 this.totalCart += product.price;
-                console.log(this.totalCart)
                 let atriculoIndexCarrito = this.cart.findIndex(e => e.id == product.id)
+
+
+
+
 
                 if (atriculoIndexCarrito == -1) {
                     this.cart.push({
@@ -52,8 +55,7 @@ const app = Vue.createApp({
                         "productPrice": product.price
                     })
                 } else {
-                    this.cart[atriculoIndexCarrito].count += 1
-                    this.cart[atriculoIndexCarrito].price += this.cart[atriculoIndexCarrito].price
+                    this.cart[atriculoIndexCarrito].productQuantity += 1
                 }
                 product.stock--
 
