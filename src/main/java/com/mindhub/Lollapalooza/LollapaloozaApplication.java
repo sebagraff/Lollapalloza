@@ -181,12 +181,6 @@ public class LollapaloozaApplication {
 			ticketRepository.save(ticket12);
 			ticketRepository.save(ticket34);
 
-//			Photo testphoto = new Photo("Titulo","url","descripcion");
-//			photoRepository.save(testphoto);
-//
-//			Comment testcomment = new Comment("descript", client.getUser(), client, testphoto);
-//			commentsRepository.save(testcomment);
-
 			Photo photo1 = new Photo("Lenny Kravitz","https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/03/31221612/Lollapalooza-2019-Dia-3-Domingo-Lenny-Kravitz-39.jpg","Lenny Kravitz en el Lolla del 2019");
 			photoRepository.save(photo1);
 
@@ -244,8 +238,6 @@ public class LollapaloozaApplication {
 
 			Comment comment9 = new Comment("eeeesaaaaaaa", client2.getUser(), client2, photo4);
 			commentsRepository.save(comment9);
-
-
 		};
 	}
 }

@@ -32,6 +32,11 @@ main{
     text-align: center;
 }
 
+.table-responsive{
+    width: 100%;
+    overflow-y: auto;
+}
+
 #mp,#dc,#pp{
     background-size:cover;
     background-position: center;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/checkOut.css">
 </head>
+
 <body>
     <div id="app">
         <header></header>
@@ -41,17 +43,23 @@
             </section>
             <div class="line" id="divider"></div>
             <section id="derecha">
-                <div id="carrito">
-                    <div class="tags">
-                        <h6>Product</h6>
-                        <h6>Price per unit</h6>
-                        <h6>Quantity</h6>
-                    </div>
-                    <div v-for="item in carrito">
-                        <p>{{item.productName}}</p>
-                        <p>${{item.productPrice}}</p>
-                        <p>{{item.productQuantity}}</p>
-                    </div>
+                <div class="table-responsive" id="table">
+                    <table class="table table-stripped">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in carrito">
+                                <td>{{item.productName}}</td>
+                                <td>{{item.productPrice}}</td>
+                                <td>{{item.productQuantity}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div>
                     <h5>Subtotal</h5>
@@ -66,6 +74,7 @@
                     <h4>${{total}}</h4>
                 </div>
                 <button>Pay Now!</button>
+                <button @click="createPdf">Exportar PDF</button>
             </section>
         </main>
     </div>
@@ -73,6 +82,8 @@
     <!-- script vue -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
+    <script src="./js/jspdf.min.js"></script>
     <script src="js/checkOut.js"></script>
 </body>
+
 </html>

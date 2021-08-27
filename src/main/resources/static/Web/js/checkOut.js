@@ -15,7 +15,7 @@ const app = Vue.createApp({
                 this.currentClient = res.data
 
             }).then(() => {
-                axios.get("/api/cart/" + this.currentClient.id)
+                axios.get("/api/cart/")
                     .then(qwer => {
                         qwer.data.productsInCart.forEach(item=>{
                             this.carrito.push(item)
@@ -27,7 +27,14 @@ const app = Vue.createApp({
     },
 
     methods: {
-        
+        createPdf(){
+            let table = document.getElementById("derecha")
+            let doc = new jsPDF();
+
+            doc.fromHTML(table, 15, 15)
+
+            doc.save("factura.pdf")
+        }
     },
 
     computed: {
@@ -40,7 +47,7 @@ const app = Vue.createApp({
             this.subTotal=suma;
             this.taxes=(suma*0.1);
             this.total=suma+this.taxes;
-        }
+        },
     },
 
 })

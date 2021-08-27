@@ -1,5 +1,46 @@
 
-/* Declaración de variables */
+const app = Vue.createApp({
+    data() {
+        return {
+            user: "",
+            password: "",
+            userRegister: "",
+            passwordRegister: "",
+        }
+    },
+
+    created() {
+
+    },
+
+    methods: {
+    
+        login() {
+
+
+            axios.post('/api/login', 'user=' + this.user + '&password=' + this.password)
+
+                .then(console.log("entro")).then(res => window.location.href="/Web/index.html")
+
+        },
+
+        register(){
+            axios.post("/api/clients", "user=" + this.userRegister + "&password=" + this.passwordRegister)
+                .then(res => Swal.fire('Ahora por favor, inicie sesión'))
+                .then(res => window.location.href="/Web/login.html")
+                .catch(res =>  Swal.fire('Ya existe el usuario'))
+        }
+    },
+
+    computed: {
+
+
+    }
+
+})
+
+app.mount("#app")
+
 let form_login = document.querySelector(".form__login")
 let form_register = document.querySelector(".form__register")
 let container_login_register = document.querySelector(".container__login-register")
@@ -62,38 +103,3 @@ const register = () => {
         back_box_login.style.opacity = "1";
     }
 }
-
-const app = Vue.createApp({
-    data() {
-        return {
-            user: "",
-            password: ""
-        }
-    },
-
-    created() {
-
-    },
-
-    methods: {
-        /*ticketsLoginButton(){
-            window.location.href="login.html"
-        }*/
-        login() {
-
-
-            axios.post('/api/login', 'user=' + this.user + '&password=' + this.password)
-
-                .then(console.log("entro")).then(res => window.location.href="/Web/index.html")
-
-        },
-    },
-
-    computed: {
-
-
-    }
-
-})
-
-app.mount("#app")
