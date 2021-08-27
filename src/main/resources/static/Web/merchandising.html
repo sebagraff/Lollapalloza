@@ -104,7 +104,6 @@
                         <a href="tickets.html"> <i class="fas fa-ticket-alt"></i> Entradas</a>
 
                         <div class="btn-group">
-<<<<<<< HEAD
                             <div class="btn-group" v-if="currentClient.user != null">
                                 <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-shopping-cart text-dark">&nbsp; {{cart.length}} </i>
@@ -120,25 +119,6 @@
 
                             <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none" v-if="currentClient.user == null">Iniciar sesión</a>
                             
-=======
-                            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="fas fa-shopping-cart text-dark">&nbsp; {{cart.length}} </i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li v-for="product in cart"><a class="dropdown-item"
-                                        href="#"></a>{{product.productName}}
-                                    ${{product.productPrice}} <span class="text-success"> cantidad:
-                                        {{product.productQuantity}}
-                                    </span></a></li>
-                                <li v-show="(cart.length === 0)"><a class="dropdown-item" href="#">No hay ningun
-                                        producto seleccionado</a></li>
-                                <hr class="dropdown-divider">
-                                <li><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
-                                <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="#">Continuar con la
-                                        compra</a></li>
-                            </ul>
->>>>>>> 3f5acad127c8f2b3dbd1bde5d08044ea6fd74ca2
                         </div>
 
                     </div>
