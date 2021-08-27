@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             currentClient:0,
-            carrito:{lista:[]},
+            carrito:[],
             subTotal:0,
             total:0,
             taxes:0,
@@ -17,19 +17,13 @@ const app = Vue.createApp({
             }).then(() => {
                 axios.get("/api/cart/" + this.currentClient.id)
                     .then(qwer => {
-                        //res.data.productsInCart.forEach(item=>this.carrito.push(item));
-                        /*this.carrito = Object.values(qwer.data.productsInCart);
-                        console.log(this.carrito)*/
-                        //console.log(qwer.data.productsInCart)
-                        let caca=[]
                         qwer.data.productsInCart.forEach(item=>{
-                            caca.push(item)
+                            this.carrito.push(item)
                         })
-                        this.carrito.lista=(caca)
-                        console.log(this.carrito.lista)
+                        this.ecuacionTotal;
                     })
             })
-        .then(this.ecuacionTotal)
+        
     },
 
     methods: {
@@ -39,9 +33,9 @@ const app = Vue.createApp({
     computed: {
         ecuacionTotal(){
             let suma=0;
-            for(let i=0;i<this.carrito.length;i++){
-                console.log(this.carrito);
-            }
+            this.carrito.forEach(item=>{
+                suma=suma+item.productPrice;
+            })
             console.log(suma)
             this.subTotal=suma;
             this.taxes=(suma*0.1);
