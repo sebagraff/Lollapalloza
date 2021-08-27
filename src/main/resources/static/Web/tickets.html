@@ -96,7 +96,8 @@
                     seleccionado</a></li>
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
-                <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="#">Continuar con la compra</a></li>
+                <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="checkOut.html">Continuar con la
+                    compra</a></li>
               </ul>
             </div>
           </div>
@@ -105,26 +106,26 @@
         <div class="login-user" v-if="currentClient.user != null">
 
           <div class="user-icon">
-              <i class="fas fa-user-circle"></i>
+            <i class="fas fa-user-circle"></i>
           </div>
 
           <div class="user" v-if="currentClient.user != null">
-              <p class="text-white">{{currentClient.user}}</p>
+            <p class="text-white">{{currentClient.user}}</p>
           </div>
 
-      </div>
-      <div class="login-user" v-if="currentClient.user == null">
+        </div>
+        <div class="login-user" v-if="currentClient.user == null">
 
           <div class="user-icon">
-              <i class="fas fa-user-circle"></i>
+            <i class="fas fa-user-circle"></i>
           </div>
 
           <div class="user">
-              <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none"
-                  v-if="currentClient.user == null">Iniciar sesión</a>
+            <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none"
+              v-if="currentClient.user == null">Iniciar sesión</a>
           </div>
 
-      </div>
+        </div>
       </div>
     </header>
 
@@ -171,7 +172,7 @@
             <h1>Event</h1>
           </div>
           <div class="evento-boton">
-            <button>Comprar</button>
+            <button @Click="addToCart(ticket)">Agregar al Carrito</button>
           </div>
           <div class="evento-img">
             <img src="../Web/assets/logo.png" alt="">
