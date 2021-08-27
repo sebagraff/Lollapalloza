@@ -43,6 +43,7 @@ const app = Vue.createApp({
                 axios.get("/api/cart/" + this.currentClient.id)
                     .then(res => {
                         this.cart = res.data;
+                        console.log(this.cart.productsInCart);
                     })
             }).catch(res => console.log(res.response))
     },

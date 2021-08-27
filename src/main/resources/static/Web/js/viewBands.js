@@ -3,6 +3,8 @@ const app = Vue.createApp({
         return {
             artist: {},
             cart: [],
+            currentClient: [],
+            cart: [],
 
         }
     },
@@ -16,6 +18,19 @@ const app = Vue.createApp({
             console.log(this.artist);
         })
         .catch(err => console.log(err))
+
+        axios.get("/api/clients/current")
+            .then(res => {
+                this.currentClient = res.data
+                console.log(this.currentClient);
+
+            }).then(() => {
+                axios.get("/api/cart/" + this.currentClient.id)
+                    .then(res => {
+                        this.cart = res.data;
+                        console.log(this.cart.productsInCart);
+                    })
+            }).catch(res => console.log(res.response))
 
     },
 
