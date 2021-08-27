@@ -39,41 +39,49 @@ const app = Vue.createApp({
         logout() {
             axios.post('/api/logout')
                 .then(response => window.location.href = "index.html")
-        },  
+        },
 
         ticketsLoginButton() {
             window.location.href = "login.html"
         },
 
-        handlePushCarrito(ticket) {
-            this.totalCart += ticket.price;
-            console.log(this.totalCart)
-            let ticketIndexCarrito = this.cart.findIndex(e => e.id == ticket.id)
+        addToCart(product) {
+            console.log(ticket.id)
+            if (this.currentClient.user != null) {
+                this.totalCart += product.price;
+                let atriculoIndexCarrito = this.cart.findIndex(e => e.id == product.id)
 
-            if (ticketIndexCarrito == -1) {
-                this.cart.push({
-                    "id": ticket.id,
-                    "ticketName": ticket.name,
-                    "ticketQuantity": 1,
-                    "ticketPrice": ticket.price
+
+
+
+
+                if (atriculoIndexCarrito == -1) {
+                    this.cart.push({
+                        "id": product.id,
+                        "productName": product.name,
+                        "productQuantity": 1,
+                        "productPrice": product.price
+                    })
+                } else {
+                    this.cart[atriculoIndexCarrito].productQuantity += 1
+                }
+                product.stock--
+
+                axios.put("/api/products/", "id=" + product.id)
+
+                axios.put("/api/cart/" + this.currentClient.id,
+                    (this.cart)
+                ).then(res => {
+                    console.log("agregado")
                 })
+
+                axios.post("/api/cart/" + this.currentClient.id + "/totalPrice", "totalPrice=" + this.totalCart)
+
             } else {
-                this.cart[ticketIndexCarrito].count += 1
-                this.cart[ticketIndexCarrito].price += this.cart[ticketIndexCarrito].price
+                Swal.fire({
+                    title: 'Por favor, inicie sesión',
+                })
             }
-            ticket.stock--
-
-            localStorage.setItem("cart", JSON.stringify(this.cart))
-            console.log(this.cart)
-
-            // this.ticketsInCart = this.ticketsInCart.filter(e => e.ticketName != ticket.name)
-            console.log(this.ticketsInCart)
-
-            axios.put("/api/cart/" + this.currentClient.id,
-                (this.cart)
-            ).then(() => {
-                console.log("agregado")
-            })
         },
 
         splitForSpace(ticket) {

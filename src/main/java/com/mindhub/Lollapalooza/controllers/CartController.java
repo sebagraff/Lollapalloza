@@ -68,16 +68,9 @@ public class CartController {
 
     }
 
-//    @PutMapping("/cart/{id}/ticket")
-//    public ResponseEntity<?> addTicketToCart(@PathVariable Long id, @RequestBody Set<TicketInCart> ticketInCarts){
-//        Client client = this.clientRepository.findById(id).get();
-//        Cart cart = client.getCart();
-//
-//        this.ticketInCartRepository.deleteAll(cart.getTicketsInCart());
-//        ticketInCarts.forEach(ticketInCart -> ticketInCart.setCart(cart));
-//        cart.setTicketsInCart(ticketInCarts);
-//        ticketInCartRepository.saveAll(ticketInCarts);
-//        return new ResponseEntity<>(HttpStatus.CREATED);
-//    }
-
-}
+    @PostMapping("/cart/{id}/tickets")
+    public ResponseEntity<?> addPriceCart(@PathVariable Long id,  @RequestBody Set<TicketInCart> ticketsInCart) {
+    
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+    }
