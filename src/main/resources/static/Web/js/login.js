@@ -26,7 +26,9 @@ const app = Vue.createApp({
 
         register(){
             axios.post("/api/clients", "user=" + this.userRegister + "&password=" + this.passwordRegister)
-                .then(res => window.location.href="/Web/index.html")
+                .then(res => Swal.fire('Ahora por favor, inicie sesión'))
+                .then(res => window.location.href="/Web/login.html")
+                .catch(res =>  Swal.fire('Ya existe el usuario'))
         }
     },
 

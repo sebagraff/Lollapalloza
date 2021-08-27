@@ -25,27 +25,17 @@ public class TicketController {
     @Autowired
     ClientRepository clientRepository;
 
-    @GetMapping("/tickets")
-    public List<TicketDTO> getAll(){
-        return this.ticketRepository.findAll().stream().map(TicketDTO::new).collect(Collectors.toList());
-    }
-
-    /*@DeleteMapping("/tickets/{id}")
-    public ResponseEntity<?> deleteTicket(@PathVariable Long id){
-        Ticket ticket = ticketRepository.findById(id).get();
-        ticketRepository.delete(ticket);
-        return new ResponseEntity<>("Ticket eliminado con éxito", HttpStatus.OK);
-    }*/
-
-    @PostMapping("/products")
-    public ResponseEntity<?> addProduct(@RequestBody TicketDTO ticketDTO){
-        if(ticketDTO.getNumberCode() == 0 || ticketDTO.getPrice() == 0){
-            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
-        }
-
-        Client client = clientRepository.findByUser().get();
-
-        this.ticketRepository.save(new Ticket(ticketDTO.getPrice(),ticketDTO.getDate(), MyUtils.getRandomNumber(1,10000), client, ticketDTO.getSede()));
-        return new ResponseEntity<>("Producto agregado correctamente", HttpStatus.ACCEPTED);
-    }
+//    @GetMapping("/tickets")
+//    public List<TicketDTO> getAll(){
+//        return this.ticketRepository.findAll().stream().map(TicketDTO::new).collect(Collectors.toList());
+//    }
+//    public ResponseEntity<?> addProduct(@RequestBody TicketDTO ticketDTO){
+//        if(ticketDTO.getNumberCode() == 0 || ticketDTO.getPrice() == 0){
+//            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+//        }
+//
+//        Client client = clientRepository.findByUser();
+//        this.ticketRepository.save(new Ticket(ticketDTO.getPrice(),ticketDTO.getDate(), MyUtils.getRandomNumber(1,10000), client, ticketDTO.getSede()));
+//        return new ResponseEntity<>("Producto agregado correctamente", HttpStatus.ACCEPTED);
+//    }
 }

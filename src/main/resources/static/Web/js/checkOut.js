@@ -28,11 +28,10 @@ const app = Vue.createApp({
 
     methods: {
         createPdf(){
-            let table = document.getElementById("table")
+            let table = document.getElementById("derecha")
             let doc = new jsPDF();
 
             doc.fromHTML(table, 15, 15)
-            doc.text(10, 200, "Total:  $" + this.total)
 
             doc.save("factura.pdf")
         }
