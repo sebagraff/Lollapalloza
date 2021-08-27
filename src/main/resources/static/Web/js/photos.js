@@ -74,7 +74,6 @@ const app = Vue.createApp({
         submitComment(data){
             axios.post("/api/comments", "description=" + this.comment + "&user=" + this.user + "&id=" + data.id).then(res => window.location.reload())
         }
-
     },
 
     computed: {
