@@ -17,6 +17,7 @@ const app = Vue.createApp({
                 console.log(res)
                 this.tickets = res.data
                 console.log(this.tickets)
+                // this.date = res.data.date.split
             })
 
         axios.get("/api/clients/current")
@@ -60,7 +61,25 @@ const app = Vue.createApp({
             ).then(() => {
                 console.log("agregado")
             })
+        },
+
+        splitForSpace(ticket) {
+            let newArray = ticket.date.split(" ");
+            let array = [];
+            for(i=0;i<newArray.length;i++){
+                if(newArray[i] == 27 || newArray[i] == 28|| newArray[i] == 29 || newArray[i] == 30){
+                    array.push(newArray[i]);
+                }
+            }
+            // console.log(array)
+            // if(newArray.length > 1){
+            //     let arr = newArray.splice(1,newArray.length,"y")
+            //     console.log(arr)
+
+            // }
+            return array.join(", ");
         }
+
     },
     computed: {
     }

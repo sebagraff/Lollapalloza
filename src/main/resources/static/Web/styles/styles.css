@@ -549,9 +549,10 @@ a:hover{
 .body-tickets{
     margin: 0;
     width: 100vw;
+    background-color: #f2f2f2;
 }
 
-#header-tickets{
+/* #header-tickets{
     width: 100vw;
     height: 90vh;
     background-color: lightskyblue;
@@ -560,15 +561,15 @@ a:hover{
     background-repeat: no-repeat;
     display: flex;
     justify-content: flex-start;    
-}
+} */
 
 .div1-tickets{
     width: 100vw;
     height: 17vh;
     background-color: #03A688;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
     position: fixed;
 }
 
@@ -580,34 +581,34 @@ a:hover{
 }
 
 #tickets-logo{
-    /* margin: 0 2rem; */
+     margin: 0 2rem; 
     width: 10vw;
 }
 
 #ingresarButton{
-    /* margin: 0rem 2rem ; */
+     margin: 0rem 2rem ; 
     padding: 0.5rem;
     height: 6vh;
     color: #0D0D0D;
     background-color: #F23838;
-}
+}*/
 
-#main-tickets{
+ #main-tickets{
     min-height: 150vh;
-    /* background-color: #0D0D0D; */
+     background-color: #0D0D0D; 
 }
 
 #main-tickets h2{
     display: flex;
     justify-content: center;
-}
+} 
 
-.ticket-row{
+/* .ticket-row{
     display: flex;
     justify-content: space-between;
-}
+} */
 
-.ticket-card-css{
+/* .ticket-card-css{
     margin-bottom: 10px;
     width: 49%;
     color: #989898;
@@ -617,18 +618,18 @@ a:hover{
     display: table-row;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    /* display: flex;
-    align-items: center; */
-}
+    display: flex;
+    align-items: center; 
+} */
 
-.ticket-date-css {
+ .ticket-date-css {
     width: 25%;
     height: 100%;
     border-right: 2px dashed #dadde6;
     display: table-cell;
     /* position: relative; */
     text-align: center;
-} 
+}  
 
 .ticket-date-css span:last-child {
     /* margin-top: -10px; */
@@ -653,6 +654,109 @@ a:hover{
 input[type="button"]{
     height: 5vh;
 }
+
+
+
+.pregunta{
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenedor{
+    margin: 2rem;
+    width: 60vw;
+    height: 20vh;
+    background-color: wheat;
+}
+
+.evento{
+    height:5vh;
+    background-color: orange;
+    border: 1px solid black;
+}
+
+.contenedor-ticket{
+    height:15vh;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.separador-ticket{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.cabeza-ticket{
+    width: 28%;
+    height:100%;
+    /* background-color:tomato; */
+    border-right: 1px dashed black;
+    display: flex;
+    /* justify-content: flex-start;
+    align-items: center; */
+    flex-direction: column;
+}
+
+.cabeza-uno{
+    width: 100%;
+    height: 50%;
+    border-bottom: 1px dashed grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabeza-dos{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuerpo-ticket{
+    width: 58%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.fila-ticket{
+    padding-left: 1rem;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fila-ticket p{
+    font-weight: bold;
+}
+
+.fila-ticket:nth-child(2){
+    color: red;
+    line-height: 15px;
+}
+
+.cola-ticket{
+    height: 100%;
+    width: 14%;
+    border-left: 1px dashed grey;
+}
+
+.cola-uno{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 #footer-tickets{
     height: 10vh;
