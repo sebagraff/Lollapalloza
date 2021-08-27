@@ -67,13 +67,6 @@ const app = Vue.createApp({
             .then(res => location.reload());
         },
 
-        createPdf(){
-            let doc = new jsPDF();
-
-            doc.text(50, 50, "Hola");
-            doc.save("Test.pdf")
-        }
-
     },
 
     computed: {

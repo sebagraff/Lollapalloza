@@ -14,8 +14,8 @@ public class Cart {
     @OneToMany(mappedBy="cart", fetch=FetchType.EAGER)
     Set<ProductInCart> productsInCart;
 
-    @OneToMany(mappedBy="Cart", fetch = FetchType.EAGER)
-    Set<TicketInCart> ticketsInCart;
+//    @OneToMany(mappedBy="Cart", fetch = FetchType.EAGER)
+//    Set<TicketInCart> ticketsInCart;
 
     @OneToOne
     @JoinColumn(name = "Client_id")
@@ -23,12 +23,10 @@ public class Cart {
 
     public Cart() {}
 
-    public Cart(long id, Set<ProductInCart> productsInCart, Set<TicketInCart> ticketsInCart, Double totalPrice, double ticketsPrice) {
+    public Cart(long id, Set<ProductInCart> productsInCart, Double totalPrice) {
         this.id = id;
         this.productsInCart = productsInCart;
         this.totalPrice = totalPrice;
-        this.ticketsInCart = ticketsInCart;
-        this.ticketsPrice = ticketsPrice;
     }
 
     public long getId() {return id;}
@@ -39,9 +37,6 @@ public class Cart {
 
     public void setProductsInCart(Set<ProductInCart> productsInCart) {this.productsInCart = productsInCart;}
 
-    public Set<TicketInCart> getTicketsInCart() {return ticketsInCart;}
-
-    public void setTicketsInCart(Set<TicketInCart> ticketsInCart) {this.ticketsInCart = ticketsInCart;}
 
     public Client getClient() {return client;}
 
@@ -51,7 +46,4 @@ public class Cart {
 
     public void setTotalPrice(Double totalPrice) {this.totalPrice = totalPrice;}
 
-    public double getTicketsPrice() {return ticketsPrice;}
-
-    public void setTicketsPrice(double ticketsPrice) {this.ticketsPrice = ticketsPrice;}
 }

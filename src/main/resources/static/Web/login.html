@@ -48,13 +48,13 @@
 
                     <!-- Registro -->
 
-                    <form action="" class="form__register">
+                    <form action="" class="form__register" v-on:submit.prevent="onSubmit">
                         <h2>Registrarse</h2>
                         <input type="text" placeholder="Nombre completo">
                         <input type="text" placeholder="Email">
-                        <input type="text" placeholder="Usuario">
-                        <input type="password" placeholder="Contraseña">
-                        <button>Registrarse</button>
+                        <input v-model="userRegister" type="text" placeholder="Usuario">
+                        <input v-model="passwordRegister" type="password" placeholder="Contraseña">
+                        <button type="submit" @click="register">Registrarse</button>
                     </form>
 
                 </div>
@@ -70,6 +70,7 @@
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
     <script src="../Web/js/login.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
