@@ -40,6 +40,5 @@ public class ProductController {
 
         this.productRepository.save(new Product(productDTO.getName(), productDTO.getPrice(), productDTO.getType(), productDTO.getDescription(), productDTO.getStock(), productDTO.getImage()));
         return new ResponseEntity<>("Producto agregado correctamente", HttpStatus.ACCEPTED);
-
     }
 }
