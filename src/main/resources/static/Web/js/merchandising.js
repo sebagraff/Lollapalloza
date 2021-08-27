@@ -26,6 +26,7 @@ const app = Vue.createApp({
                 axios.get("/api/cart/" + this.currentClient.id)
                     .then(res => {
                         this.cart = res.data.productsInCart
+                        this.totalCart = res.data.totalPrice
                     })
             })
 
@@ -71,11 +72,13 @@ const app = Vue.createApp({
                     console.log("agregado")
                 })
 
-            }else{
+                axios.post("/api/cart/" + this.currentClient.id + "/totalPrice", "totalPrice=" + this.totalCart)
+
+            } else {
                 Swal.fire({
                     title: 'Por favor, inicie sesión',
-                  })
-                  
+                })
+
             }
 
 

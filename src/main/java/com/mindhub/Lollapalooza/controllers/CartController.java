@@ -50,10 +50,23 @@ public class CartController {
         cart.setProductsInCart(productInCarts);
         productInCartRepository.saveAll(productInCarts);
 
-        
+
+
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @PostMapping("/cart/{id}/totalPrice")
+    public ResponseEntity<?> addPriceCart(@PathVariable Long id,  @RequestParam Double totalPrice) {
+
+        Client client = this.clientRepository.findById(id).get();
+        Cart cart = client.getCart();
+
+        cart.setTotalPrice(totalPrice);
+        this.cartRepository.save(cart);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+
+
+    }
     /*@PutMapping("/cart/{id}")
     public ResponseEntity<?> addTicketToCart(@PathVariable Long id, @RequestBody Set<TicketInCart> ticketInCarts){
         Client client = this.clientRepository.findById(id).get();
