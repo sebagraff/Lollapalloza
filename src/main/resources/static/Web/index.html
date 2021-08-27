@@ -25,8 +25,9 @@
         <!-- Header -->
         <header>
             <div class="content-header">
-                <img src="assets/lola.png" alt="logo" id="imgHeader">
-
+                <a href="../Web/index.html">
+                    <img src="assets/lola.png" alt="logo" id="imgHeader">
+                </a>
                 <!-- ------------MOBILEEEE---------------- -->
                 <button class="btn-canvas btn btn-dark" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
@@ -218,7 +219,7 @@
                                         </div>
                                         <div class="redirectToPurchase">
                                             <h2>{{bandsDayOne[0].eventLocation.name}}</h2>
-                                            <input type="button" value="Comprar Entrada">
+                                            <input type="button" value="Comprar Entrada" @click="goToTicketsPage">
                                         </div>
                                     </div>
 
@@ -246,7 +247,7 @@
                                         </div>
                                         <div class="redirectToPurchase">
                                             <h2>{{bandsDayTwo[0].eventLocation.name}}</h2>
-                                            <input type="button" value="Comprar Entrada">
+                                            <input type="button" value="Comprar Entrada" @click="goToTicketsPage">
                                         </div>
                                     </div>
 
@@ -275,7 +276,7 @@
                                         </div>
                                         <div class="redirectToPurchase">
                                             <h2>{{bandsDayThree[0].eventLocation.name}}</h2>
-                                            <input type="button" value="Comprar Entrada">
+                                            <input type="button" value="Comprar Entrada" @click="goToTicketsPage">
                                         </div>
                                     </div>
 
@@ -304,7 +305,7 @@
                                         </div>
                                         <div class="redirectToPurchase">
                                             <h2>{{bandsDayFour[0].eventLocation.name}}</h2>
-                                            <input type="button" value="Comprar Entrada">
+                                            <input type="button" value="Comprar Entrada" @click="goToTicketsPage">
                                         </div>
                                     </div>
 
