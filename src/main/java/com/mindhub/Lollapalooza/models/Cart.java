@@ -8,9 +8,12 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private Double totalPrice;
 
     @OneToMany(mappedBy="cart", fetch=FetchType.EAGER)
     Set<ProductInCart> productsInCart;
+
+
 
     /*@ManyToMany(mappedBy="Cart", fetch = FetchType.EAGER)
     Set<TicketInCart> ticketsInCart;*/
@@ -21,9 +24,10 @@ public class Cart {
 
     public Cart() {}
 
-    public Cart(long id, Set<ProductInCart> productsInCart, Set<TicketInCart> ticketsInCart) {
+    public Cart(long id, Set<ProductInCart> productsInCart, Set<TicketInCart> ticketsInCart, Double totalPrice) {
         this.id = id;
         this.productsInCart = productsInCart;
+        this.totalPrice = totalPrice;
     }
 
     public long getId() {return id;}
@@ -41,4 +45,12 @@ public class Cart {
     public Client getClient() {return client;}
 
     public void setClient(Client client) {this.client = client;}
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 }

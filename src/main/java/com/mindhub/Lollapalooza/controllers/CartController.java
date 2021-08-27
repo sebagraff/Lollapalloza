@@ -41,7 +41,7 @@ public class CartController {
     }
 
     @PutMapping("/cart/{id}")
-    public ResponseEntity<?> addProductToCart(@PathVariable Long id, @RequestBody Set<ProductInCart> productInCarts){
+    public ResponseEntity<?> addProductToCart(@PathVariable Long id,  @RequestBody Set<ProductInCart> productInCarts){
         Client client = this.clientRepository.findById(id).get();
         Cart cart = client.getCart();
 
@@ -49,6 +49,8 @@ public class CartController {
         productInCarts.forEach(productInCart -> productInCart.setCart(cart));
         cart.setProductsInCart(productInCarts);
         productInCartRepository.saveAll(productInCarts);
+
+        
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
