@@ -59,15 +59,14 @@ const app = Vue.createApp({
         splitForSpace(index, date) {
             let newArray = date.split(" ")
             return newArray[index]
+        },
+        goToTicketsPage(){
+            window.location.href="tickets.html"
         }
 
     },
-
     computed: {
-
-
     }
-
 })
 
 app.mount("#app")
