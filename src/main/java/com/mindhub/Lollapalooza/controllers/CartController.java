@@ -68,9 +68,5 @@ public class CartController {
 
     }
 
-    @PostMapping("/cart/{id}/tickets")
-    public ResponseEntity<?> addPriceCart(@PathVariable Long id,  @RequestBody Set<TicketInCart> ticketsInCart) {
-    
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
+   
     }
