@@ -7,7 +7,6 @@ public class ProductInCart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long productId;
-
     private String productName;
     private int productQuantity;
     private double productPrice;
@@ -16,8 +15,7 @@ public class ProductInCart {
     @JoinColumn(name="cart")
     private Cart cart;
 
-    public ProductInCart() {
-    }
+    public ProductInCart() {}
 
     public ProductInCart( String productName, int productQuantity, double productPrice) {
         this.productName = productName;

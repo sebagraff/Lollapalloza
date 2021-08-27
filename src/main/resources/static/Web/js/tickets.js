@@ -7,6 +7,7 @@ const app = Vue.createApp({
             stock: 0,
             detail: "",
             tickets: "",
+            currentClient: "",
 
         }
     },
@@ -18,6 +19,11 @@ const app = Vue.createApp({
                 console.log(this.tickets)
             })
 
+        axios.get("/api/clients/current")
+        .then(res => {
+            this.currentClient = res.data;
+            console.log(this.currentClient)
+        })
 
     },
     methods: {

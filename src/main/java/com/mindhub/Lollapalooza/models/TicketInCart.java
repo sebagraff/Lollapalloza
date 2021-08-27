@@ -7,42 +7,39 @@ public class TicketInCart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long TicketId;
 
-    private String TicketName;
-    private int TicketQuantity;
-    private double productPrice;
+    private String ticketName;
+    private int ticketQuantity;
+    private double ticketPrice;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "cart")
+    @JoinColumn(name = "Cart")
     private Cart cart;
 
     public TicketInCart(){}
 
-    public TicketInCart(String ticketName, int ticketQuantity, double productPrice, com.mindhub.Lollapalooza.models.Cart cart) {
-        TicketName = ticketName;
-        TicketQuantity = ticketQuantity;
-        this.productPrice = productPrice;
-        this.cart = cart;
+    public TicketInCart(String ticketName, int ticketQuantity, double ticketPrice) {
+        this.ticketName = ticketName;
+        this.ticketQuantity = ticketQuantity;
+        this.ticketPrice = ticketPrice;
     }
 
-    public long getTicketId() { return TicketId; }
+    public long getTicketId() {return TicketId;}
 
-    public void setTicketId(long ticketId) { TicketId = ticketId; }
+    public void setTicketId(long ticketId) {TicketId = ticketId;}
 
+    public String getTicketName() {return ticketName;}
 
+    public void setTicketName(String ticketName) {this.ticketName = ticketName;}
 
-    public String getTicketName() { return TicketName; }
+    public int getTicketQuantity() {return ticketQuantity;}
 
-    public void setTicketName(String ticketName) { TicketName = ticketName; }
+    public void setTicketQuantity(int ticketQuantity) {this.ticketQuantity = ticketQuantity;}
 
-    public int getTicketQuantity() { return TicketQuantity; }
+    public double getTicketPrice() {return ticketPrice;}
 
-    public void setTicketQuantity(int ticketQuantity) { TicketQuantity = ticketQuantity; }
+    public void setTicketPrice(double ticketPrice) {this.ticketPrice = ticketPrice;}
 
-    public double getProductPrice() { return productPrice; }
+    public Cart getCart() {return cart;}
 
-    public void setProductPrice(double productPrice) { this.productPrice = productPrice; }
-
-    public com.mindhub.Lollapalooza.models.Cart getCart() { return cart; }
-
-    public void setCart(com.mindhub.Lollapalooza.models.Cart cart) { this.cart = cart; }
+    public void setCart(Cart cart) {this.cart = cart;}
 }
