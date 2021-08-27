@@ -51,14 +51,11 @@ const app = Vue.createApp({
     },
 
     methods: {
-<<<<<<< HEAD
-=======
         logout() {
             axios.post('/api/logout')
                 .then(response => window.location.href = "index.html")
         },  
         
->>>>>>> 23e57e70367674e396b01ceeed6a17faed083d4b
         splitForSpace(index, date) {
             let newArray = date.split(" ")
             return newArray[index]
