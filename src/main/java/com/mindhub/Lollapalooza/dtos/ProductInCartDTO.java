@@ -9,19 +9,13 @@ public class ProductInCartDTO {
     private int productQuantity;
     private double productPrice;
 
-    public ProductInCartDTO() {
-    }
+    public ProductInCartDTO() {}
 
     public ProductInCartDTO(ProductInCart productInCart) {
-
         this.productName = productInCart.getProductName();
         this.productQuantity = productInCart.getProductQuantity();
         this.productPrice = productInCart.getProductPrice();
     }
-
-
-
-
 
     public String getProductName() {
         return productName;

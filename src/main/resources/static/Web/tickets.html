@@ -71,6 +71,28 @@
             <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
             <a href="tickets.html"> <i class="fas fa-ticket-alt"></i> Entradas</a>
             <!-- <i class="fas fa-shopping-cart">&nbsp; {{cart.length}} </i> -->
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="fas fa-shopping-cart text-dark">&nbsp;</i> <!--{{cart.length}}-->
+              </button>
+              <ul class="dropdown-menu">
+                  <li v-for="product in cart">
+                    <a class="dropdown-item" href="#">{{product.name}} ${{product.price}} 
+                      <span class="text-success"> cantidad: {{product.count}}</span>
+                    </a>
+                  </li>
+                 <!--v-show="(cart.length === 0)"-->  <li><a class="dropdown-item" href="#">No hay ningun
+                          producto seleccionado</a></li>
+                  <hr class="dropdown-divider">
+                  <li>
+                    <a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
+                   <!--v-show="(cart.length !== 0)"--><li>
+                    <a class="dropdown-item" href="#">Continuar con la compra</a>
+                  </li>
+              </ul>
+          </div>
           </div>
         </div>
 
@@ -90,21 +112,49 @@
         <h2>¿¡Qué esperás para conseguirlas!?</h2>
       </div>
   
+      <!-- <section class="ticket-container" v-for="ticket in tickets" style="background-color: bisque;">
+        <h1 class="main-ticket-h1">Events</h1>
+          <div class="ticket-row">
+  
+            <article class="ticket-card-css fl-left" style="width: 44%;">
+              <section class="ticket-date-css">
+                <span>{{ticket.id}}</span>
+              </section>
+              <section class="ticket-card-cont">
+                <small>dj khaled</small>
+                <h3>live</h3>
+                <div class="even-date" style="display: flex;">
+                  <i class="fa fa-calendar"></i>
+                  <time>
+                    <span>{{ticket.date}}</span>
+                  </time>
+                </div>
+                <div class="eveticketo">
+                  <i class="fa fa-map-marker"></i>
+                  <p>{{ticket.sede}}</p>
+                </div>
+              </section>  
+            </article>
+            <div class="purchaseButton">
+              <input type="button" value="Comprar">
+            </div>
+  
+          </div>
+      </section> -->
+
       <section class="ticket-container" v-for="ticket in tickets" style="background-color: bisque;">
         <h1 class="main-ticket-h1">Events</h1>
           <div class="ticket-row">
   
             <article class="ticket-card-css fl-left" style="width: 44%;">
               <section class="ticket-date-css">
-                <!-- <time datetime="23th feb"> -->
                 <span>{{ticket.id}}</span>
-                <!-- </time> -->
               </section>
               <section class="ticket-card-cont">
                 <small>dj khaled</small>
                 <h3>live</h3>
-                <div class="even-date">
-                  <i class="fa fa-calendar" style="margin: 0;"></i>
+                <div class="even-date" style="display: flex;">
+                  <i class="fa fa-calendar"></i>
                   <time>
                     <span>{{ticket.date}}</span>
                   </time>
@@ -121,6 +171,8 @@
   
           </div>
       </section>
+
+
     </main>
     <footer id="footer-tickets">
       <h2>&copy;Lollapalooza</h2>
