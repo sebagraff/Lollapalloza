@@ -67,8 +67,11 @@ public class ClientController {
 
         Client client = new Client(user, passwordEncoder.encode(password));
 
-     
+        Cart newCart = cartRepository.save(new Cart());
 
+        client.setCart(newCart);
+
+        this.clientRepository.save(client);
         return new ResponseEntity<>(HttpStatus.CREATED);
 
     }
