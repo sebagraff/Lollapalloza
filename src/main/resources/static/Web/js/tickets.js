@@ -25,15 +25,21 @@ const app = Vue.createApp({
                 this.currentClient = res.data
                 console.log(this.currentClient);
 
-            }).then(() => {
-                axios.get("/api/cart/" + this.currentClient.id)
-                    .then(res => {
-                        this.cart = res.data.ticketsInCart;
-                        console.log(this.cart)
-                    })
             }).catch(res => console.log(res.response))
+        axios.get("/api/cart/")
+            .then(res => {
+
+                console.log(res.data)
+                this.cart = res.data.productsInCart
+                this.totalCart = res.data.totalPrice
+            })
     },
     methods: {
+        logout() {
+            axios.post('/api/logout')
+                .then(response => window.location.href = "index.html")
+        },  
+
         ticketsLoginButton() {
             window.location.href = "login.html"
         },
@@ -72,8 +78,8 @@ const app = Vue.createApp({
         splitForSpace(ticket) {
             let newArray = ticket.date.split(" ");
             let array = [];
-            for(i=0;i<newArray.length;i++){
-                if(newArray[i] == 27 || newArray[i] == 28|| newArray[i] == 29 || newArray[i] == 30){
+            for (i = 0; i < newArray.length; i++) {
+                if (newArray[i] == 27 || newArray[i] == 28 || newArray[i] == 29 || newArray[i] == 30) {
                     array.push(newArray[i]);
                 }
             }

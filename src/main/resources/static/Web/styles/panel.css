@@ -119,6 +119,22 @@ form button{
   height: 70vh;
 }
 
+#comments{
+  border: 0.1em solid black;
+  overflow-y: auto;
+  height: 20vh;
+  padding: 10px;
+}
+
+#comments::-webkit-scrollbar{
+  width: 7px;
+  background:white!important;
+}
+
+#comments::-webkit-scrollbar-thumb{
+  background: rgb(26, 3, 92)
+}
+
 @media(max-width: 690px){
   #tables{
     width: 93%;

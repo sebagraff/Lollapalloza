@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merchandising</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -60,29 +62,34 @@
                             <a href="bands.html"><i class="fas fa-circle"></i> Bandas</a>
                             <a href="merchandising.html"><i class="fas fa-circle"></i> Merchandising</a>
                             <a href="tickets.html"><i class="fas fa-circle"></i> Entradas</a>
-
+                            <a href="photos.html"><i class="fas fa-camera-retro"></i> Galeria</a>
                             <div class="btn-group" v-if="currentClient.user != null">
                                 <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                                  aria-expanded="false">
-                                  <i class="fas fa-shopping-cart text-dark">&nbsp; {{cart.length}} </i>
+                                    aria-expanded="false">
+                                    <i class="fas fa-shopping-cart text-dark">&nbsp; {{cart.length}} </i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                  <li v-for="product in cart" class="ms-2"><a class="dropdown-item" href="#"></a>{{product.productName}}
-                                    ${{product.productPrice}}<span class="text-success"> cantidad: {{product.productQuantity}} </span></a>
-                                  </li>
-                                  <li v-show="(cart.length === 0)"><a class="dropdown-item" href="#">No tienes productos</a></li>
-                                  <hr class="dropdown-divider">
-                                  <li v-if="cart.length > 0"><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
-                                  <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="checkOut.html">Continuar con la
-                                      compra</a></li>
+                                    <li v-for="product in cart" class="ms-2"><a class="dropdown-item"
+                                            href="#"></a>{{product.productName}} ${{product.productPrice}}
+                                        ${{product.productPrice}}<span class="text-success"> cantidad:
+                                            {{product.productQuantity}} </span></a>
+                                    </li>
+                                    <li v-show="(cart.length === 0)"><a class="dropdown-item" href="#">No tienes
+                                            productos</a></li>
+                                    <hr class="dropdown-divider">
+                                    <li v-if="cart.length > 0"><a class="dropdown-item" href="#">Total:
+                                            {{totalCart}}</a></li>
+                                    <li v-show="(cart.length !== 0)"><a class="dropdown-item"
+                                            href="checkOut.html">Continuar con la
+                                            compra</a></li>
                                 </ul>
-                              </div>
-                  
-                              <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none"
+                            </div>
+
+                            <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none"
                                 v-if="currentClient.user == null">Iniciar sesión</a>
 
-                        </div>
 
+                        </div>
 
                         <div class="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -90,7 +97,7 @@
                         </div>
 
                         <div class="logOut">
-                            <a href="#">Log Out</a>
+                            <a href="index.html" @click="logout()">Log Out</a>
                             <a href="#">Settings</a>
                         </div>
                     </div>
@@ -103,27 +110,36 @@
                         <a href="bands.html"> <i class="fas fa-music"></i> Bandas</a>
                         <a href="merchandising.html"> <i class="fas fa-shopping-bag"></i> Merchandising</a>
                         <a href="tickets.html"> <i class="fas fa-ticket-alt"></i> Entradas</a>
+                        <a href="photos.html"><i class="fas fa-camera-retro"></i> Galeria</a>
+                        <a href="index.html" @click="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a>
 
-                        <div class="btn-group">
-                            <div class="btn-group" v-if="currentClient.user != null">
-                                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-shopping-cart text-dark">&nbsp; {{cart.length}} </i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                  <li v-for="product in cart" class="ms-2"><a class="dropdown-item" href="#"></a>{{product.productName}} ${{product.productPrice}}<span class="text-success"> cantidad: {{product.productQuantity}} </span></a></li>
-                                  <li v-show="(cart.length === 0)" ><a class="dropdown-item" href="#">No hay ningun producto seleccionado</a></li>
-                                  <hr class="dropdown-divider">
-                                  <li><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
-                                  <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="checkOut.html">Continuar con la compra</a></li>
-                                </ul>
-                            </div> 
-                            
+
+                        <div class="btn-group" v-if="currentClient.user != null">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fas fa-shopping-cart text-dark">&nbsp; {{cart.length}} </i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li v-for="product in cart"><a class="dropdown-item"
+                                        href="#"></a>{{product.productName}} ${{product.productPrice}}<span
+                                        class="text-success"> cantidad:
+                                        {{product.productQuantity}} </span></a></li>
+                                <li v-show="(cart.length === 0)"><a class="dropdown-item" href="#">No hay ningun
+                                        producto
+                                        seleccionado</a></li>
+                                <hr class="dropdown-divider">
+                                <li><a class="dropdown-item" href="#">Total: {{totalCart}}</a></li>
+                                <li v-show="(cart.length !== 0)"><a class="dropdown-item" href="#">Continuar con la
+                                        compra</a></li>
+                            </ul>
                         </div>
 
+                        <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none"
+                            v-if="currentClient.user == null">Iniciar sesión</a>
                     </div>
                 </div>
 
-                <div class="login-user" v-if="currentClient.user != null">
+                <div class="login-user">
 
                     <div class="user-icon">
                         <i class="fas fa-user-circle"></i>
@@ -141,7 +157,8 @@
                     </div>
 
                     <div class="user">
-                        <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none" v-if="currentClient.user == null">Iniciar sesión</a>
+                        <a href="login.html" class="btn-success rounded-2 p-2 text-decoration-none"
+                            v-if="currentClient.user == null">Iniciar sesión</a>
                     </div>
 
                 </div>

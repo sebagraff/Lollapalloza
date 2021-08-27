@@ -44,7 +44,25 @@ public class CommentController {
         return this.commentsRepository.findById(id).map(CommentDTO::new).orElse(null);
     }
 
+    @PostMapping("/comments")
+    public ResponseEntity<?> addComment(@RequestParam String description, @RequestParam String user, @RequestParam Long id,Authentication authentication){
+        Client client = clientRepository.findByUser(authentication.getName());
+        Photo photo = photoRepository.findById(id).get();
 
+        if (description.isEmpty()){
+            return new ResponseEntity<>("El comentario no puede estar vacío", HttpStatus.FORBIDDEN);
+        }
 
+        commentsRepository.save(new Comment(description, user, client, photo));
+
+        return new ResponseEntity<>("Comentario creado con éxito", HttpStatus.OK);
+
+    }
+
+    @DeleteMapping("comments/{id}")
+    public ResponseEntity<?> deleteComment(@PathVariable Long id){
+        commentsRepository.deleteById(id);
+        return new ResponseEntity<>("Eliminado correctamente", HttpStatus.OK);
+    }
 
 }
