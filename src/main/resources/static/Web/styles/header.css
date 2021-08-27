@@ -31,6 +31,27 @@ header{
     height: 8vh;
 }
 
+#imgHeader{
+    height: 8vh;
+    animation: sk-rotateplane 2.2s infinite ease-in-out;}
+
+    @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+@keyframes sk-rotateplane {
+    0% { 
+        transform: rotate(0deg);
+    }  100% { 
+        transform: rotate(360deg);
+    }
+      }
 
 .links{
     height: 50%;
