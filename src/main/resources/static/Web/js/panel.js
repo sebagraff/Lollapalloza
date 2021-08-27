@@ -17,6 +17,7 @@ const app = Vue.createApp({
             day: "",
             event: {},
             locations: {},
+            comments: [],
         }
     },
 
@@ -43,6 +44,9 @@ const app = Vue.createApp({
         .then(res => {
             this.locations = res.data;
         })
+        axios.get("/api/comments").then(res => {
+            this.comments = res.data
+        })
 
     },
 
@@ -66,13 +70,16 @@ const app = Vue.createApp({
             axios.post("/api/musicbands", {bandName: this.nameBand, genre: this.genre, hour: this.hour, description: this.description, event: this.event[this.day], image: this.imageBand})
             .then(res => location.reload());
         },
+        
+        deleteComment(comment){
+            console.log(comment.id);
+            axios.delete("/api/comments/" + comment.id).then(res => window.location.reload())
+        }
 
     },
 
     computed: {
-        totalLocation(){
-            return this.locations.reduce((acumulador, item) => acumulador + item.maximumCapacity, 0)
-        }
+    
     }
 
 })
