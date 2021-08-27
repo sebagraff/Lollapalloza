@@ -6,7 +6,6 @@ public class TicketInCart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long TicketId;
-
     private String ticketName;
     private int ticketQuantity;
     private double ticketPrice;
