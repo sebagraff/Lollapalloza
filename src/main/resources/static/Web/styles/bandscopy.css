@@ -290,3 +290,13 @@ a:hover{
   border-radius: 40%;
   -webkit-border-radius: 4;
 }
+
+#preloader{
+    background:#000 url(../assets/lola.png) no-repeat center center;
+    height:100vh;
+    width:100%;
+    position:fixed;
+    z-index:100;
+    background-size:15%;
+    }
+

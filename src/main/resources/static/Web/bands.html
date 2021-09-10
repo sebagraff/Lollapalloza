@@ -36,6 +36,7 @@
 </head>
 
 <body>
+<div id="preloader"></div>
     <div id="app">
         <!-- Header -->
         <header>
@@ -147,6 +148,7 @@
             <i class="fas fa-search ms-2 fs-3 mt-2"></i>
         </div>
         <main>
+
             <section class="hero-section">
                 <div class="card-grid">
                     <a class="card" :href="'http://localhost:8080/Web/viewBands.html?id=' + data.id"
@@ -231,6 +233,12 @@
     <script src="https://code.jquery.com/jquery-2.2.0.js"> </script>
     <!-- mis scripts -->
     <script src="../Web/js/bands.js"> </script>
+<script>
+    var loader = document.getElementById("preloader")
+    window.addEventListener("load", function(){
+    loader.style.display="none";
+    })
+</script>
 </body>
 
 </html>
